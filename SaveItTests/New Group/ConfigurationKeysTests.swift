@@ -1,14 +1,21 @@
 //
-//  SaveItTests.swift
+//  ConfigurationKeys.swift
 //  SaveItTests
 //
-//  Created by Tiago Bencardino on 06/02/2018.
+//  Created by Tiago Bencardino on 27/03/2018.
 //  Copyright © 2018 Buildit. All rights reserved.
 //
 
+@testable import SaveIt
 import XCTest
 
-class SaveItTests: XCTestCase {
+class ConfigurationKeysTests: XCTestCase {
+    
+    var configurationKeys: ConfigurationKeys {
+        let bundle = Bundle(for: type(of: self))
+        let path = bundle.url(forResource: "configuration", withExtension: "plist")!
+        return ConfigurationKeys(with: path)
+    }
     
     override func setUp() {
         super.setUp()
@@ -23,6 +30,14 @@ class SaveItTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+    }
+    
+    /// Asserts it can reads all the values properly
+    func testReadValues() {
+        XCTAssertEqual(configurationKeys.monzoClientId, "monzo_client_id")
+        XCTAssertEqual(configurationKeys.monzoClientSecret, "monzo_client_secret")
+        XCTAssertEqual(configurationKeys.monzoRedirectLink, "monzo_redirect_link")
+        XCTAssertEqual(configurationKeys.starlingToken, "starling_token")
     }
     
     func testPerformanceExample() {

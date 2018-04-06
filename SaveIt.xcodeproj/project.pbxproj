@@ -7,16 +7,73 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1FDD766D9546FA86E9616246 /* Pods_SaveIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90FBB37B8F5DADDDD5F9719F /* Pods_SaveIt.framework */; };
+		6F546E5EEFE424D7BE26D914 /* Pods_SaveItTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B04F41E023CE67A6EBB87DD7 /* Pods_SaveItTests.framework */; };
+		F10476B4203F33A900EEAEC1 /* DateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10476B3203F33A900EEAEC1 /* DateHandler.swift */; };
+		F10476B620402D7700EEAEC1 /* MonzoBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10476B520402D7700EEAEC1 /* MonzoBalance.swift */; };
+		F10476BD204035C300EEAEC1 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F10476BB204035C300EEAEC1 /* Interface.storyboard */; };
+		F10476C6204035C400EEAEC1 /* Watchit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F10476C5204035C400EEAEC1 /* Watchit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F10476CB204035C400EEAEC1 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10476CA204035C400EEAEC1 /* InterfaceController.swift */; };
+		F10476CD204035C400EEAEC1 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10476CC204035C400EEAEC1 /* ExtensionDelegate.swift */; };
+		F10476CF204035C400EEAEC1 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10476CE204035C400EEAEC1 /* NotificationController.swift */; };
+		F10476D1204035C400EEAEC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F10476D0204035C400EEAEC1 /* Assets.xcassets */; };
+		F10476D6204035C400EEAEC1 /* Watchit.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = F10476B9204035C300EEAEC1 /* Watchit.app */; };
+		F10B6B4E20693A9C00CE7710 /* configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = F10B6B4D20693A9C00CE7710 /* configuration.plist */; };
+		F10B6B50206A5AF800CE7710 /* ConfigurationKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10B6B4F206A5AF800CE7710 /* ConfigurationKeys.swift */; };
+		F10B6B54206A5D8800CE7710 /* ConfigurationKeysTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10B6B53206A5D8800CE7710 /* ConfigurationKeysTests.swift */; };
+		F10B6B57206A661C00CE7710 /* configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = F10B6B56206A661C00CE7710 /* configuration.plist */; };
+		F11658DA2045A9A700BBB746 /* BalanceRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11658D92045A9A700BBB746 /* BalanceRowController.swift */; };
+		F11658DF2045C48D00BBB746 /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11658DE2045C48D00BBB746 /* Balance.swift */; };
+		F11658E12045CBBA00BBB746 /* AccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11658E02045CBBA00BBB746 /* AccountsViewController.swift */; };
+		F11658E32045CBD400BBB746 /* AccountsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11658E22045CBD400BBB746 /* AccountsViewModel.swift */; };
+		F11658E52045CC0B00BBB746 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11658E42045CC0B00BBB746 /* Account.swift */; };
+		F11658E72045CECA00BBB746 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11658E62045CECA00BBB746 /* DatabaseManager.swift */; };
+		F1462CB22035D6D400D39AAB /* MonzoToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1462CB12035D6D400D39AAB /* MonzoToken.swift */; };
+		F1462CB42035DD3D00D39AAB /* MonzoError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1462CB32035DD3D00D39AAB /* MonzoError.swift */; };
+		F1462CB6203B407F00D39AAB /* MonzoAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1462CB5203B407F00D39AAB /* MonzoAccount.swift */; };
+		F152397F204EA524004A2DFB /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F152397E204EA524004A2DFB /* APIManager.swift */; };
+		F1A26A772046CB5A002972A3 /* AccountsBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A26A762046CB5A002972A3 /* AccountsBusinessLogic.swift */; };
+		F1A26A792046CBA5002972A3 /* BankAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A26A782046CBA5002972A3 /* BankAPI.swift */; };
+		F1A26A7C2046F693002972A3 /* RevolutAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A26A7B2046F693002972A3 /* RevolutAPI.swift */; };
+		F1A26A80204718D3002972A3 /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A26A7E204718D3002972A3 /* AccountTableViewCell.swift */; };
+		F1A26A81204718D3002972A3 /* AccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1A26A7F204718D3002972A3 /* AccountTableViewCell.xib */; };
+		F1A26A8320484C92002972A3 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A26A8220484C92002972A3 /* Token.swift */; };
+		F1A26A8520484CC2002972A3 /* Bank.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A26A8420484CC2002972A3 /* Bank.swift */; };
+		F1A26A8720485B98002972A3 /* BankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A26A8620485B98002972A3 /* BankTableViewCell.swift */; };
+		F1A26A8920485C04002972A3 /* BanksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A26A8820485C04002972A3 /* BanksViewController.swift */; };
+		F1A26A8B20485D75002972A3 /* BanksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A26A8A20485D75002972A3 /* BanksViewModel.swift */; };
+		F1A26A8D204DA9A7002972A3 /* BanksBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A26A8C204DA9A7002972A3 /* BanksBusinessLogic.swift */; };
 		F1E700272029C2E600140153 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E700262029C2E600140153 /* AppDelegate.swift */; };
-		F1E700292029C2E600140153 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E700282029C2E600140153 /* FirstViewController.swift */; };
-		F1E7002B2029C2E600140153 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E7002A2029C2E600140153 /* SecondViewController.swift */; };
 		F1E7002E2029C2E600140153 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1E7002C2029C2E600140153 /* Main.storyboard */; };
 		F1E700302029C2E600140153 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1E7002F2029C2E600140153 /* Assets.xcassets */; };
 		F1E700332029C2E600140153 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1E700312029C2E600140153 /* LaunchScreen.storyboard */; };
 		F1E7003E2029C2E600140153 /* SaveItTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E7003D2029C2E600140153 /* SaveItTests.swift */; };
+		F1E700502029C4F200140153 /* TransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E7004F2029C4F200140153 /* TransactionsViewController.swift */; };
+		F1E700522029C51F00140153 /* TransactionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E700512029C51F00140153 /* TransactionsViewModel.swift */; };
+		F1E700552029C53B00140153 /* MonzoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E700542029C53B00140153 /* MonzoAPI.swift */; };
+		F1E700572029C54900140153 /* StarlingAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E700562029C54900140153 /* StarlingAPI.swift */; };
+		F1E7005A2029C58000140153 /* TransactionsBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E700592029C58000140153 /* TransactionsBusinessLogic.swift */; };
+		F1E7005E2029C60400140153 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E7005D2029C60400140153 /* MainViewController.swift */; };
+		F1E700602029E7B700140153 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E7005F2029E7B700140153 /* SettingsViewController.swift */; };
+		F1FEF41420502D8300A40E93 /* StarlingAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FEF41320502D8300A40E93 /* StarlingAccount.swift */; };
+		F1FEF41620502E8E00A40E93 /* StarlingBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FEF41520502E8E00A40E93 /* StarlingBalance.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		F10476C7204035C400EEAEC1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F1E7001B2029C2E600140153 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F10476C4204035C400EEAEC1;
+			remoteInfo = "Watchit Extension";
+		};
+		F10476D4204035C400EEAEC1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F1E7001B2029C2E600140153 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F10476B8204035C300EEAEC1;
+			remoteInfo = Watchit;
+		};
 		F1E7003A2029C2E600140153 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F1E7001B2029C2E600140153 /* Project object */;
@@ -26,11 +83,76 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		F10476DA204035C400EEAEC1 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				F10476C6204035C400EEAEC1 /* Watchit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F10476DE204035C400EEAEC1 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				F10476D6204035C400EEAEC1 /* Watchit.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		332F5DC05302E0F6ED9B78A8 /* Pods-SaveIt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaveIt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SaveIt/Pods-SaveIt.debug.xcconfig"; sourceTree = "<group>"; };
+		41A050EB8D2E463387E4A4C4 /* Pods-SaveItTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaveItTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SaveItTests/Pods-SaveItTests.release.xcconfig"; sourceTree = "<group>"; };
+		90FBB37B8F5DADDDD5F9719F /* Pods_SaveIt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SaveIt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B04F41E023CE67A6EBB87DD7 /* Pods_SaveItTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SaveItTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C65A36A104AD34B0ACB456F9 /* Pods-SaveItTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaveItTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SaveItTests/Pods-SaveItTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F10476B3203F33A900EEAEC1 /* DateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHandler.swift; sourceTree = "<group>"; };
+		F10476B520402D7700EEAEC1 /* MonzoBalance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonzoBalance.swift; sourceTree = "<group>"; };
+		F10476B9204035C300EEAEC1 /* Watchit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Watchit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F10476BC204035C300EEAEC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		F10476C0204035C300EEAEC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F10476C5204035C400EEAEC1 /* Watchit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Watchit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F10476CA204035C400EEAEC1 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		F10476CC204035C400EEAEC1 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		F10476CE204035C400EEAEC1 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		F10476D0204035C400EEAEC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F10476D2204035C400EEAEC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F10476D3204035C400EEAEC1 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		F10B6B4D20693A9C00CE7710 /* configuration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = configuration.plist; sourceTree = SOURCE_ROOT; };
+		F10B6B4F206A5AF800CE7710 /* ConfigurationKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationKeys.swift; sourceTree = "<group>"; };
+		F10B6B53206A5D8800CE7710 /* ConfigurationKeysTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationKeysTests.swift; sourceTree = "<group>"; };
+		F10B6B56206A661C00CE7710 /* configuration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = configuration.plist; sourceTree = "<group>"; };
+		F11658D92045A9A700BBB746 /* BalanceRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceRowController.swift; sourceTree = "<group>"; };
+		F11658DE2045C48D00BBB746 /* Balance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balance.swift; sourceTree = "<group>"; };
+		F11658E02045CBBA00BBB746 /* AccountsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsViewController.swift; sourceTree = "<group>"; };
+		F11658E22045CBD400BBB746 /* AccountsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsViewModel.swift; sourceTree = "<group>"; };
+		F11658E42045CC0B00BBB746 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		F11658E62045CECA00BBB746 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		F1462CB12035D6D400D39AAB /* MonzoToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonzoToken.swift; sourceTree = "<group>"; };
+		F1462CB32035DD3D00D39AAB /* MonzoError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonzoError.swift; sourceTree = "<group>"; };
+		F1462CB5203B407F00D39AAB /* MonzoAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonzoAccount.swift; sourceTree = "<group>"; };
+		F152397E204EA524004A2DFB /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		F1A26A762046CB5A002972A3 /* AccountsBusinessLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsBusinessLogic.swift; sourceTree = "<group>"; };
+		F1A26A782046CBA5002972A3 /* BankAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAPI.swift; sourceTree = "<group>"; };
+		F1A26A7B2046F693002972A3 /* RevolutAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevolutAPI.swift; sourceTree = "<group>"; };
+		F1A26A7E204718D3002972A3 /* AccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
+		F1A26A7F204718D3002972A3 /* AccountTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountTableViewCell.xib; sourceTree = "<group>"; };
+		F1A26A8220484C92002972A3 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		F1A26A8420484CC2002972A3 /* Bank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bank.swift; sourceTree = "<group>"; };
+		F1A26A8620485B98002972A3 /* BankTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankTableViewCell.swift; sourceTree = "<group>"; };
+		F1A26A8820485C04002972A3 /* BanksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanksViewController.swift; sourceTree = "<group>"; };
+		F1A26A8A20485D75002972A3 /* BanksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanksViewModel.swift; sourceTree = "<group>"; };
+		F1A26A8C204DA9A7002972A3 /* BanksBusinessLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanksBusinessLogic.swift; sourceTree = "<group>"; };
 		F1E700232029C2E600140153 /* SaveIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SaveIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1E700262029C2E600140153 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F1E700282029C2E600140153 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		F1E7002A2029C2E600140153 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		F1E7002D2029C2E600140153 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F1E7002F2029C2E600140153 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1E700322029C2E600140153 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -38,13 +160,38 @@
 		F1E700392029C2E600140153 /* SaveItTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SaveItTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1E7003D2029C2E600140153 /* SaveItTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveItTests.swift; sourceTree = "<group>"; };
 		F1E7003F2029C2E600140153 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1E7004F2029C4F200140153 /* TransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewController.swift; sourceTree = "<group>"; };
+		F1E700512029C51F00140153 /* TransactionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewModel.swift; sourceTree = "<group>"; };
+		F1E700542029C53B00140153 /* MonzoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonzoAPI.swift; sourceTree = "<group>"; };
+		F1E700562029C54900140153 /* StarlingAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarlingAPI.swift; sourceTree = "<group>"; };
+		F1E700592029C58000140153 /* TransactionsBusinessLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsBusinessLogic.swift; sourceTree = "<group>"; };
+		F1E7005D2029C60400140153 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		F1E7005F2029E7B700140153 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		F1FEF41320502D8300A40E93 /* StarlingAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarlingAccount.swift; sourceTree = "<group>"; };
+		F1FEF41520502E8E00A40E93 /* StarlingBalance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarlingBalance.swift; sourceTree = "<group>"; };
+		FB732D498CEA60874EF4CBD7 /* Pods-SaveIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaveIt.release.xcconfig"; path = "Pods/Target Support Files/Pods-SaveIt/Pods-SaveIt.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		7416B8C3D452814FB69E19EE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F10476C2204035C400EEAEC1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F1E700202029C2E600140153 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FDD766D9546FA86E9616246 /* Pods_SaveIt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,18 +199,152 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F546E5EEFE424D7BE26D914 /* Pods_SaveItTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		30AA94BA56F6C3AA956D83CA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				332F5DC05302E0F6ED9B78A8 /* Pods-SaveIt.debug.xcconfig */,
+				FB732D498CEA60874EF4CBD7 /* Pods-SaveIt.release.xcconfig */,
+				C65A36A104AD34B0ACB456F9 /* Pods-SaveItTests.debug.xcconfig */,
+				41A050EB8D2E463387E4A4C4 /* Pods-SaveItTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B24453539166A42B7CDBD77B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				90FBB37B8F5DADDDD5F9719F /* Pods_SaveIt.framework */,
+				B04F41E023CE67A6EBB87DD7 /* Pods_SaveItTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F10476BA204035C300EEAEC1 /* Watchit */ = {
+			isa = PBXGroup;
+			children = (
+				F10476BB204035C300EEAEC1 /* Interface.storyboard */,
+				F10476C0204035C300EEAEC1 /* Info.plist */,
+			);
+			path = Watchit;
+			sourceTree = "<group>";
+		};
+		F10476C9204035C400EEAEC1 /* Watchit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F10476CA204035C400EEAEC1 /* InterfaceController.swift */,
+				F10476CC204035C400EEAEC1 /* ExtensionDelegate.swift */,
+				F10476CE204035C400EEAEC1 /* NotificationController.swift */,
+				F10476D0204035C400EEAEC1 /* Assets.xcassets */,
+				F10476D2204035C400EEAEC1 /* Info.plist */,
+				F10476D3204035C400EEAEC1 /* PushNotificationPayload.apns */,
+				F11658D92045A9A700BBB746 /* BalanceRowController.swift */,
+			);
+			path = "Watchit Extension";
+			sourceTree = "<group>";
+		};
+		F10B6B55206A5DCA00CE7710 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F10B6B53206A5D8800CE7710 /* ConfigurationKeysTests.swift */,
+			);
+			name = Services;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		F11658DB2045C45800BBB746 /* Monzo */ = {
+			isa = PBXGroup;
+			children = (
+				F1462CB12035D6D400D39AAB /* MonzoToken.swift */,
+				F1462CB32035DD3D00D39AAB /* MonzoError.swift */,
+				F1462CB5203B407F00D39AAB /* MonzoAccount.swift */,
+				F10476B520402D7700EEAEC1 /* MonzoBalance.swift */,
+			);
+			path = Monzo;
+			sourceTree = "<group>";
+		};
+		F11658DC2045C46500BBB746 /* Starling */ = {
+			isa = PBXGroup;
+			children = (
+				F1FEF41320502D8300A40E93 /* StarlingAccount.swift */,
+				F1FEF41520502E8E00A40E93 /* StarlingBalance.swift */,
+			);
+			path = Starling;
+			sourceTree = "<group>";
+		};
+		F11658DD2045C46B00BBB746 /* Meta */ = {
+			isa = PBXGroup;
+			children = (
+				F152397D204EA4D3004A2DFB /* managers */,
+				F152397C204EA4C0004A2DFB /* entities */,
+			);
+			path = Meta;
+			sourceTree = "<group>";
+		};
+		F1462CB02035D63D00D39AAB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F11658DD2045C46B00BBB746 /* Meta */,
+				F11658DB2045C45800BBB746 /* Monzo */,
+				F1A26A7A2046F677002972A3 /* Revolut */,
+				F11658DC2045C46500BBB746 /* Starling */,
+				F10476B3203F33A900EEAEC1 /* DateHandler.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F152397C204EA4C0004A2DFB /* entities */ = {
+			isa = PBXGroup;
+			children = (
+				F11658DE2045C48D00BBB746 /* Balance.swift */,
+				F11658E42045CC0B00BBB746 /* Account.swift */,
+				F1A26A8420484CC2002972A3 /* Bank.swift */,
+				F1A26A8220484C92002972A3 /* Token.swift */,
+			);
+			path = entities;
+			sourceTree = "<group>";
+		};
+		F152397D204EA4D3004A2DFB /* managers */ = {
+			isa = PBXGroup;
+			children = (
+				F11658E62045CECA00BBB746 /* DatabaseManager.swift */,
+			);
+			path = managers;
+			sourceTree = "<group>";
+		};
+		F1A26A7A2046F677002972A3 /* Revolut */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Revolut;
+			sourceTree = "<group>";
+		};
+		F1A26A7D20470C4B002972A3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F1A26A7E204718D3002972A3 /* AccountTableViewCell.swift */,
+				F1A26A7F204718D3002972A3 /* AccountTableViewCell.xib */,
+				F1A26A8620485B98002972A3 /* BankTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		F1E7001A2029C2E600140153 = {
 			isa = PBXGroup;
 			children = (
 				F1E700252029C2E600140153 /* SaveIt */,
 				F1E7003C2029C2E600140153 /* SaveItTests */,
+				F10476BA204035C300EEAEC1 /* Watchit */,
+				F10476C9204035C400EEAEC1 /* Watchit Extension */,
 				F1E700242029C2E600140153 /* Products */,
+				30AA94BA56F6C3AA956D83CA /* Pods */,
+				B24453539166A42B7CDBD77B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,6 +353,8 @@
 			children = (
 				F1E700232029C2E600140153 /* SaveIt.app */,
 				F1E700392029C2E600140153 /* SaveItTests.xctest */,
+				F10476B9204035C300EEAEC1 /* Watchit.app */,
+				F10476C5204035C400EEAEC1 /* Watchit Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -79,13 +362,18 @@
 		F1E700252029C2E600140153 /* SaveIt */ = {
 			isa = PBXGroup;
 			children = (
+				F1462CB02035D63D00D39AAB /* Model */,
+				F1E700582029C55D00140153 /* BusinessLogic */,
+				F1E700532029C52800140153 /* Services */,
+				F1A26A7D20470C4B002972A3 /* Views */,
+				F1E7004A2029C49800140153 /* ViewController */,
+				F1E700482029C44600140153 /* ViewModel */,
 				F1E700262029C2E600140153 /* AppDelegate.swift */,
-				F1E700282029C2E600140153 /* FirstViewController.swift */,
-				F1E7002A2029C2E600140153 /* SecondViewController.swift */,
 				F1E7002C2029C2E600140153 /* Main.storyboard */,
 				F1E7002F2029C2E600140153 /* Assets.xcassets */,
 				F1E700312029C2E600140153 /* LaunchScreen.storyboard */,
 				F1E700342029C2E600140153 /* Info.plist */,
+				F10B6B4D20693A9C00CE7710 /* configuration.plist */,
 			);
 			path = SaveIt;
 			sourceTree = "<group>";
@@ -93,26 +381,113 @@
 		F1E7003C2029C2E600140153 /* SaveItTests */ = {
 			isa = PBXGroup;
 			children = (
+				F10B6B55206A5DCA00CE7710 /* Services */,
 				F1E7003D2029C2E600140153 /* SaveItTests.swift */,
 				F1E7003F2029C2E600140153 /* Info.plist */,
+				F10B6B56206A661C00CE7710 /* configuration.plist */,
 			);
 			path = SaveItTests;
+			sourceTree = "<group>";
+		};
+		F1E700482029C44600140153 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F1E700512029C51F00140153 /* TransactionsViewModel.swift */,
+				F11658E22045CBD400BBB746 /* AccountsViewModel.swift */,
+				F1A26A8A20485D75002972A3 /* BanksViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F1E7004A2029C49800140153 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F1E7004F2029C4F200140153 /* TransactionsViewController.swift */,
+				F1E7005F2029E7B700140153 /* SettingsViewController.swift */,
+				F1E7005D2029C60400140153 /* MainViewController.swift */,
+				F11658E02045CBBA00BBB746 /* AccountsViewController.swift */,
+				F1A26A8820485C04002972A3 /* BanksViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		F1E700532029C52800140153 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F152397E204EA524004A2DFB /* APIManager.swift */,
+				F1A26A782046CBA5002972A3 /* BankAPI.swift */,
+				F1E700542029C53B00140153 /* MonzoAPI.swift */,
+				F1A26A7B2046F693002972A3 /* RevolutAPI.swift */,
+				F1E700562029C54900140153 /* StarlingAPI.swift */,
+				F10B6B4F206A5AF800CE7710 /* ConfigurationKeys.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		F1E700582029C55D00140153 /* BusinessLogic */ = {
+			isa = PBXGroup;
+			children = (
+				F1E700592029C58000140153 /* TransactionsBusinessLogic.swift */,
+				F1A26A762046CB5A002972A3 /* AccountsBusinessLogic.swift */,
+				F1A26A8C204DA9A7002972A3 /* BanksBusinessLogic.swift */,
+			);
+			path = BusinessLogic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F1E700222029C2E600140153 /* SaveIt */ = {
+		F10476B8204035C300EEAEC1 /* Watchit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F1E700422029C2E600140153 /* Build configuration list for PBXNativeTarget "SaveIt" */;
+			buildConfigurationList = F10476DB204035C400EEAEC1 /* Build configuration list for PBXNativeTarget "Watchit" */;
 			buildPhases = (
-				F1E7001F2029C2E600140153 /* Sources */,
-				F1E700202029C2E600140153 /* Frameworks */,
-				F1E700212029C2E600140153 /* Resources */,
+				F10476B7204035C300EEAEC1 /* Resources */,
+				F10476DA204035C400EEAEC1 /* Embed App Extensions */,
+				7416B8C3D452814FB69E19EE /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F10476C8204035C400EEAEC1 /* PBXTargetDependency */,
+			);
+			name = Watchit;
+			productName = Watchit;
+			productReference = F10476B9204035C300EEAEC1 /* Watchit.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		F10476C4204035C400EEAEC1 /* Watchit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F10476D7204035C400EEAEC1 /* Build configuration list for PBXNativeTarget "Watchit Extension" */;
+			buildPhases = (
+				F10476C1204035C400EEAEC1 /* Sources */,
+				F10476C2204035C400EEAEC1 /* Frameworks */,
+				F10476C3204035C400EEAEC1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Watchit Extension";
+			productName = "Watchit Extension";
+			productReference = F10476C5204035C400EEAEC1 /* Watchit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+		F1E700222029C2E600140153 /* SaveIt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F1E700422029C2E600140153 /* Build configuration list for PBXNativeTarget "SaveIt" */;
+			buildPhases = (
+				21F4EAAE8A3DF89424ADA6FC /* [CP] Check Pods Manifest.lock */,
+				F1E7001F2029C2E600140153 /* Sources */,
+				F1E700202029C2E600140153 /* Frameworks */,
+				F1E700212029C2E600140153 /* Resources */,
+				AE3CE034E861591141B95229 /* [CP] Embed Pods Frameworks */,
+				99F453B2AC1946F578CD8B6B /* [CP] Copy Pods Resources */,
+				F10476DE204035C400EEAEC1 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F10476D5204035C400EEAEC1 /* PBXTargetDependency */,
 			);
 			name = SaveIt;
 			productName = SaveIt;
@@ -123,9 +498,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F1E700452029C2E600140153 /* Build configuration list for PBXNativeTarget "SaveItTests" */;
 			buildPhases = (
+				E20EA5E09BC7E3B7068FF18F /* [CP] Check Pods Manifest.lock */,
 				F1E700352029C2E600140153 /* Sources */,
 				F1E700362029C2E600140153 /* Frameworks */,
 				F1E700372029C2E600140153 /* Resources */,
+				1CB5E633A68D376CDA6151B2 /* [CP] Embed Pods Frameworks */,
+				EEB78BB8CE972F133CF01AA9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -147,9 +525,17 @@
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = Buildit;
 				TargetAttributes = {
-					F1E700222029C2E600140153 = {
+					F10476B8204035C300EEAEC1 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+					};
+					F10476C4204035C400EEAEC1 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					F1E700222029C2E600140153 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Manual;
 					};
 					F1E700382029C2E600140153 = {
 						CreatedOnToolsVersion = 9.2;
@@ -173,16 +559,36 @@
 			targets = (
 				F1E700222029C2E600140153 /* SaveIt */,
 				F1E700382029C2E600140153 /* SaveItTests */,
+				F10476B8204035C300EEAEC1 /* Watchit */,
+				F10476C4204035C400EEAEC1 /* Watchit Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		F10476B7204035C300EEAEC1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F10476BD204035C300EEAEC1 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F10476C3204035C400EEAEC1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F10476D1204035C400EEAEC1 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F1E700212029C2E600140153 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				F1E700332029C2E600140153 /* LaunchScreen.storyboard in Resources */,
+				F10B6B4E20693A9C00CE7710 /* configuration.plist in Resources */,
+				F1A26A81204718D3002972A3 /* AccountTableViewCell.xib in Resources */,
 				F1E700302029C2E600140153 /* Assets.xcassets in Resources */,
 				F1E7002E2029C2E600140153 /* Main.storyboard in Resources */,
 			);
@@ -192,19 +598,173 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F10B6B57206A661C00CE7710 /* configuration.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1CB5E633A68D376CDA6151B2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SaveItTests/Pods-SaveItTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SaveItTests/Pods-SaveItTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		21F4EAAE8A3DF89424ADA6FC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SaveIt-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		99F453B2AC1946F578CD8B6B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SaveIt/Pods-SaveIt-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AE3CE034E861591141B95229 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SaveIt/Pods-SaveIt-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFDateHelper/AFDateHelper.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFDateHelper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SaveIt/Pods-SaveIt-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E20EA5E09BC7E3B7068FF18F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SaveItTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EEB78BB8CE972F133CF01AA9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SaveItTests/Pods-SaveItTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		F10476C1204035C400EEAEC1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F10476CF204035C400EEAEC1 /* NotificationController.swift in Sources */,
+				F10476CD204035C400EEAEC1 /* ExtensionDelegate.swift in Sources */,
+				F10476CB204035C400EEAEC1 /* InterfaceController.swift in Sources */,
+				F11658DA2045A9A700BBB746 /* BalanceRowController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F1E7001F2029C2E600140153 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1E7002B2029C2E600140153 /* SecondViewController.swift in Sources */,
+				F1462CB6203B407F00D39AAB /* MonzoAccount.swift in Sources */,
+				F10476B620402D7700EEAEC1 /* MonzoBalance.swift in Sources */,
+				F1A26A772046CB5A002972A3 /* AccountsBusinessLogic.swift in Sources */,
+				F1FEF41420502D8300A40E93 /* StarlingAccount.swift in Sources */,
+				F1E7005E2029C60400140153 /* MainViewController.swift in Sources */,
+				F1E700502029C4F200140153 /* TransactionsViewController.swift in Sources */,
+				F10B6B50206A5AF800CE7710 /* ConfigurationKeys.swift in Sources */,
+				F152397F204EA524004A2DFB /* APIManager.swift in Sources */,
+				F1A26A80204718D3002972A3 /* AccountTableViewCell.swift in Sources */,
+				F1462CB42035DD3D00D39AAB /* MonzoError.swift in Sources */,
+				F1E7005A2029C58000140153 /* TransactionsBusinessLogic.swift in Sources */,
+				F1A26A8720485B98002972A3 /* BankTableViewCell.swift in Sources */,
+				F1E700522029C51F00140153 /* TransactionsViewModel.swift in Sources */,
+				F1FEF41620502E8E00A40E93 /* StarlingBalance.swift in Sources */,
+				F11658E12045CBBA00BBB746 /* AccountsViewController.swift in Sources */,
+				F11658E72045CECA00BBB746 /* DatabaseManager.swift in Sources */,
+				F1E700572029C54900140153 /* StarlingAPI.swift in Sources */,
+				F1E700552029C53B00140153 /* MonzoAPI.swift in Sources */,
+				F10476B4203F33A900EEAEC1 /* DateHandler.swift in Sources */,
+				F11658E52045CC0B00BBB746 /* Account.swift in Sources */,
+				F1A26A8920485C04002972A3 /* BanksViewController.swift in Sources */,
 				F1E700272029C2E600140153 /* AppDelegate.swift in Sources */,
-				F1E700292029C2E600140153 /* FirstViewController.swift in Sources */,
+				F1462CB22035D6D400D39AAB /* MonzoToken.swift in Sources */,
+				F11658DF2045C48D00BBB746 /* Balance.swift in Sources */,
+				F1A26A8D204DA9A7002972A3 /* BanksBusinessLogic.swift in Sources */,
+				F1A26A7C2046F693002972A3 /* RevolutAPI.swift in Sources */,
+				F1A26A8320484C92002972A3 /* Token.swift in Sources */,
+				F11658E32045CBD400BBB746 /* AccountsViewModel.swift in Sources */,
+				F1A26A8520484CC2002972A3 /* Bank.swift in Sources */,
+				F1A26A8B20485D75002972A3 /* BanksViewModel.swift in Sources */,
+				F1A26A792046CBA5002972A3 /* BankAPI.swift in Sources */,
+				F1E700602029E7B700140153 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,6 +772,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F10B6B54206A5D8800CE7710 /* ConfigurationKeysTests.swift in Sources */,
 				F1E7003E2029C2E600140153 /* SaveItTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,6 +780,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		F10476C8204035C400EEAEC1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F10476C4204035C400EEAEC1 /* Watchit Extension */;
+			targetProxy = F10476C7204035C400EEAEC1 /* PBXContainerItemProxy */;
+		};
+		F10476D5204035C400EEAEC1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F10476B8204035C300EEAEC1 /* Watchit */;
+			targetProxy = F10476D4204035C400EEAEC1 /* PBXContainerItemProxy */;
+		};
 		F1E7003B2029C2E600140153 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F1E700222029C2E600140153 /* SaveIt */;
@@ -227,6 +798,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		F10476BB204035C300EEAEC1 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F10476BC204035C300EEAEC1 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		F1E7002C2029C2E600140153 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -246,6 +825,80 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		F10476D8204035C400EEAEC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QX2M8PE6QE;
+				INFOPLIST_FILE = "Watchit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wiprodigital.buildit.SaveIt.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.1;
+			};
+			name = Debug;
+		};
+		F10476D9204035C400EEAEC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QX2M8PE6QE;
+				INFOPLIST_FILE = "Watchit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wiprodigital.buildit.SaveIt.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.1;
+			};
+			name = Release;
+		};
+		F10476DC204035C400EEAEC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QX2M8PE6QE;
+				IBSC_MODULE = Watchit_Extension;
+				INFOPLIST_FILE = Watchit/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wiprodigital.buildit.SaveIt.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.1;
+			};
+			name = Debug;
+		};
+		F10476DD204035C400EEAEC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QX2M8PE6QE;
+				IBSC_MODULE = Watchit_Extension;
+				INFOPLIST_FILE = Watchit/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wiprodigital.buildit.SaveIt.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.1;
+			};
+			name = Release;
+		};
 		F1E700402029C2E600140153 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -355,14 +1008,18 @@
 		};
 		F1E700432029C2E600140153 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 332F5DC05302E0F6ED9B78A8 /* Pods-SaveIt.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QX2M8PE6QE;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SaveIt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wiprodigital.buildit.SaveIt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -370,14 +1027,18 @@
 		};
 		F1E700442029C2E600140153 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB732D498CEA60874EF4CBD7 /* Pods-SaveIt.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QX2M8PE6QE;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SaveIt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wiprodigital.buildit.SaveIt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -385,8 +1046,9 @@
 		};
 		F1E700462029C2E600140153 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C65A36A104AD34B0ACB456F9 /* Pods-SaveItTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QX2M8PE6QE;
@@ -402,8 +1064,9 @@
 		};
 		F1E700472029C2E600140153 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41A050EB8D2E463387E4A4C4 /* Pods-SaveItTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QX2M8PE6QE;
@@ -420,6 +1083,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F10476D7204035C400EEAEC1 /* Build configuration list for PBXNativeTarget "Watchit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F10476D8204035C400EEAEC1 /* Debug */,
+				F10476D9204035C400EEAEC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F10476DB204035C400EEAEC1 /* Build configuration list for PBXNativeTarget "Watchit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F10476DC204035C400EEAEC1 /* Debug */,
+				F10476DD204035C400EEAEC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F1E7001E2029C2E600140153 /* Build configuration list for PBXProject "SaveIt" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
