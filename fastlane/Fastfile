@@ -1,0 +1,39 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+
+  desc "create the apps at the provisioning portal and handle the certificates"
+  lane :first_things_first do
+    produce(username: ENV["mw_apple_id"], app_identifier: 'com.wiprodigital.buildit.SaveIt', app_name: 'SaveIt', skip_itc: true)
+    produce(username: ENV["mw_apple_id"], app_identifier: 'com.wiprodigital.buildit.SaveIt.watchkitapp', app_name: 'SaveIt Watch', skip_itc: true)
+    produce(username: ENV["mw_apple_id"], app_identifier: 'com.wiprodigital.buildit.SaveIt.watchkitapp.watchkitextension', app_name: 'SaveIt Watch Extension', skip_itc: true)
+    provisioning
+  end
+
+  desc "Runs match for all the type available"
+  lane :provisioning do
+    puts("let me handle provisioning for you...")
+    match(type: "development")
+    match(type: "adhoc")
+    match(type: "appstore")
+    puts("provisioning sorted! 😋")
+  end
+
+  desc "Build it all"
+  lane :build do
+    cocoapods
+    gym(clean: true)
+  end
+
+end
