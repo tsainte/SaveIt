@@ -30,6 +30,11 @@ Runs match for all the type available
 ```
 fastlane ios build
 ```
+Build it all
+### ios metrics
+```
+fastlane ios metrics
+```
 
 
 ----
