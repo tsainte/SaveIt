@@ -31,11 +31,16 @@ Runs match for all the type available
 fastlane ios build
 ```
 Build it all
+### ios test
+```
+fastlane ios test
+```
+
 ### ios metrics
 ```
 fastlane ios metrics
 ```
-
+Runs some metrics for ensure code quality
 
 ----
 
