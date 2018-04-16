@@ -1,0 +1,7 @@
+# URL for the certificates repository - defined as an environment variable
+git_url(ENV["mw_cert_git_url"])
+
+type("development") # The default type, can be: appstore, adhoc, enterprise or development
+
+app_identifier(["com.wiprodigital.buildit.SaveIt", "com.wiprodigital.buildit.SaveIt.watchkitapp","com.wiprodigital.buildit.SaveIt.watchkitapp.watchkitextension"])
+username(ENV["mw_apple_id"]) # Apple Developer Portal username

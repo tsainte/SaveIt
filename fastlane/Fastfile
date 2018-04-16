@@ -1,0 +1,55 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+
+  desc "create the apps at the provisioning portal and handle the certificates"
+  lane :first_things_first do
+    produce(username: ENV["mw_apple_id"], app_identifier: 'com.wiprodigital.buildit.SaveIt', app_name: 'SaveIt', skip_itc: true)
+    produce(username: ENV["mw_apple_id"], app_identifier: 'com.wiprodigital.buildit.SaveIt.watchkitapp', app_name: 'SaveIt Watch', skip_itc: true)
+    produce(username: ENV["mw_apple_id"], app_identifier: 'com.wiprodigital.buildit.SaveIt.watchkitapp.watchkitextension', app_name: 'SaveIt Watch Extension', skip_itc: true)
+    provisioning
+  end
+
+  desc "Runs match for all the type available"
+  lane :provisioning do
+    puts("let me handle provisioning for you...")
+    match(type: "development")
+    match(type: "adhoc")
+    match(type: "appstore")
+    puts("provisioning sorted! 😋")
+  end
+
+  desc "Build it all"
+  lane :build do
+    cocoapods
+    gym(clean: true)
+  end
+
+  desc "Run unit tests"
+  lane :test do
+    cocoapods
+    scan(scheme: "SaveIt", clean: true, code_coverage: true, derived_data_path: "./DerivedData", output_directory: "./reports")
+  end
+
+  desc "Runs some metrics for ensure code quality"
+  lane :metrics do
+    puts("So your code is good enough? Let me run some metrics...")
+    test
+    slather(cobertura_xml: true, jenkins: false, scheme: "SaveIt", build_directory: "./DerivedData", output_directory: "./reports", workspace: "./SaveIt.xcworkspace", proj: "./SaveIt.xcodeproj")
+    sh("cd .. && lizard -l swift --xml > ./reports/lizard-report.xml")
+    swiftlint(executable: "Pods/SwiftLint/swiftlint", output_file: "./reports/swiftlint.txt", ignore_exit_status: true)
+    sonar
+  end
+
+end

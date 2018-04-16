@@ -7,6 +7,7 @@ target 'SaveIt' do
   pod 'AFDateHelper', '~> 4.2.2'
   pod 'Alamofire', '~> 4.5'
   pod 'RealmSwift', '~> 3.3'
+  pod 'SwiftLint'
 end
 
 target 'SaveItTests' do

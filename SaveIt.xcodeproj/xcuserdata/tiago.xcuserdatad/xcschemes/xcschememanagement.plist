@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>SaveIt.xcscheme</key>
+		<key>SaveIt.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>6</integer>
@@ -18,6 +18,24 @@
 		<dict>
 			<key>orderHint</key>
 			<integer>7</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>F10476B8204035C300EEAEC1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F1E700222029C2E600140153</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F1E700382029C2E600140153</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
