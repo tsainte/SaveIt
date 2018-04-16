@@ -28,6 +28,7 @@
 		F11658E32045CBD400BBB746 /* AccountsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11658E22045CBD400BBB746 /* AccountsViewModel.swift */; };
 		F11658E52045CC0B00BBB746 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11658E42045CC0B00BBB746 /* Account.swift */; };
 		F11658E72045CECA00BBB746 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11658E62045CECA00BBB746 /* DatabaseManager.swift */; };
+		F13EFFD82084C6EB00921550 /* WatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13EFFD72084C6EB00921550 /* WatchManager.swift */; };
 		F1462CB22035D6D400D39AAB /* MonzoToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1462CB12035D6D400D39AAB /* MonzoToken.swift */; };
 		F1462CB42035DD3D00D39AAB /* MonzoError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1462CB32035DD3D00D39AAB /* MonzoError.swift */; };
 		F1462CB6203B407F00D39AAB /* MonzoAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1462CB5203B407F00D39AAB /* MonzoAccount.swift */; };
@@ -136,6 +137,7 @@
 		F11658E22045CBD400BBB746 /* AccountsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsViewModel.swift; sourceTree = "<group>"; };
 		F11658E42045CC0B00BBB746 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		F11658E62045CECA00BBB746 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		F13EFFD72084C6EB00921550 /* WatchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchManager.swift; sourceTree = "<group>"; };
 		F1462CB12035D6D400D39AAB /* MonzoToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonzoToken.swift; sourceTree = "<group>"; };
 		F1462CB32035DD3D00D39AAB /* MonzoError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonzoError.swift; sourceTree = "<group>"; };
 		F1462CB5203B407F00D39AAB /* MonzoAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonzoAccount.swift; sourceTree = "<group>"; };
@@ -314,6 +316,7 @@
 			isa = PBXGroup;
 			children = (
 				F11658E62045CECA00BBB746 /* DatabaseManager.swift */,
+				F13EFFD72084C6EB00921550 /* WatchManager.swift */,
 			);
 			path = managers;
 			sourceTree = "<group>";
@@ -741,6 +744,7 @@
 				F11658DF2045C48D00BBB746 /* Balance.swift in Sources */,
 				F1A26A8D204DA9A7002972A3 /* BanksBusinessLogic.swift in Sources */,
 				F1A26A7C2046F693002972A3 /* RevolutAPI.swift in Sources */,
+				F13EFFD82084C6EB00921550 /* WatchManager.swift in Sources */,
 				F1A26A8320484C92002972A3 /* Token.swift in Sources */,
 				F11658E32045CBD400BBB746 /* AccountsViewModel.swift in Sources */,
 				F1A26A8520484CC2002972A3 /* Bank.swift in Sources */,

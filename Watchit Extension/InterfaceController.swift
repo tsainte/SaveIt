@@ -7,8 +7,6 @@
 //
 
 import WatchKit
-import Foundation
-
 
 class InterfaceController: WKInterfaceController {
 
@@ -25,18 +23,18 @@ class InterfaceController: WKInterfaceController {
                                Balance(amount: "-£29.63", lastUpdate: "03/02 11:55", image: "icon_revolut"),
                                Balance(amount: "£992.22", lastUpdate: "13/02 14:39", image: "icon_hsbc"),
                                Balance(amount: "£15.07", lastUpdate: "26/02 07:27", image: "icon_lloyds")]
-    
+
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
         loadTableData()
     }
-    
+
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
     }
-    
+
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
@@ -44,7 +42,7 @@ class InterfaceController: WKInterfaceController {
 }
 
 extension InterfaceController {
-    
+
     private func loadTableData() {
         table.setNumberOfRows(balances.count, withRowType: "BalanceRowController")
         for (index, balance) in balances.enumerated() {
