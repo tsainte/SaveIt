@@ -34,33 +34,32 @@ class AccountsViewModel: NSObject {
 
         businessLogic.fetchAccounts()
     }
-    
+
     deinit {
         notificationToken?.invalidate()
     }
-    
+
     func refreshData() {
         businessLogic.fetchAccounts()
     }
-    
-}
 
+}
 
 // MARK: cell bindings
 extension AccountsViewModel {
-    
+
     func getLogo(row: Int) -> String {
         return accounts[row].bank!.icon
     }
-    
+
     func getAccountName(row: Int) -> String {
         return accounts[row].name
     }
-    
+
     func getLastUpdate(row: Int) -> String {
         return "Last update: " + (accounts[row].balance?.lastUpdate.toString(style: .short) ?? "---")
     }
-    
+
     func getAmount(row: Int) -> String {
         //TODO: create extension to convert balance properly
         guard let amount = accounts[row].balance?.amount else { return "---" }

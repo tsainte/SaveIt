@@ -11,7 +11,7 @@ import UIKit
 class AccountsBusinessLogic: NSObject {
 
     let apiManager = APIManager.shared
-    
+
     func fetchAccounts() {
         apiManager.fetchAllAccounts()
     }

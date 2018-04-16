@@ -18,21 +18,21 @@ class AccountsViewController: UIViewController {
         refreshControl.addTarget(self, action:
             #selector(handleRefresh(_:)),
                                  for: UIControlEvents.valueChanged)
-        refreshControl.tintColor = UIColor.red
-        
+        refreshControl.tintColor = .red
+
         return refreshControl
     }()
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         viewModel = AccountsViewModel(delegate: self)
-        
+
         tableView.dataSource = self
         tableView.delegate = self
-        
-        tableView.register(UINib(nibName: "AccountTableViewCell", bundle: nil), forCellReuseIdentifier: "AccountTableViewCell")
+
+        tableView.register(UINib(nibName: "AccountTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "AccountTableViewCell")
         tableView.addSubview(refreshControl)
     }
 
@@ -60,17 +60,18 @@ extension AccountsViewController: AccountsViewModelDelegate {
 }
 
 extension AccountsViewController: UITableViewDataSource {
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfRows
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "AccountTableViewCell", for: indexPath) as? AccountTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "AccountTableViewCell",
+                                                       for: indexPath) as? AccountTableViewCell else {
             print("cant take the cell")
             return UITableViewCell()
         }
-        
+
         let row = indexPath.row
         cell.accountName.text = viewModel.getAccountName(row: row)
         cell.amount.text = viewModel.getAmount(row: row)
@@ -81,5 +82,5 @@ extension AccountsViewController: UITableViewDataSource {
 }
 
 extension AccountsViewController: UITableViewDelegate {
-    
+
 }

@@ -9,7 +9,7 @@
 import Foundation
 
 struct StarlingAccount: Decodable {
-    
+
     let id: String
     let name: String
     let created: Date
@@ -18,7 +18,7 @@ struct StarlingAccount: Decodable {
     let iban: String
     let bic: String
     let currency: String
-    
+
     enum CodingKeys: String, CodingKey {
         case id
         case name

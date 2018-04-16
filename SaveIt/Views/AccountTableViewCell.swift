@@ -14,7 +14,7 @@ class AccountTableViewCell: UITableViewCell {
     @IBOutlet weak var accountName: UILabel!
     @IBOutlet weak var lastUpdate: UILabel!
     @IBOutlet weak var amount: UILabel!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

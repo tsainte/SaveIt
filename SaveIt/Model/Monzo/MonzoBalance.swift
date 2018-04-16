@@ -9,11 +9,11 @@
 import Foundation
 
 struct MonzoBalance: Decodable {
-    
+
     let amount: Double
     let currency: String
     let spendToday: Double
-    
+
     enum CodingKeys: String, CodingKey {
         case amount = "balance"
         case currency

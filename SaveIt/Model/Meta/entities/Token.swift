@@ -15,24 +15,24 @@ protocol TokenProtocol {
 }
 
 class Token: Object {
-    
+
     @objc dynamic var bank: String = ""
     @objc dynamic var accessToken: String = ""
-    
+
     convenience init(bank: Bank, accessToken: String) {
         self.init()
         self.bank = bank.name
         self.accessToken = accessToken
     }
-    
+
     convenience init(monzoToken: MonzoToken) {
         self.init(bank: BankList.monzo, accessToken: monzoToken.accessToken)
     }
-    
+
     convenience init(starlingToken: String) {
         self.init(bank: BankList.starling, accessToken: starlingToken)
     }
-    
+
     override static func primaryKey() -> String? {
         return "bank"
     }

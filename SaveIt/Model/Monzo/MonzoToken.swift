@@ -9,10 +9,10 @@
 import Foundation
 
 struct MonzoToken: Decodable, TokenProtocol {
-    
+
     var bank: Bank! = BankList.monzo
     var accessToken: String!
-    
+
     let clientId: String
     let expiresIn: Double
     let refreshToken: String?

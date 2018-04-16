@@ -12,19 +12,16 @@ import RealmSwift
 class DatabaseManager: NSObject {
 
     static var realm: Realm {
-        get {
-            do {
-                let realm = try Realm()
-                return realm
-            }
-            catch {
-                print("Could not access database: ", error)
-            }
-            return self.realm
+        do {
+            let realm = try Realm()
+            return realm
+        } catch {
+            print("Could not access database: ", error)
         }
+        return self.realm
     }
 
-    public static func write(realm: Realm, writeClosure: () -> ()) {
+    public static func write(realm: Realm, writeClosure: () -> Void) {
         do {
             try realm.write {
                 writeClosure()
@@ -41,17 +38,17 @@ class DatabaseManager: NSObject {
 
 // MARK: Handling tokens
 extension DatabaseManager {
-    
+
     static func getToken(for bank: String) -> Token? {
         return realm.objects(Token.self).filter("bank == '\(bank)'").last
     }
-    
+
     static func saveToken(_ token: Token) {
         write(realm: realm) {
             realm.add(token)
         }
     }
-    
+
     // Updates token for a particular bank
     static func updateToken(_ token: Token) {
         if let oldToken = getToken(for: token.bank) {
@@ -71,14 +68,24 @@ extension DatabaseManager {
 
 // MARK: Handling accounts
 extension DatabaseManager {
-    
+
     static func accounts() -> [Account] {
         return Array(realm.objects(Account.self))
     }
-    
+
     static func saveAccount(_ account: Account) {
         write(realm: realm) {
             realm.add(account, update: true)
         }
+    }
+}
+
+// MARK: Updating Apple Watch with current data
+extension DatabaseManager {
+    static func updateWatch() {
+        let balances = accounts().compactMap {
+            $0.watchDescription()
+        }
+        WatchManager.sendContext(data: ["balances": balances])
     }
 }

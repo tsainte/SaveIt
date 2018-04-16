@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="AvenirNext.ttc">
-            <string>AvenirNext-Regular</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Settings-->
         <scene sceneID="wg7-f3-ORb">
@@ -121,10 +116,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="uYV-Tj-nHR" firstAttribute="top" secondItem="Ri7-8v-o8a" secondAttribute="bottom" constant="-554" id="3HE-5P-t0Z"/>
-                            <constraint firstItem="Ri7-8v-o8a" firstAttribute="bottom" secondItem="uYV-Tj-nHR" secondAttribute="bottom" id="DGF-aL-HrF"/>
-                            <constraint firstItem="uYV-Tj-nHR" firstAttribute="width" secondItem="Ri7-8v-o8a" secondAttribute="width" id="OyB-V0-sHt"/>
-                            <constraint firstItem="uYV-Tj-nHR" firstAttribute="centerX" secondItem="Ri7-8v-o8a" secondAttribute="centerX" id="YhX-q2-gOm"/>
+                            <constraint firstItem="uYV-Tj-nHR" firstAttribute="leading" secondItem="Ri7-8v-o8a" secondAttribute="leading" id="HzI-1x-fot"/>
+                            <constraint firstItem="Ri7-8v-o8a" firstAttribute="bottom" secondItem="uYV-Tj-nHR" secondAttribute="bottom" id="JAf-Vs-cy5"/>
+                            <constraint firstItem="uYV-Tj-nHR" firstAttribute="top" secondItem="Ri7-8v-o8a" secondAttribute="top" id="bjM-vL-X7z"/>
+                            <constraint firstItem="Ri7-8v-o8a" firstAttribute="trailing" secondItem="uYV-Tj-nHR" secondAttribute="trailing" id="lTA-nq-b9B"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ri7-8v-o8a"/>
                     </view>

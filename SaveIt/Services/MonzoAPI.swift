@@ -33,7 +33,7 @@ class MonzoAPI: NSObject {
  3. Exchange the authorization code for an access token
 */
 extension MonzoAPI {
-    
+
     //1. Redirect user to monzo website
     func requestAuthenticationCode() {
         if let url = URL(string: "https://auth.monzo.com/?client_id=\(MonzoAPI.clientId)&redirect_uri=\(MonzoAPI.redirectURI)&response_type=code&state=") {
@@ -47,7 +47,7 @@ extension MonzoAPI {
             let code = authUrl.queryItems?.first(where: { $0.name == "code" })?.value else {
                 return
         }
-        
+
         let parameters: Parameters = ["grant_type": "authorization_code",
                                       "client_id": MonzoAPI.clientId,
                                       "client_secret": MonzoAPI.clientSecret,
@@ -55,7 +55,7 @@ extension MonzoAPI {
                                       "code": code]
 
         let url = MonzoAPI.baseURL + "oauth2/token"
-        
+
         Alamofire.request(url, method: .post, parameters: parameters).response { response in
             let decoder = JSONDecoder()
             guard let data = response.data else {

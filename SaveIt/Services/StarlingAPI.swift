@@ -33,10 +33,10 @@ extension StarlingAPI: BankAPI {
     
     func getAccounts(success: @escaping ([Account]) -> Void, failure: @escaping (BankError) -> Void) {
         guard let token = self.token?.accessToken else { failure(.noToken); return }
-        
-        let headers: HTTPHeaders = ["Authorization" : "Bearer \(token)"]
+
+        let headers: HTTPHeaders = ["Authorization": "Bearer \(token)"]
         let url = StarlingAPI.baseURL + "accounts"
-        
+
         Alamofire.request(url, headers: headers).response { response in
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .custom(DateHandler.dateDecoding)
@@ -53,7 +53,7 @@ extension StarlingAPI: BankAPI {
     func getBalance(account: Account, success: @escaping (Balance) -> Void, failure: @escaping (BankError) -> Void) {
         guard let token = self.token?.accessToken else { failure(.noToken); return }
         
-        let headers: HTTPHeaders = ["Authorization" : "Bearer \(token)"]
+        let headers: HTTPHeaders = ["Authorization": "Bearer \(token)"]
         let url = StarlingAPI.baseURL + "accounts/balance"
         
         Alamofire.request(url, headers: headers).response { response in
