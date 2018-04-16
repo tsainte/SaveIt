@@ -11,7 +11,7 @@ import RealmSwift
 class Bank: Object {
     @objc dynamic var name: String = ""
     @objc dynamic var icon: String = ""
-    
+
     convenience init(name: String, icon: String) {
         self.init()
         self.name = name

@@ -14,7 +14,7 @@ struct MonzoError: Decodable {
     let errorDescription: String?
     let message: String?
     let code: String?
-    
+
     enum CodingKeys: String, CodingKey {
         case error
         case message

@@ -13,5 +13,4 @@ class BalanceRowController: NSObject {
     @IBOutlet weak var amount: WKInterfaceLabel!
     @IBOutlet weak var lastUpdate: WKInterfaceLabel!
     @IBOutlet weak var logo: WKInterfaceImage!
-    
 }

@@ -13,7 +13,7 @@
 		F10476B620402D7700EEAEC1 /* MonzoBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10476B520402D7700EEAEC1 /* MonzoBalance.swift */; };
 		F10476BD204035C300EEAEC1 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F10476BB204035C300EEAEC1 /* Interface.storyboard */; };
 		F10476C6204035C400EEAEC1 /* Watchit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F10476C5204035C400EEAEC1 /* Watchit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		F10476CB204035C400EEAEC1 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10476CA204035C400EEAEC1 /* InterfaceController.swift */; };
+		F10476CB204035C400EEAEC1 /* BalancesInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10476CA204035C400EEAEC1 /* BalancesInterfaceController.swift */; };
 		F10476CD204035C400EEAEC1 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10476CC204035C400EEAEC1 /* ExtensionDelegate.swift */; };
 		F10476CF204035C400EEAEC1 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10476CE204035C400EEAEC1 /* NotificationController.swift */; };
 		F10476D1204035C400EEAEC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F10476D0204035C400EEAEC1 /* Assets.xcassets */; };
@@ -56,6 +56,8 @@
 		F1E7005A2029C58000140153 /* TransactionsBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E700592029C58000140153 /* TransactionsBusinessLogic.swift */; };
 		F1E7005E2029C60400140153 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E7005D2029C60400140153 /* MainViewController.swift */; };
 		F1E700602029E7B700140153 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E7005F2029E7B700140153 /* SettingsViewController.swift */; };
+		F1F78F512084F0D900224C69 /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F78F4F2084F0D900224C69 /* Balance.swift */; };
+		F1F78F522084F0D900224C69 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F78F502084F0D900224C69 /* DataManager.swift */; };
 		F1FEF41420502D8300A40E93 /* StarlingAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FEF41320502D8300A40E93 /* StarlingAccount.swift */; };
 		F1FEF41620502E8E00A40E93 /* StarlingBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FEF41520502E8E00A40E93 /* StarlingBalance.swift */; };
 /* End PBXBuildFile section */
@@ -121,7 +123,7 @@
 		F10476BC204035C300EEAEC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		F10476C0204035C300EEAEC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F10476C5204035C400EEAEC1 /* Watchit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Watchit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F10476CA204035C400EEAEC1 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		F10476CA204035C400EEAEC1 /* BalancesInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalancesInterfaceController.swift; sourceTree = "<group>"; };
 		F10476CC204035C400EEAEC1 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		F10476CE204035C400EEAEC1 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		F10476D0204035C400EEAEC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -169,6 +171,8 @@
 		F1E700592029C58000140153 /* TransactionsBusinessLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsBusinessLogic.swift; sourceTree = "<group>"; };
 		F1E7005D2029C60400140153 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F1E7005F2029E7B700140153 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		F1F78F4F2084F0D900224C69 /* Balance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Balance.swift; sourceTree = "<group>"; };
+		F1F78F502084F0D900224C69 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		F1FEF41320502D8300A40E93 /* StarlingAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarlingAccount.swift; sourceTree = "<group>"; };
 		F1FEF41520502E8E00A40E93 /* StarlingBalance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarlingBalance.swift; sourceTree = "<group>"; };
 		FB732D498CEA60874EF4CBD7 /* Pods-SaveIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaveIt.release.xcconfig"; path = "Pods/Target Support Files/Pods-SaveIt/Pods-SaveIt.release.xcconfig"; sourceTree = "<group>"; };
@@ -240,7 +244,8 @@
 		F10476C9204035C400EEAEC1 /* Watchit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				F10476CA204035C400EEAEC1 /* InterfaceController.swift */,
+				F1F78F4E2084F0AD00224C69 /* Model */,
+				F10476CA204035C400EEAEC1 /* BalancesInterfaceController.swift */,
 				F10476CC204035C400EEAEC1 /* ExtensionDelegate.swift */,
 				F10476CE204035C400EEAEC1 /* NotificationController.swift */,
 				F10476D0204035C400EEAEC1 /* Assets.xcassets */,
@@ -294,7 +299,6 @@
 			children = (
 				F11658DD2045C46B00BBB746 /* Meta */,
 				F11658DB2045C45800BBB746 /* Monzo */,
-				F1A26A7A2046F677002972A3 /* Revolut */,
 				F11658DC2045C46500BBB746 /* Starling */,
 				F10476B3203F33A900EEAEC1 /* DateHandler.swift */,
 			);
@@ -319,13 +323,6 @@
 				F13EFFD72084C6EB00921550 /* WatchManager.swift */,
 			);
 			path = managers;
-			sourceTree = "<group>";
-		};
-		F1A26A7A2046F677002972A3 /* Revolut */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Revolut;
 			sourceTree = "<group>";
 		};
 		F1A26A7D20470C4B002972A3 /* Views */ = {
@@ -435,6 +432,15 @@
 				F1A26A8C204DA9A7002972A3 /* BanksBusinessLogic.swift */,
 			);
 			path = BusinessLogic;
+			sourceTree = "<group>";
+		};
+		F1F78F4E2084F0AD00224C69 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F1F78F4F2084F0D900224C69 /* Balance.swift */,
+				F1F78F502084F0D900224C69 /* DataManager.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -708,8 +714,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F10476CF204035C400EEAEC1 /* NotificationController.swift in Sources */,
+				F1F78F522084F0D900224C69 /* DataManager.swift in Sources */,
+				F1F78F512084F0D900224C69 /* Balance.swift in Sources */,
 				F10476CD204035C400EEAEC1 /* ExtensionDelegate.swift in Sources */,
-				F10476CB204035C400EEAEC1 /* InterfaceController.swift in Sources */,
+				F10476CB204035C400EEAEC1 /* BalancesInterfaceController.swift in Sources */,
 				F11658DA2045A9A700BBB746 /* BalanceRowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

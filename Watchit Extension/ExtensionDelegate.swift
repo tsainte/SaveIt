@@ -52,6 +52,10 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
             }
         }
     }
+}
+
+// Handling connections
+extension ExtensionDelegate {
 
     func setupWatchConnectivity() {
         if WCSession.isSupported() {
@@ -73,5 +77,15 @@ extension ExtensionDelegate: WCSessionDelegate {
         }
         print("WC Session activated with state: " +
               "\(activationState.rawValue)")
+    }
+
+    func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String: Any]) {
+        DataManager.shared.balancesFrom(applicationContext)
+        DispatchQueue.main.async {
+            WKInterfaceController.reloadRootPageControllers(withNames: ["BalancesInterfaceController"],
+                                                            contexts: nil,
+                                                            orientation: .vertical, //??
+                                                            pageIndex: 0) //??
+        }
     }
 }

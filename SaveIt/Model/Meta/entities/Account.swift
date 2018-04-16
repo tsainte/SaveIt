@@ -6,20 +6,19 @@
 //  Copyright © 2018 Buildit. All rights reserved.
 //
 
-import Foundation
 import RealmSwift
 
 class Account: Object {
-    
+
     @objc dynamic var bank: Bank?
-    
+
     @objc dynamic var accountId: String = ""
     @objc dynamic var name: String = ""
     @objc dynamic var sortCode: String?
     @objc dynamic var accountNumber: String?
-    
+
     @objc dynamic var balance: Balance?
-    
+
     convenience init(bank: Bank,
                      accountId: String,
                      name: String,
@@ -34,7 +33,7 @@ class Account: Object {
         self.accountNumber = accountNumber
         self.balance = balance
     }
-    
+
     convenience init(monzoAccount: MonzoAccount) {
         self.init(bank: BankList.monzo,
                   accountId: monzoAccount.id,
@@ -42,7 +41,7 @@ class Account: Object {
                   sortCode: monzoAccount.sortCode,
                   accountNumber: monzoAccount.accountNumber)
     }
-    
+
     convenience init(starlingAccount: StarlingAccount) {
         self.init(bank: BankList.starling,
                   accountId: starlingAccount.id,
@@ -50,8 +49,22 @@ class Account: Object {
                   sortCode: starlingAccount.sortCode,
                   accountNumber: starlingAccount.accountNumber)
     }
-    
+
     override static func primaryKey() -> String? {
         return "accountId"
     }
 }
+
+// MARK: Apple Watch format
+extension Account {
+    func watchDescription() -> [String: String]? {
+        if let balance = self.balance, let bank = self.bank {
+            return ["amount": "£" + balance.amount.description,
+                    "lastUpdate" : balance.lastUpdate.description,
+                    "image" : bank.icon]
+        } else {
+            return nil
+        }
+    }
+}
+

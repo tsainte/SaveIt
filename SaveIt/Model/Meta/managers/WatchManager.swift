@@ -19,6 +19,26 @@ class WatchManager: NSObject {
     }
 }
 
+// Send data to Apple Watch
+extension WatchManager {
+
+    // 1. Check if current device supports connectivity
+    // 2. Check if the counterpart app is installed on Apple Watch
+    // 3. If GG, send the dictionary by updating the application context
+    static func sendContext(data: [String: Any]) {
+        if WCSession.isSupported() {
+            let session = WCSession.default
+            if session.isWatchAppInstalled {
+                do {
+                    try session.updateApplicationContext(data)
+                } catch {
+                    print("Can't send context to Apple Watch - \(error.localizedDescription)")
+                }
+            }
+        }
+    }
+}
+
 extension WatchManager: WCSessionDelegate {
 
     func sessionDidBecomeInactive(_ session: WCSession) {

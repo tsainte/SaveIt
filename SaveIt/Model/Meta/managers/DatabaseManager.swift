@@ -79,3 +79,13 @@ extension DatabaseManager {
         }
     }
 }
+
+// MARK: Updating Apple Watch with current data
+extension DatabaseManager {
+    static func updateWatch() {
+        let balances = accounts().compactMap {
+            $0.watchDescription()
+        }
+        WatchManager.sendContext(data: ["balances": balances])
+    }
+}

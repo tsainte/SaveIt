@@ -20,9 +20,8 @@ class BanksBusinessLogic: NSObject {
             print("no service found for \(bank)")
         }
     }
-    
+
     func logoutService(bank: String) {
-        
         print("logout \(bank)")
     }
 }

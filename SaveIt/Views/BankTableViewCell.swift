@@ -13,21 +13,21 @@ protocol BankTableViewCellDelegate {
 }
 
 class BankTableViewCell: UITableViewCell {
-    
+
     @IBOutlet weak var logo: UIImageView!
     @IBOutlet weak var bankName: UILabel!
     @IBOutlet weak var status: UISwitch!
-    
+
     var delegate: BankTableViewCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-    
+
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
+
         // Configure the view for the selected state
     }
 

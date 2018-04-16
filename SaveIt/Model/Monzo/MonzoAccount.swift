@@ -21,7 +21,7 @@ struct MonzoAccount: Decodable {
     let closed: Bool
     let accountNumber: String?
     let sortCode: String?
-    
+
     enum CodingKeys: String, CodingKey {
         case id
         case created
@@ -32,6 +32,3 @@ struct MonzoAccount: Decodable {
         case sortCode = "sort_code"
     }
 }
-
-
-

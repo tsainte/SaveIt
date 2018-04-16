@@ -12,7 +12,7 @@ class BanksViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     let viewModel = BanksViewModel()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,24 +28,24 @@ class BanksViewController: UIViewController {
 }
 
 extension BanksViewController: UITableViewDataSource {
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfRows
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "BankTableViewCell",
                                                        for: indexPath) as? BankTableViewCell else {
             return UITableViewCell()
         }
-        
+
         let row = indexPath.row
-        
+
         cell.delegate = self
         cell.logo.image = UIImage(named: viewModel.logo(for: row))
         cell.bankName.text = viewModel.name(for: row)
         cell.status.isOn = viewModel.status(for: row)
-        
+
         return cell
     }
 }

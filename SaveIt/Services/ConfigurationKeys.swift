@@ -9,7 +9,7 @@
 import Foundation
 
 class ConfigurationKeys {
-    
+
     private let path: URL
     private let entries: [String: [String: String]]
     
@@ -34,12 +34,12 @@ class ConfigurationKeys {
         guard let monzo = entries["monzo"] else { return "" }
         return monzo["client_secret"] ?? ""
     }
-    
+
     public var monzoRedirectLink: String {
         guard let monzo = entries["monzo"] else { return "" }
         return monzo["redirect_link"] ?? ""
     }
-    
+
     public var starlingToken: String {
         guard let starling = entries["starling"] else { return "" }
         return starling["token"] ?? ""
