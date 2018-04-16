@@ -22,14 +22,14 @@ class ConfigurationKeys {
     
     public init(with path: URL) {
         self.path = path
-        self.entries = NSDictionary(contentsOf: path) as! [String: [String: String]]
+        self.entries = NSDictionary(contentsOf: path) as? [String: [String: String]] ?? [:]
     }
     
     public var monzoClientId: String {
         guard let monzo = entries["monzo"] else { return "" }
         return monzo["client_id"] ?? ""
     }
-    
+
     public var monzoClientSecret: String {
         guard let monzo = entries["monzo"] else { return "" }
         return monzo["client_secret"] ?? ""

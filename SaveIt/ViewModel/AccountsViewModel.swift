@@ -18,17 +18,17 @@ class AccountsViewModel: NSObject {
 
     weak var delegate: AccountsViewModelDelegate?
     var notificationToken: NotificationToken? = nil
-    
-    let accounts = DatabaseManager.shared.accounts()
+
+    let accounts = DatabaseManager.accounts()
     let businessLogic = AccountsBusinessLogic()
-    
+
     var numberOfRows: Int {
         return accounts.count
     }
-    
+
     init(delegate: AccountsViewModelDelegate) {
         self.delegate = delegate
-        notificationToken = DatabaseManager.shared.realm.observe { notification, realm in
+        notificationToken = DatabaseManager.realm.observe { notification, realm in
             delegate.refreshUI()
         }
 

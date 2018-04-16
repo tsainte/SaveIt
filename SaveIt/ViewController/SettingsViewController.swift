@@ -31,10 +31,4 @@ class SettingsViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
-    @IBAction func loginMonzo(_ sender: Any) {
-
-//        let url = URL(string: "saveit://buildit.wiprodigital.com/saveit?code=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaSI6Im9hdXRoY2xpZW50XzAwMDA5VGNnRUIxSVpCRnhJRk95YWYiLCJleHAiOjE1MTkxMzU3NzksImlhdCI6MTUxOTA0OTM3OSwianRpIjoiYXV0aGNvZGVfMDAwMDlUbkJCZ2FWbVVnMWg1UndKZCIsInVpIjoidXNlcl8wMDAwOTgxZkVlUUl6N3Y1QmpOa2VYIiwidiI6IjIifQ.e99z8nyQ05R-u_qdIBZWSHnsdzi5BZedeghbCnh7c_A&state=")
-//        monzoAPI.getAuhenticationToken(from: url!)
-    }
 }

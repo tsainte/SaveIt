@@ -11,11 +11,30 @@ import RealmSwift
 
 class DatabaseManager: NSObject {
 
-    public static let shared = DatabaseManager()
-    
-    public let realm = try! Realm()
-    
-    var filePath: URL? {
+    static var realm: Realm {
+        get {
+            do {
+                let realm = try Realm()
+                return realm
+            }
+            catch {
+                print("Could not access database: ", error)
+            }
+            return self.realm
+        }
+    }
+
+    public static func write(realm: Realm, writeClosure: () -> ()) {
+        do {
+            try realm.write {
+                writeClosure()
+            }
+        } catch {
+            print("Could not write to database: ", error)
+        }
+    }
+
+    static var filePath: URL? {
         return realm.configuration.fileURL
     }
 }
@@ -23,26 +42,26 @@ class DatabaseManager: NSObject {
 // MARK: Handling tokens
 extension DatabaseManager {
     
-    func getToken(for bank: String) -> Token? {
+    static func getToken(for bank: String) -> Token? {
         return realm.objects(Token.self).filter("bank == '\(bank)'").last
     }
     
-    func saveToken(_ token: Token) {
-        try! realm.write {
+    static func saveToken(_ token: Token) {
+        write(realm: realm) {
             realm.add(token)
         }
     }
     
     // Updates token for a particular bank
-    func updateToken(_ token: Token) {
+    static func updateToken(_ token: Token) {
         if let oldToken = getToken(for: token.bank) {
-            try! realm.write {
+            write(realm: realm) {
                 oldToken.accessToken = token.accessToken
                 realm.add(oldToken, update: true)
                 print("token updated: \(token.accessToken)")
             }
         } else {
-            try! realm.write {
+            write(realm: realm) {
                 realm.add(token)
                 print("token added: \(token.accessToken)")
             }
@@ -53,12 +72,12 @@ extension DatabaseManager {
 // MARK: Handling accounts
 extension DatabaseManager {
     
-    func accounts() -> [Account] {
+    static func accounts() -> [Account] {
         return Array(realm.objects(Account.self))
     }
     
-    func saveAccount(_ account: Account) {
-        try! realm.write {
+    static func saveAccount(_ account: Account) {
+        write(realm: realm) {
             realm.add(account, update: true)
         }
     }
