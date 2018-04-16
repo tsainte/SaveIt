@@ -26,7 +26,7 @@
                                                     <label alignment="right" text="£443.75" id="WWG-su-9RN">
                                                         <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                                                     </label>
-                                                    <label alignment="right" text="12/01 13:40" id="rx0-Vc-u0x">
+                                                    <label alignment="right" text="12/01 13:40" minimumScaleFactor="0.69999999999999996" id="rx0-Vc-u0x">
                                                         <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                                                     </label>
                                                 </items>

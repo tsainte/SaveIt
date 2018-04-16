@@ -59,12 +59,11 @@ class Account: Object {
 extension Account {
     func watchDescription() -> [String: String]? {
         if let balance = self.balance, let bank = self.bank {
-            return ["amount": "£" + balance.amount.description,
-                    "lastUpdate" : balance.lastUpdate.description,
-                    "image" : bank.icon]
+            return ["amount": String(format: "£ %.02f", balance.amount),
+                    "lastUpdate": balance.lastUpdate.toString(style: .short),
+                    "image": bank.icon]
         } else {
             return nil
         }
     }
 }
-
