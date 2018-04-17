@@ -35,7 +35,12 @@ Build it all
 ```
 fastlane ios test
 ```
-
+Run unit tests
+### ios beta
+```
+fastlane ios beta
+```
+Deploy to Beta platform
 ### ios metrics
 ```
 fastlane ios metrics

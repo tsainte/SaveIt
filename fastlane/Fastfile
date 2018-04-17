@@ -39,16 +39,42 @@ platform :ios do
   desc "Run unit tests"
   lane :test do
     cocoapods
-    scan(scheme: "SaveIt", clean: true, code_coverage: true, derived_data_path: "./DerivedData", output_directory: "./reports")
+    scan(scheme: "SaveIt",
+      clean: true,
+      code_coverage: true,
+      derived_data_path: "./DerivedData",
+      output_directory: "./reports"
+    )
+  end
+
+  desc "Deploy to Beta platform"
+  lane :beta do
+    cocoapods
+    scan(scheme: "SaveIt", clean: true)
+    build
+    hockey(api_token: ENV["mw_hockey_token"],
+      ipa: "./SaveIt.ipa",
+      notes: "Changelog"
+    )
   end
 
   desc "Runs some metrics for ensure code quality"
   lane :metrics do
     puts("So your code is good enough? Let me run some metrics...")
     test
-    slather(cobertura_xml: true, jenkins: false, scheme: "SaveIt", build_directory: "./DerivedData", output_directory: "./reports", workspace: "./SaveIt.xcworkspace", proj: "./SaveIt.xcodeproj")
+    slather(cobertura_xml: true,
+      jenkins: false,
+      scheme: "SaveIt",
+      build_directory: "./DerivedData",
+      output_directory: "./reports",
+      workspace: "./SaveIt.xcworkspace",
+      proj: "./SaveIt.xcodeproj"
+    )
     sh("cd .. && lizard -l swift --xml > ./reports/lizard-report.xml")
-    swiftlint(executable: "Pods/SwiftLint/swiftlint", output_file: "./reports/swiftlint.txt", ignore_exit_status: true)
+    swiftlint(executable: "Pods/SwiftLint/swiftlint",
+      output_file: "./reports/swiftlint.txt",
+      ignore_exit_status: true
+    )
     sonar
   end
 
