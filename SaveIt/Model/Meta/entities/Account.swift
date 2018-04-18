@@ -35,7 +35,7 @@ class Account: Object {
     }
 
     convenience init(monzoAccount: MonzoAccount) {
-        self.init(bank: BankList.monzo,
+        self.init(bank: .monzo,
                   accountId: monzoAccount.id,
                   name: monzoAccount.type,
                   sortCode: monzoAccount.sortCode,
@@ -43,7 +43,7 @@ class Account: Object {
     }
 
     convenience init(starlingAccount: StarlingAccount) {
-        self.init(bank: BankList.starling,
+        self.init(bank: .starling,
                   accountId: starlingAccount.id,
                   name: starlingAccount.name,
                   sortCode: starlingAccount.sortCode,

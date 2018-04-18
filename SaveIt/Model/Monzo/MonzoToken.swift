@@ -10,7 +10,7 @@ import Foundation
 
 struct MonzoToken: Decodable, TokenProtocol {
 
-    var bank: Bank! = BankList.monzo
+    var bank: Bank! = .monzo
     var accessToken: String!
 
     let clientId: String
@@ -18,7 +18,7 @@ struct MonzoToken: Decodable, TokenProtocol {
     let refreshToken: String?
     let tokenType: String
     let userId: String
-    
+
     enum CodingKeys: String, CodingKey {
         case accessToken = "access_token"
         case clientId = "client_id"

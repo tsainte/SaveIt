@@ -11,6 +11,7 @@ import Foundation
 enum BankError: Error {
     case noAccounts
     case noBalance
+    case noTransactions
     case noData
     case noToken
     case notImplemented
@@ -19,6 +20,7 @@ enum BankError: Error {
 
 protocol BankAPI {
     var token: Token? { get set }
+    var parser: BankParser { get set }
 
     init(with token: Token?)
 

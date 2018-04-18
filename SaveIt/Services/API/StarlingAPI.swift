@@ -14,9 +14,11 @@ class StarlingAPI: NSObject {
     static let baseURL = "https://api.starlingbank.com/api/v1/"
     
     var token: Token?
-    
+    var parser: BankParser
+
     required init(with token: Token?) {
         self.token = token
+        self.parser = StarlingParser()
     }
 }
 

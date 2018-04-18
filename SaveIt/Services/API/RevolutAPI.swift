@@ -11,9 +11,10 @@ import UIKit
 class RevolutAPI: NSObject {
 
     var token: Token?
-    
+    var parser: BankParser
     required init(with token: Token?) {
         self.token = token
+        self.parser = RevolutParser()
     }
 }
 

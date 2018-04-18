@@ -14,13 +14,15 @@ class MonzoAPI: NSObject {
     static let clientId = ConfigurationKeys.shared.monzoClientId
     static let clientSecret = ConfigurationKeys.shared.monzoClientSecret
     static let redirectURI = ConfigurationKeys.shared.monzoRedirectLink
-    
+
     static let baseURL = "https://api.monzo.com/"
 
     var token: Token?
+    var parser: BankParser
     
     required init(with token: Token?) {
         self.token = token
+        self.parser = MonzoParser()
     }
 }
 
@@ -40,7 +42,7 @@ extension MonzoAPI {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
-    
+
     //2 and 3. Callback method, from AppDelegate, to exchange the authorization for an access token
     func getAuhenticationToken(from authURL: URL, completeHandler: @escaping (MonzoToken?) -> Void) {
         guard let authUrl = URLComponents(url: authURL, resolvingAgainstBaseURL: true),
@@ -103,8 +105,8 @@ extension MonzoAPI {
 
     func printError(error: Error, data: Data) {
         do {
-            let parsedError = try JSONDecoder().decode(MonzoError.self, from: data)
-            print("Monzo says: \(parsedError.errorDescription ?? "😒")")
+            let parsedError = try parser.parseError(from: data)
+            print("Monzo says: \(parsedError.localizedDescription)")
         } catch {
             print("error returned: \(error.localizedDescription)")
         }
@@ -115,7 +117,8 @@ extension MonzoAPI {
 
 extension MonzoAPI: BankAPI {
 
-    func getAccounts(success: @escaping ([Account]) -> Void, failure: @escaping (BankError) -> Void) {
+    func getAccounts(success: @escaping ([Account]) -> Void,
+                     failure: @escaping (BankError) -> Void) {
         guard let token = self.token?.accessToken else { failure(.noToken); return }
 
         let headers: HTTPHeaders = ["Authorization": "Bearer \(token)"]
@@ -135,17 +138,14 @@ extension MonzoAPI: BankAPI {
 
                 success(validAccounts)
             } catch {
-                do {
-                    let monzoError = try decoder.decode(MonzoError.self, from: data)
-                    failure(.error(localizedDescription: "Monzo says: " + (monzoError.message ?? "😒")))
-                } catch {
-                   failure(.error(localizedDescription: error.localizedDescription))
-                }
+                self.printError(error: error, data: data)
             }
         }
     }
 
-    func getBalance(account: Account, success: @escaping (Balance) -> Void, failure: @escaping (BankError) -> Void) {
+    func getBalance(account: Account,
+                    success: @escaping (Balance) -> Void,
+                    failure: @escaping (BankError) -> Void) {
         guard let token = self.token?.accessToken else { failure(.noToken); return }
 
         let headers: HTTPHeaders = ["Authorization": "Bearer \(token)"]
@@ -158,15 +158,31 @@ extension MonzoAPI: BankAPI {
             do {
                 let balance = try decoder.decode(MonzoBalance.self, from: data)
                 success(Balance(monzoBalance: balance, accountId: account.accountId))
-
             } catch {
-                do {
-                    let monzoError = try decoder.decode(MonzoError.self, from: data)
-                    failure(.error(localizedDescription: "Monzo says: " + (monzoError.message ?? "😒")))
-                } catch {
-                    failure(.error(localizedDescription: error.localizedDescription))
-                }
+                self.printError(error: error, data: data)
+            }
+        }
+    }
 
+    func getTransactions(account: Account,
+                         success: @escaping ([Transaction]) -> Void,
+                         failure: @escaping (BankError) -> Void) {
+
+        let headers: HTTPHeaders = ["Authorization": "Bearer \(token)"]
+        let parameters: Parameters = ["account_id": account.accountId]
+        let url = MonzoAPI.baseURL + "transactions"
+
+        Alamofire.request(url,
+                          parameters: parameters,
+                          headers: headers
+        ).response { response in
+            guard let data = response.data else { failure(.noData); return }
+            do {
+                let transactions = try self.parser.parseTransactions(from: data,
+                                                                     account: account)
+                success(transactions)
+            } catch {
+                self.printError(error: error, data: data)
             }
         }
     }

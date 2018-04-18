@@ -58,6 +58,15 @@
 		F1E700602029E7B700140153 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E7005F2029E7B700140153 /* SettingsViewController.swift */; };
 		F1F78F512084F0D900224C69 /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F78F4F2084F0D900224C69 /* Balance.swift */; };
 		F1F78F522084F0D900224C69 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F78F502084F0D900224C69 /* DataManager.swift */; };
+		F1F78F542086491500224C69 /* StarlingTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F78F532086491500224C69 /* StarlingTransaction.swift */; };
+		F1F78F5620864A1400224C69 /* MonzoTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F78F5520864A1400224C69 /* MonzoTransaction.swift */; };
+		F1F78F5820864AA300224C69 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F78F5720864AA300224C69 /* Transaction.swift */; };
+		F1F78F5C20865EA600224C69 /* BankParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F78F5B20865EA600224C69 /* BankParser.swift */; };
+		F1F78F5E20865F9700224C69 /* MonzoParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F78F5D20865F9700224C69 /* MonzoParser.swift */; };
+		F1F78F6020865FA000224C69 /* StarlingParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F78F5F20865FA000224C69 /* StarlingParser.swift */; };
+		F1F78F62208661E600224C69 /* RevolutParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F78F61208661E600224C69 /* RevolutParser.swift */; };
+		F1F78F652087203400224C69 /* MonzoParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F78F642087203400224C69 /* MonzoParserTests.swift */; };
+		F1F78F6720873C0700224C69 /* StarlingParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F78F6620873C0700224C69 /* StarlingParserTests.swift */; };
 		F1FEF41420502D8300A40E93 /* StarlingAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FEF41320502D8300A40E93 /* StarlingAccount.swift */; };
 		F1FEF41620502E8E00A40E93 /* StarlingBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FEF41520502E8E00A40E93 /* StarlingBalance.swift */; };
 /* End PBXBuildFile section */
@@ -173,6 +182,15 @@
 		F1E7005F2029E7B700140153 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		F1F78F4F2084F0D900224C69 /* Balance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Balance.swift; sourceTree = "<group>"; };
 		F1F78F502084F0D900224C69 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		F1F78F532086491500224C69 /* StarlingTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarlingTransaction.swift; sourceTree = "<group>"; };
+		F1F78F5520864A1400224C69 /* MonzoTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonzoTransaction.swift; sourceTree = "<group>"; };
+		F1F78F5720864AA300224C69 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		F1F78F5B20865EA600224C69 /* BankParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankParser.swift; sourceTree = "<group>"; };
+		F1F78F5D20865F9700224C69 /* MonzoParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonzoParser.swift; sourceTree = "<group>"; };
+		F1F78F5F20865FA000224C69 /* StarlingParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarlingParser.swift; sourceTree = "<group>"; };
+		F1F78F61208661E600224C69 /* RevolutParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevolutParser.swift; sourceTree = "<group>"; };
+		F1F78F642087203400224C69 /* MonzoParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonzoParserTests.swift; sourceTree = "<group>"; };
+		F1F78F6620873C0700224C69 /* StarlingParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarlingParserTests.swift; sourceTree = "<group>"; };
 		F1FEF41320502D8300A40E93 /* StarlingAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarlingAccount.swift; sourceTree = "<group>"; };
 		F1FEF41520502E8E00A40E93 /* StarlingBalance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarlingBalance.swift; sourceTree = "<group>"; };
 		FB732D498CEA60874EF4CBD7 /* Pods-SaveIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaveIt.release.xcconfig"; path = "Pods/Target Support Files/Pods-SaveIt/Pods-SaveIt.release.xcconfig"; sourceTree = "<group>"; };
@@ -259,6 +277,7 @@
 		F10B6B55206A5DCA00CE7710 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				F1F78F632087201A00224C69 /* Parser */,
 				F10B6B53206A5D8800CE7710 /* ConfigurationKeysTests.swift */,
 			);
 			name = Services;
@@ -272,6 +291,7 @@
 				F1462CB32035DD3D00D39AAB /* MonzoError.swift */,
 				F1462CB5203B407F00D39AAB /* MonzoAccount.swift */,
 				F10476B520402D7700EEAEC1 /* MonzoBalance.swift */,
+				F1F78F5520864A1400224C69 /* MonzoTransaction.swift */,
 			);
 			path = Monzo;
 			sourceTree = "<group>";
@@ -281,6 +301,7 @@
 			children = (
 				F1FEF41320502D8300A40E93 /* StarlingAccount.swift */,
 				F1FEF41520502E8E00A40E93 /* StarlingBalance.swift */,
+				F1F78F532086491500224C69 /* StarlingTransaction.swift */,
 			);
 			path = Starling;
 			sourceTree = "<group>";
@@ -312,6 +333,7 @@
 				F11658E42045CC0B00BBB746 /* Account.swift */,
 				F1A26A8420484CC2002972A3 /* Bank.swift */,
 				F1A26A8220484C92002972A3 /* Token.swift */,
+				F1F78F5720864AA300224C69 /* Transaction.swift */,
 			);
 			path = entities;
 			sourceTree = "<group>";
@@ -414,11 +436,8 @@
 		F1E700532029C52800140153 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				F152397E204EA524004A2DFB /* APIManager.swift */,
-				F1A26A782046CBA5002972A3 /* BankAPI.swift */,
-				F1E700542029C53B00140153 /* MonzoAPI.swift */,
-				F1A26A7B2046F693002972A3 /* RevolutAPI.swift */,
-				F1E700562029C54900140153 /* StarlingAPI.swift */,
+				F1F78F5A20865E7100224C69 /* Parser */,
+				F1F78F5920865E5A00224C69 /* API */,
 				F10B6B4F206A5AF800CE7710 /* ConfigurationKeys.swift */,
 			);
 			path = Services;
@@ -441,6 +460,38 @@
 				F1F78F502084F0D900224C69 /* DataManager.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		F1F78F5920865E5A00224C69 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				F152397E204EA524004A2DFB /* APIManager.swift */,
+				F1A26A782046CBA5002972A3 /* BankAPI.swift */,
+				F1E700542029C53B00140153 /* MonzoAPI.swift */,
+				F1A26A7B2046F693002972A3 /* RevolutAPI.swift */,
+				F1E700562029C54900140153 /* StarlingAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		F1F78F5A20865E7100224C69 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				F1F78F5B20865EA600224C69 /* BankParser.swift */,
+				F1F78F5D20865F9700224C69 /* MonzoParser.swift */,
+				F1F78F5F20865FA000224C69 /* StarlingParser.swift */,
+				F1F78F61208661E600224C69 /* RevolutParser.swift */,
+			);
+			path = Parser;
+			sourceTree = "<group>";
+		};
+		F1F78F632087201A00224C69 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				F1F78F642087203400224C69 /* MonzoParserTests.swift */,
+				F1F78F6620873C0700224C69 /* StarlingParserTests.swift */,
+			);
+			path = Parser;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -738,8 +789,10 @@
 				F1462CB42035DD3D00D39AAB /* MonzoError.swift in Sources */,
 				F1E7005A2029C58000140153 /* TransactionsBusinessLogic.swift in Sources */,
 				F1A26A8720485B98002972A3 /* BankTableViewCell.swift in Sources */,
+				F1F78F5620864A1400224C69 /* MonzoTransaction.swift in Sources */,
 				F1E700522029C51F00140153 /* TransactionsViewModel.swift in Sources */,
 				F1FEF41620502E8E00A40E93 /* StarlingBalance.swift in Sources */,
+				F1F78F542086491500224C69 /* StarlingTransaction.swift in Sources */,
 				F11658E12045CBBA00BBB746 /* AccountsViewController.swift in Sources */,
 				F11658E72045CECA00BBB746 /* DatabaseManager.swift in Sources */,
 				F1E700572029C54900140153 /* StarlingAPI.swift in Sources */,
@@ -750,14 +803,19 @@
 				F1E700272029C2E600140153 /* AppDelegate.swift in Sources */,
 				F1462CB22035D6D400D39AAB /* MonzoToken.swift in Sources */,
 				F11658DF2045C48D00BBB746 /* Balance.swift in Sources */,
+				F1F78F5820864AA300224C69 /* Transaction.swift in Sources */,
 				F1A26A8D204DA9A7002972A3 /* BanksBusinessLogic.swift in Sources */,
+				F1F78F62208661E600224C69 /* RevolutParser.swift in Sources */,
 				F1A26A7C2046F693002972A3 /* RevolutAPI.swift in Sources */,
 				F13EFFD82084C6EB00921550 /* WatchManager.swift in Sources */,
 				F1A26A8320484C92002972A3 /* Token.swift in Sources */,
+				F1F78F5C20865EA600224C69 /* BankParser.swift in Sources */,
 				F11658E32045CBD400BBB746 /* AccountsViewModel.swift in Sources */,
+				F1F78F6020865FA000224C69 /* StarlingParser.swift in Sources */,
 				F1A26A8520484CC2002972A3 /* Bank.swift in Sources */,
 				F1A26A8B20485D75002972A3 /* BanksViewModel.swift in Sources */,
 				F1A26A792046CBA5002972A3 /* BankAPI.swift in Sources */,
+				F1F78F5E20865F9700224C69 /* MonzoParser.swift in Sources */,
 				F1E700602029E7B700140153 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -766,8 +824,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1F78F6720873C0700224C69 /* StarlingParserTests.swift in Sources */,
 				F10B6B54206A5D8800CE7710 /* ConfigurationKeysTests.swift in Sources */,
 				F1E7003E2029C2E600140153 /* SaveItTests.swift in Sources */,
+				F1F78F652087203400224C69 /* MonzoParserTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

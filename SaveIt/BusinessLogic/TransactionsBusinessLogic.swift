@@ -10,4 +10,10 @@ import UIKit
 
 class TransactionsBusinessLogic: NSObject {
 
+    let apiManager = APIManager.shared
+
+    func fetchTransactions() {
+        
+    }
+
 }
