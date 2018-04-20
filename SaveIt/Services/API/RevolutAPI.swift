@@ -21,12 +21,21 @@ class RevolutAPI: NSObject {
 // MARK: BankAPI protocol implementation
 
 extension RevolutAPI: BankAPI {
-    
-    func getAccounts(success: @escaping ([Account]) -> Void, failure: @escaping (BankError) -> Void) {
+
+    func getAccounts(success: @escaping ([Account]) -> Void,
+                     failure: @escaping (BankError) -> Void) {
         failure(.notImplemented)
     }
-    
-    func getBalance(account: Account, success: @escaping (Balance) -> Void, failure: @escaping(BankError) -> Void) {
+
+    func getBalance(account: Account,
+                    success: @escaping (Balance) -> Void,
+                    failure: @escaping(BankError) -> Void) {
+        failure(.notImplemented)
+    }
+
+    func getTransactions(account: Account,
+                         success: @escaping ([Transaction]) -> Void,
+                         failure: @escaping (BankError) -> Void) {
         failure(.notImplemented)
     }
 }

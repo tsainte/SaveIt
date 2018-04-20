@@ -32,8 +32,9 @@ extension StarlingAPI {
 // MARK: BankAPI protocol implementation
 
 extension StarlingAPI: BankAPI {
-    
-    func getAccounts(success: @escaping ([Account]) -> Void, failure: @escaping (BankError) -> Void) {
+
+    func getAccounts(success: @escaping ([Account]) -> Void,
+                     failure: @escaping (BankError) -> Void) {
         guard let token = self.token?.accessToken else { failure(.noToken); return }
 
         let headers: HTTPHeaders = ["Authorization": "Bearer \(token)"]
@@ -51,13 +52,15 @@ extension StarlingAPI: BankAPI {
             }
         }
     }
-    
-    func getBalance(account: Account, success: @escaping (Balance) -> Void, failure: @escaping (BankError) -> Void) {
+
+    func getBalance(account: Account,
+                    success: @escaping (Balance) -> Void,
+                    failure: @escaping (BankError) -> Void) {
         guard let token = self.token?.accessToken else { failure(.noToken); return }
-        
+
         let headers: HTTPHeaders = ["Authorization": "Bearer \(token)"]
         let url = StarlingAPI.baseURL + "accounts/balance"
-        
+
         Alamofire.request(url, headers: headers).response { response in
             let decoder = JSONDecoder()
             guard let data = response.data else { failure(.noData); return }
@@ -68,5 +71,11 @@ extension StarlingAPI: BankAPI {
                 failure(.error(localizedDescription: error.localizedDescription))
             }
         }
+    }
+
+    func getTransactions(account: Account,
+                         success: @escaping ([Transaction]) -> Void,
+                         failure: @escaping (BankError) -> Void) {
+        failure(.notImplemented)
     }
 }

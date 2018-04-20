@@ -13,19 +13,20 @@ class APIManager: NSObject {
     static let shared = APIManager()
 
     // Injecting token onto the API services if available
-    let monzo = MonzoAPI(with: DatabaseManager.getToken(for: Bank.monzo.name))
-    let starling = StarlingAPI(with: DatabaseManager.getToken(for: Bank.starling.name))
-    let revolut = RevolutAPI(with: DatabaseManager.getToken(for: Bank.revolut.name))
+    let monzoAPI = MonzoAPI(with: DatabaseManager.getToken(for: Bank.monzo.name))
+    let starlingAPI = StarlingAPI(with: DatabaseManager.getToken(for: Bank.starling.name))
+    let revolutAPI = RevolutAPI(with: DatabaseManager.getToken(for: Bank.revolut.name))
 
-    func bankApi(from bank: Bank) -> BankAPI? {
-        switch bank {
-        case .monzo:
-            return monzo
-        case .starling:
-            return starling
-        case .revolut:
-            return revolut
-        default: return nil
+    func bankApi(from bank: Bank) -> BankAPI? { 
+        switch bank.name {
+        case Bank.monzo.name:
+            return monzoAPI
+        case Bank.starling.name:
+            return starlingAPI
+        case Bank.revolut.name:
+            return revolutAPI
+        default:
+            return nil
         }
     }
 }
@@ -34,18 +35,18 @@ class APIManager: NSObject {
 extension APIManager {
 
     func fetchMonzoToken(from url: URL) {
-        monzo.getAuhenticationToken(from: url) { [unowned self] monzoToken in
+        monzoAPI.getAuhenticationToken(from: url) { [unowned self] monzoToken in
             guard let monzoToken = monzoToken else { print("no token returned"); return }
 
             let token = Token(monzoToken: monzoToken)
-            self.monzo.token = token
+            self.monzoAPI.token = token
             DatabaseManager.updateToken(token)
         }
     }
 
     func fetchStarlingToken() {
-        starling.addDeveloperToken { [unowned self] token in
-            self.starling.token = token
+        starlingAPI.addDeveloperToken { [unowned self] token in
+            self.starlingAPI.token = token
             DatabaseManager.updateToken(token)
         }
     }
@@ -55,8 +56,8 @@ extension APIManager {
 extension APIManager {
 
     func fetchAllAccounts() {
-        fetchAccounts(for: monzo)
-        fetchAccounts(for: starling)
+        fetchAccounts(for: monzoAPI)
+        fetchAccounts(for: starlingAPI)
     }
 
     func fetchAccounts(for bankAPI: BankAPI) {
@@ -79,9 +80,21 @@ extension APIManager {
 // MARK: Fetch transactions
 extension APIManager {
 
-    func fetchTransactions(for bank: Bank) {
-//        guard let api = bankApi(from: bank) else { return }
-//        api.get
+    func fetchTransactions(for account: Account) {
+        let failure: (BankError) -> Void = { (error) in
+            print(error)
+        }
 
+        guard let bank = account.bank,
+            let api = bankApi(from: bank) else {
+                print("something is nil")
+            return
+        }
+        api.getTransactions(
+            account: account,
+            success: { (transactions) in
+                DatabaseManager.saveTransactions(transactions, with: account)
+        },
+            failure: failure)
     }
 }

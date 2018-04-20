@@ -15,9 +15,8 @@ struct MonzoTransaction: Decodable {
     let currency: String
     let description: String
     let id: String
-    let merchant: String
+    let merchant: String?
     let notes: String
     let isLoad: Bool
-    let settled: Date
     let category: String
 }

@@ -13,7 +13,7 @@ class BanksBusinessLogic: NSObject {
     func loginService(bank: String) {
         switch bank {
         case Bank.monzo.name:
-            APIManager.shared.monzo.requestAuthenticationCode()
+            APIManager.shared.monzoAPI.requestAuthenticationCode()
         case Bank.starling.name:
             APIManager.shared.fetchStarlingToken()
         default:

@@ -37,18 +37,22 @@ class AccountsViewController: UIViewController {
     }
 
     @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
-        viewModel.refreshData()
+        viewModel.reloadData()
     }
-    /*
+
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-    }
-    */
+        if segue.identifier == "TransactionsViewController" {
+            guard
+                let transactionsVC = segue.destination as? TransactionsViewController,
+                let indexPath = tableView.indexPathForSelectedRow else { return }
 
+            transactionsVC.viewModel = viewModel.transactionsViewModel(row: indexPath.row)
+        }
+    }
 }
 
 extension AccountsViewController: AccountsViewModelDelegate {
@@ -83,4 +87,7 @@ extension AccountsViewController: UITableViewDataSource {
 
 extension AccountsViewController: UITableViewDelegate {
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "TransactionsViewController", sender: tableView)
+    }
 }

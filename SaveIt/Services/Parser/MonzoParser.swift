@@ -10,6 +10,12 @@ import Foundation
 
 class MonzoParser: NSObject {
 
+    static var decoder: JSONDecoder {
+        let jsonDecoder = JSONDecoder()
+        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+        jsonDecoder.dateDecodingStrategy = .custom(DateHandler.dateDecoding)
+        return jsonDecoder
+    }
 }
 
 extension MonzoParser: BankParser {
@@ -22,7 +28,9 @@ extension MonzoParser: BankParser {
     }
 
     func parseTransactions(from data: Data, account: Account) throws -> [Transaction] {
-        let dict = try JSONDecoder().decode([String: [MonzoTransaction]].self, from: data)
+        let decoder = MonzoParser.decoder
+//        decoder.dateDecodingStrategy = .iso8601
+        let dict = try decoder.decode([String: [MonzoTransaction]].self, from: data)
         let transactions = dict["transactions"]?.map {
             Transaction(monzoTransaction: $0, account: account)
         }

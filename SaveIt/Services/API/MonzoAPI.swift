@@ -167,6 +167,7 @@ extension MonzoAPI: BankAPI {
     func getTransactions(account: Account,
                          success: @escaping ([Transaction]) -> Void,
                          failure: @escaping (BankError) -> Void) {
+        guard let token = self.token?.accessToken else { failure(.noToken); return }
 
         let headers: HTTPHeaders = ["Authorization": "Bearer \(token)"]
         let parameters: Parameters = ["account_id": account.accountId]

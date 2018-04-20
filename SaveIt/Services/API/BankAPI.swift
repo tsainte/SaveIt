@@ -24,6 +24,14 @@ protocol BankAPI {
 
     init(with token: Token?)
 
-    func getAccounts(success: @escaping ([Account]) -> Void, failure: @escaping (BankError) -> Void)
-    func getBalance(account: Account, success: @escaping (Balance) -> Void, failure: @escaping (BankError) -> Void)
+    func getAccounts(success: @escaping ([Account]) -> Void,
+                     failure: @escaping (BankError) -> Void)
+
+    func getBalance(account: Account,
+                    success: @escaping (Balance) -> Void,
+                    failure: @escaping (BankError) -> Void)
+
+    func getTransactions(account: Account,
+                         success: @escaping ([Transaction]) -> Void,
+                         failure: @escaping (BankError) -> Void)
 }

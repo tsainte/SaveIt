@@ -19,6 +19,8 @@ class Account: Object {
 
     @objc dynamic var balance: Balance?
 
+    let transactions = LinkingObjects(fromType: Transaction.self, property: "account")
+
     convenience init(bank: Bank,
                      accountId: String,
                      name: String,

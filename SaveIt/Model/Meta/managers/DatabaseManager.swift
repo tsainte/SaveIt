@@ -80,6 +80,24 @@ extension DatabaseManager {
     }
 }
 
+// MARK: Handling transactions
+extension DatabaseManager {
+
+    static func transactions(account: Account) -> [Transaction] {
+        let transactions = account.transactions
+        return Array(transactions)
+    }
+
+    static func saveTransactions(_ transactions: [Transaction], with account: Account) {
+        let oldTransactions = account.transactions
+
+        write(realm: realm) {
+            realm.delete(oldTransactions)
+            realm.add(transactions)
+        }
+    }
+}
+
 // MARK: Updating Apple Watch with current data
 extension DatabaseManager {
     static func updateWatch() {

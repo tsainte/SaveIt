@@ -17,7 +17,6 @@ class DateHandler {
         do {
             let container = try decoder.singleValueContainer()
             let dateStr = try container.decode(String.self)
-
             let formatter = DateFormatter()
             formatter.calendar = Calendar(identifier: .iso8601)
             formatter.locale = Locale(identifier: "en_US_POSIX")

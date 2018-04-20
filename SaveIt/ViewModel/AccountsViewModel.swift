@@ -17,9 +17,9 @@ protocol AccountsViewModelDelegate: class {
 class AccountsViewModel: NSObject {
 
     weak var delegate: AccountsViewModelDelegate?
-    var notificationToken: NotificationToken? = nil
+    var notificationToken: NotificationToken?
 
-    let accounts = DatabaseManager.accounts()
+    var accounts = DatabaseManager.accounts()
     let businessLogic = AccountsBusinessLogic()
 
     var numberOfRows: Int {
@@ -28,32 +28,45 @@ class AccountsViewModel: NSObject {
 
     init(delegate: AccountsViewModelDelegate) {
         self.delegate = delegate
-        notificationToken = DatabaseManager.realm.observe { notification, realm in
-            delegate.refreshUI()
-        }
-
-        businessLogic.fetchAccounts()
+        super.init()
+        setupRealmObserver()
+        reloadData()
     }
 
     deinit {
         notificationToken?.invalidate()
     }
+}
 
-    func refreshData() {
-        businessLogic.fetchAccounts()
+extension AccountsViewModel: ViewModelConnector {
+
+    func setupRealmObserver() {
+        notificationToken = DatabaseManager.realm.observe { _, _ in
+            self.accounts = DatabaseManager.accounts()
+            self.delegate?.refreshUI()
+        }
     }
 
+    func reloadData() {
+        businessLogic.fetchAccounts()
+    }
 }
 
 // MARK: cell bindings
 extension AccountsViewModel {
 
     func getLogo(row: Int) -> String {
-        return accounts[row].bank!.icon
+        return accounts[row].bank?.icon ?? ""
     }
 
     func getAccountName(row: Int) -> String {
-        return accounts[row].name
+        let account = accounts[row]
+        let officialName = account.name
+        var name: String?
+        if let sortCode = account.sortCode, let number = account.accountNumber {
+            name = "SC: \(sortCode), AN: \(number)"
+        }
+        return name ?? officialName
     }
 
     func getLastUpdate(row: Int) -> String {
@@ -64,5 +77,13 @@ extension AccountsViewModel {
         //TODO: create extension to convert balance properly
         guard let amount = accounts[row].balance?.amount else { return "---" }
         return String(format: "£ %.02f", amount)
+    }
+}
+
+// MARK: other bindings
+extension AccountsViewModel {
+
+    func transactionsViewModel(row: Int) -> TransactionsViewModel {
+        return TransactionsViewModel(account: accounts[row])
     }
 }

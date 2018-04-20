@@ -23,4 +23,7 @@ class Bank: Object {
         self.name = name
         self.icon = icon
     }
+
 }
+
+
