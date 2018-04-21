@@ -12,7 +12,7 @@ class StarlingAPI: NSObject {
 
     static let developerToken = ConfigurationKeys.shared.starlingToken
     static let baseURL = "https://api.starlingbank.com/api/v1/"
-    
+
     var token: Token?
     var parser: BankParser
 
@@ -41,12 +41,10 @@ extension StarlingAPI: BankAPI {
         let url = StarlingAPI.baseURL + "accounts"
 
         Alamofire.request(url, headers: headers).response { response in
-            let decoder = JSONDecoder()
-            decoder.dateDecodingStrategy = .custom(DateHandler.dateDecoding)
             guard let data = response.data else { failure(.noData); return }
             do {
-                let account = try decoder.decode(StarlingAccount.self, from: data)
-                success([Account(starlingAccount: account)])
+                let account = try self.parser.parseAccounts(from: data)
+                success(account)
             } catch {
                 failure(.error(localizedDescription: error.localizedDescription))
             }
@@ -62,11 +60,10 @@ extension StarlingAPI: BankAPI {
         let url = StarlingAPI.baseURL + "accounts/balance"
 
         Alamofire.request(url, headers: headers).response { response in
-            let decoder = JSONDecoder()
             guard let data = response.data else { failure(.noData); return }
             do {
-                let balance = try decoder.decode(StarlingBalance.self, from: data)
-                success(Balance(starlingBalance: balance, accountId: account.accountId))
+                let balance = try self.parser.parseBalance(from: data, account: account)
+                success(balance)
             } catch {
                 failure(.error(localizedDescription: error.localizedDescription))
             }
@@ -76,6 +73,19 @@ extension StarlingAPI: BankAPI {
     func getTransactions(account: Account,
                          success: @escaping ([Transaction]) -> Void,
                          failure: @escaping (BankError) -> Void) {
-        failure(.notImplemented)
+        guard let token = self.token?.accessToken else { failure(.noToken); return }
+
+        let headers: HTTPHeaders = ["Authorization": "Bearer \(token)"]
+        let url = StarlingAPI.baseURL + "transactions"
+
+        Alamofire.request(url, headers: headers).response { response in
+            guard let data = response.data else { failure(.noData); return }
+            do {
+                let transactions = try self.parser.parseTransactions(from: data, account: account)
+                success(transactions)
+            } catch {
+                failure(.error(localizedDescription: error.localizedDescription))
+            }
+        }
     }
 }

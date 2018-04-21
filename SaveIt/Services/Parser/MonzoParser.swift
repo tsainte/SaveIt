@@ -20,17 +20,21 @@ class MonzoParser: NSObject {
 
 extension MonzoParser: BankParser {
     func parseAccounts(from data: Data) throws -> [Account] {
-        return [Account()]
+        let dict = try MonzoParser.decoder.decode([String: [MonzoAccount]].self, from: data)
+        let accounts = dict["accounts"]?.map { Account(monzoAccount: $0) }
+
+        guard let validAccounts = accounts else { throw BankError.noAccounts }
+        return validAccounts
     }
 
     func parseBalance(from data: Data, account: Account) throws -> Balance {
-        return Balance()
+        let monzoBalance = try MonzoParser.decoder.decode(MonzoBalance.self, from: data)
+        let balance = Balance(monzoBalance: monzoBalance, accountId: account.accountId)
+        return balance
     }
 
     func parseTransactions(from data: Data, account: Account) throws -> [Transaction] {
-        let decoder = MonzoParser.decoder
-//        decoder.dateDecodingStrategy = .iso8601
-        let dict = try decoder.decode([String: [MonzoTransaction]].self, from: data)
+        let dict = try MonzoParser.decoder.decode([String: [MonzoTransaction]].self, from: data)
         let transactions = dict["transactions"]?.map {
             Transaction(monzoTransaction: $0, account: account)
         }

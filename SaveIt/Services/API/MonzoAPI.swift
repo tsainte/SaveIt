@@ -125,18 +125,10 @@ extension MonzoAPI: BankAPI {
         let url = MonzoAPI.baseURL + "accounts"
 
         Alamofire.request(url, headers: headers).response { response in
-            let decoder = JSONDecoder()
-            decoder.dateDecodingStrategy = .custom(DateHandler.dateDecoding)
-
             guard let data = response.data else { failure(.noData); return }
-
             do {
-                let dict = try decoder.decode([String: [MonzoAccount]].self, from: data)
-                let accounts = dict["accounts"]?.map { Account(monzoAccount: $0) }
-
-                guard let validAccounts = accounts else { failure(.noAccounts); return }
-
-                success(validAccounts)
+                let accounts = try self.parser.parseAccounts(from: data)
+                success(accounts)
             } catch {
                 self.printError(error: error, data: data)
             }
@@ -153,11 +145,10 @@ extension MonzoAPI: BankAPI {
         let url = MonzoAPI.baseURL + "balance"
 
         Alamofire.request(url, parameters: parameters, headers: headers).response { response in
-            let decoder = JSONDecoder()
             guard let data = response.data else { failure(.noData); return }
             do {
-                let balance = try decoder.decode(MonzoBalance.self, from: data)
-                success(Balance(monzoBalance: balance, accountId: account.accountId))
+                let balance = try self.parser.parseBalance(from: data, account: account)
+                success(balance)
             } catch {
                 self.printError(error: error, data: data)
             }

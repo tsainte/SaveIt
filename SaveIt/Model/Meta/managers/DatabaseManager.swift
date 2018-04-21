@@ -70,7 +70,7 @@ extension DatabaseManager {
 extension DatabaseManager {
 
     static func accounts() -> [Account] {
-        let accounts = realm.objects(Account.self).sorted(byKeyPath: "balance.lastUpdate", ascending: false)
+        let accounts = realm.objects(Account.self)
         return Array(accounts)
     }
 
