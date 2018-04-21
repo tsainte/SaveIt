@@ -28,6 +28,7 @@ class AccountsViewModel: NSObject {
 
     init(delegate: AccountsViewModelDelegate) {
         self.delegate = delegate
+        self.accounts = DatabaseManager.accounts()
         super.init()
         setupRealmObserver()
         reloadData()

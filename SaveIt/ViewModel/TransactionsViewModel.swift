@@ -25,6 +25,7 @@ class TransactionsViewModel: NSObject {
     init(account: Account) {
         self.account = account
         businessLogic = TransactionsBusinessLogic(with: account)
+        transactions = DatabaseManager.transactions(account: self.account)
         super.init()
         setupRealmObserver()
     }
@@ -35,16 +36,12 @@ extension TransactionsViewModel: ViewModelConnector {
     func setupRealmObserver() {
         notificationToken = DatabaseManager.realm.observe { _, _ in
             self.transactions = DatabaseManager.transactions(account: self.account)
-            self.refreshUI()
+            self.delegate?.refreshUI()
         }
     }
 
     func reloadData() {
         businessLogic.fetchTransactions()
-    }
-
-    func refreshUI() {
-        self.delegate?.refreshUI()
     }
 }
 

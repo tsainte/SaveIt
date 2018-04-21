@@ -13,7 +13,7 @@ class TransactionTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var amountLabel: UILabel!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -24,5 +24,5 @@ class TransactionTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
 }

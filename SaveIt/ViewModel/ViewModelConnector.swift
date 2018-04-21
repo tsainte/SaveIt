@@ -9,7 +9,7 @@
 import RealmSwift
 
 protocol ViewModelConnector {
-    var notificationToken: NotificationToken? { set get }
+    var notificationToken: NotificationToken? { get set }
     func setupRealmObserver()
     func reloadData()
 }

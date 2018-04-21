@@ -70,6 +70,7 @@
 		F1F78FAD20876C3200224C69 /* ViewModelConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F78FAC20876C3200224C69 /* ViewModelConnector.swift */; };
 		F1F78FB120876FB100224C69 /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F78FAF20876FB100224C69 /* TransactionTableViewCell.swift */; };
 		F1F78FB220876FB100224C69 /* TransactionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1F78FB020876FB100224C69 /* TransactionTableViewCell.xib */; };
+		F1F78FB5208B2EF900224C69 /* UIViewController+Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F78FB4208B2EF900224C69 /* UIViewController+Protocols.swift */; };
 		F1FEF41420502D8300A40E93 /* StarlingAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FEF41320502D8300A40E93 /* StarlingAccount.swift */; };
 		F1FEF41620502E8E00A40E93 /* StarlingBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FEF41520502E8E00A40E93 /* StarlingBalance.swift */; };
 /* End PBXBuildFile section */
@@ -197,6 +198,7 @@
 		F1F78FAC20876C3200224C69 /* ViewModelConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelConnector.swift; sourceTree = "<group>"; };
 		F1F78FAF20876FB100224C69 /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
 		F1F78FB020876FB100224C69 /* TransactionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionTableViewCell.xib; sourceTree = "<group>"; };
+		F1F78FB4208B2EF900224C69 /* UIViewController+Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Protocols.swift"; sourceTree = "<group>"; };
 		F1FEF41320502D8300A40E93 /* StarlingAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarlingAccount.swift; sourceTree = "<group>"; };
 		F1FEF41520502E8E00A40E93 /* StarlingBalance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarlingBalance.swift; sourceTree = "<group>"; };
 		FB732D498CEA60874EF4CBD7 /* Pods-SaveIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaveIt.release.xcconfig"; path = "Pods/Target Support Files/Pods-SaveIt/Pods-SaveIt.release.xcconfig"; sourceTree = "<group>"; };
@@ -389,6 +391,7 @@
 		F1E700252029C2E600140153 /* SaveIt */ = {
 			isa = PBXGroup;
 			children = (
+				F1F78FB3208B2EC600224C69 /* Protocols */,
 				F1462CB02035D63D00D39AAB /* Model */,
 				F1E700582029C55D00140153 /* BusinessLogic */,
 				F1E700532029C52800140153 /* Services */,
@@ -509,6 +512,14 @@
 				F1F78FB020876FB100224C69 /* TransactionTableViewCell.xib */,
 			);
 			path = CustomCells;
+			sourceTree = "<group>";
+		};
+		F1F78FB3208B2EC600224C69 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				F1F78FB4208B2EF900224C69 /* UIViewController+Protocols.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -829,6 +840,7 @@
 				F13EFFD82084C6EB00921550 /* WatchManager.swift in Sources */,
 				F1A26A8320484C92002972A3 /* Token.swift in Sources */,
 				F1F78F5C20865EA600224C69 /* BankParser.swift in Sources */,
+				F1F78FB5208B2EF900224C69 /* UIViewController+Protocols.swift in Sources */,
 				F11658E32045CBD400BBB746 /* AccountsViewModel.swift in Sources */,
 				F1F78F6020865FA000224C69 /* StarlingParser.swift in Sources */,
 				F1F78FAD20876C3200224C69 /* ViewModelConnector.swift in Sources */,

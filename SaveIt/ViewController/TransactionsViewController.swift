@@ -13,13 +13,29 @@ class TransactionsViewController: UIViewController {
     var viewModel: TransactionsViewModel!
 
     @IBOutlet weak var tableView: UITableView!
+    var refreshControl: UIRefreshControl?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        viewModel.delegate = self
-        tableView.dataSource = self
+        configureTableView()
+        viewModel.reloadData()
+    }
+}
 
+// MARK: Configure views
+extension TransactionsViewController {
+    func configureTableView() {
+        tableView.dataSource = self
+        tableView.register(UINib(nibName: "TransactionTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "TransactionTableViewCell")
+        setupRefreshControl()
+    }
+}
+
+extension TransactionsViewController: Refreshable {
+
+    func handleRefresh(_ refreshControl: UIRefreshControl) {
         viewModel.reloadData()
     }
 }
@@ -27,6 +43,7 @@ class TransactionsViewController: UIViewController {
 extension TransactionsViewController: TransactionsViewModelDelegate {
     func refreshUI() {
         tableView.reloadData()
+        refreshControl?.endRefreshing()
     }
 }
 
@@ -38,8 +55,8 @@ extension TransactionsViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard
-            let cell = tableView.dequeueReusableCell(withIdentifier: "TransactionTableViewCell") as? TransactionTableViewCell
-            else { return UITableViewCell() }
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TransactionTableViewCell")
+                as? TransactionTableViewCell else { return UITableViewCell() }
 
         let row = indexPath.row
         cell.nameLabel.text = viewModel.getName(for: row)

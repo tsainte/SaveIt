@@ -70,7 +70,8 @@ extension DatabaseManager {
 extension DatabaseManager {
 
     static func accounts() -> [Account] {
-        return Array(realm.objects(Account.self))
+        let accounts = realm.objects(Account.self).sorted(byKeyPath: "balance.lastUpdate", ascending: false)
+        return Array(accounts)
     }
 
     static func saveAccount(_ account: Account) {
@@ -84,7 +85,7 @@ extension DatabaseManager {
 extension DatabaseManager {
 
     static func transactions(account: Account) -> [Transaction] {
-        let transactions = account.transactions
+        let transactions = account.transactions.sorted(byKeyPath: "created", ascending: false)
         return Array(transactions)
     }
 
