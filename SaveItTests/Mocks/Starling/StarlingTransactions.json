@@ -1,0 +1,91 @@
+{
+  "_links": {
+    "nextPage": {
+      "href": "NOT_YET_IMPLEMENTED"
+    }
+  },
+  "_embedded": {
+    "transactions": [
+      {
+        "_links": {
+          "detail": {
+            "href": "api/v1/transactions/mastercard/sadfasdfasfasdf",
+            "templated": false
+          }
+        },
+        "id": "sadfasdfasfasdf",
+        "currency": "GBP",
+        "amount": -6.3,
+        "direction": "OUTBOUND",
+        "created": "2018-04-23T10:31:52.301Z",
+        "narrative": "TfL",
+        "source": "MASTER_CARD",
+        "balance": 105.5
+      },
+      {
+        "_links": {
+          "detail": {
+            "href": "api/v1/transactions/fps/in/asdxcvzsvxcvwfade",
+            "templated": false
+          }
+        },
+        "id": "asdxcvzsvxcvwfade",
+        "currency": "GBP",
+        "amount": 6,
+        "direction": "INBOUND",
+        "created": "2018-04-23T08:20:00.000Z",
+        "narrative": "el chino oo o",
+        "source": "FASTER_PAYMENTS_IN",
+        "balance": 111.8
+      },
+      {
+        "_links": {
+          "detail": {
+            "href": "api/v1/transactions/mastercard/dsfgxvbxcvxarfaf",
+            "templated": false
+          }
+        },
+        "id": "dsfgxvbxcvxarfaf",
+        "currency": "GBP",
+        "amount": -3,
+        "direction": "OUTBOUND",
+        "created": "2018-04-23T06:39:30.185Z",
+        "narrative": "TfL",
+        "source": "MASTER_CARD",
+        "balance": 105.8
+      },
+      {
+        "_links": {
+          "detail": {
+            "href": "api/v1/transactions/mastercard/ghjkgjhkhjkghkjj",
+            "templated": false
+          }
+        },
+        "id": "ghjkgjhkhjkghkjj",
+        "currency": "GBP",
+        "amount": -1.5,
+        "direction": "OUTBOUND",
+        "created": "2018-04-23T02:19:12.745Z",
+        "narrative": "TfL",
+        "source": "MASTER_CARD",
+        "balance": 108.8
+      },
+      {
+        "_links": {
+          "detail": {
+            "href": "api/v1/transactions/mastercard/cvbnbnbncvnvcbnbcn",
+            "templated": false
+          }
+        },
+        "id": "cvbnbnbncvnvcbnbcn",
+        "currency": "GBP",
+        "amount": -4.7,
+        "direction": "OUTBOUND",
+        "created": "2018-04-22T15:54:07.453Z",
+        "narrative": "Tesco",
+        "source": "MASTER_CARD",
+        "balance": 110.3
+      }
+    ]
+  }
+}

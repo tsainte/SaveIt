@@ -12,9 +12,9 @@ class ConfigurationKeys {
 
     private let path: URL
     private let entries: [String: [String: String]]
-    
+
     public static let shared = ConfigurationKeys()
-    
+
     convenience init() {
         let path = Bundle.main.url(forResource: "configuration", withExtension: "plist")!
         self.init(with: path)
@@ -24,7 +24,7 @@ class ConfigurationKeys {
         self.path = path
         self.entries = NSDictionary(contentsOf: path) as? [String: [String: String]] ?? [:]
     }
-    
+
     public var monzoClientId: String {
         guard let monzo = entries["monzo"] else { return "" }
         return monzo["client_id"] ?? ""

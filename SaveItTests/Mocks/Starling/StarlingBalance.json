@@ -1,0 +1,9 @@
+{
+  "clearedBalance": 105.5,
+  "effectiveBalance": 105.5,
+  "pendingTransactions": 0,
+  "availableToSpend": 605.5,
+  "acceptedOverdraft": 500,
+  "currency": "GBP",
+  "amount": 105.5
+}

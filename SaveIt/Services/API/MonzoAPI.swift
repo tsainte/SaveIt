@@ -67,6 +67,7 @@ extension MonzoAPI {
 
             do {
                 let token = try decoder.decode(MonzoToken.self, from: data)
+                print("monzo token: \(token.accessToken)")
                 completeHandler(token)
             } catch {
                 self.printError(error: error, data: data)
