@@ -19,7 +19,7 @@ class MonzoAPI: NSObject {
 
     var token: Token?
     var parser: BankParser
-    
+
     required init(with token: Token?) {
         self.token = token
         self.parser = MonzoParser()

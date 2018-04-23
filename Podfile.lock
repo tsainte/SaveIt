@@ -1,6 +1,7 @@
 PODS:
   - AFDateHelper (4.2.7)
   - Alamofire (4.7.1)
+  - FontAwesome.swift (1.3.2)
   - Realm (3.3.2):
     - Realm/Headers (= 3.3.2)
   - Realm/Headers (3.3.2)
@@ -11,6 +12,7 @@ PODS:
 DEPENDENCIES:
   - AFDateHelper (~> 4.2.2)
   - Alamofire (~> 4.5)
+  - FontAwesome.swift (~> 1.3)
   - RealmSwift (~> 3.3)
   - SwiftLint
 
@@ -18,6 +20,7 @@ SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - AFDateHelper
     - Alamofire
+    - FontAwesome.swift
     - Realm
     - RealmSwift
     - SwiftLint
@@ -25,10 +28,11 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   AFDateHelper: 4ad66fb19503041fbba8a3018cb7ef9c71b2ff88
   Alamofire: 68d7d521118d49c615a8d2214d87cdf525599d30
+  FontAwesome.swift: b4e4c8ccbbecb12f9b592bc533ff237af3706667
   Realm: d927fbf66df5532cfafc08afb5f7e53ded37b894
   RealmSwift: 4e903a494e05d866581d69ad6f7e7b879d446baf
   SwiftLint: e14651157288e9e01d6e1a71db7014fb5744a8ea
 
-PODFILE CHECKSUM: d69cf29687032954be8f6f491e80802fd3daecb6
+PODFILE CHECKSUM: d62dc8539a18f59cccbf4a6ea78dc2da46fe7b4e
 
 COCOAPODS: 1.5.0
