@@ -70,12 +70,31 @@ extension DatabaseManager {
 extension DatabaseManager {
 
     static func accounts() -> [Account] {
-        return Array(realm.objects(Account.self))
+        let accounts = realm.objects(Account.self)
+        return Array(accounts)
     }
 
     static func saveAccount(_ account: Account) {
         write(realm: realm) {
             realm.add(account, update: true)
+        }
+    }
+}
+
+// MARK: Handling transactions
+extension DatabaseManager {
+
+    static func transactions(account: Account) -> [Transaction] {
+        let transactions = account.transactions.sorted(byKeyPath: "created", ascending: false)
+        return Array(transactions)
+    }
+
+    static func saveTransactions(_ transactions: [Transaction], with account: Account) {
+        let oldTransactions = account.transactions
+
+        write(realm: realm) {
+            realm.delete(oldTransactions)
+            realm.add(transactions)
         }
     }
 }

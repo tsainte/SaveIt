@@ -22,11 +22,11 @@ class BankDataModel {
 
 class BanksViewModel: NSObject {
 
-    let dataModels = [BankDataModel(bank: BankList.monzo, status: false),
-                      BankDataModel(bank: BankList.starling, status: false),
-                      BankDataModel(bank: BankList.revolut, status: false),
-                      BankDataModel(bank: BankList.hsbc, status: false),
-                      BankDataModel(bank: BankList.lloyds, status: false)]
+    let dataModels = [BankDataModel(bank: .monzo, status: false),
+                      BankDataModel(bank: .starling, status: false),
+                      BankDataModel(bank: .revolut, status: false),
+                      BankDataModel(bank: .hsbc, status: false),
+                      BankDataModel(bank: .lloyds, status: false)]
 
     let businessLogic = BanksBusinessLogic()
 

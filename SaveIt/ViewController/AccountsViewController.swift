@@ -12,53 +12,60 @@ class AccountsViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     var viewModel: AccountsViewModel!
-    
-    lazy var refreshControl: UIRefreshControl = {
-        let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action:
-            #selector(handleRefresh(_:)),
-                                 for: UIControlEvents.valueChanged)
-        refreshControl.tintColor = .red
-
-        return refreshControl
-    }()
+    var refreshControl: UIRefreshControl?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         viewModel = AccountsViewModel(delegate: self)
+        configureTableView()
+    }
 
+    // MARK: - Navigation
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        if segue.identifier == "TransactionsViewController" {
+            guard
+                let transactionsVC = segue.destination as? TransactionsViewController,
+                let indexPath = tableView.indexPathForSelectedRow else { return }
+
+            transactionsVC.viewModel = viewModel.transactionsViewModel(row: indexPath.row)
+            transactionsVC.viewModel.delegate = transactionsVC
+        }
+    }
+}
+
+// MARK: Setup controls
+extension AccountsViewController {
+    func configureTableView() {
         tableView.dataSource = self
         tableView.delegate = self
 
         tableView.register(UINib(nibName: "AccountTableViewCell", bundle: nil),
                            forCellReuseIdentifier: "AccountTableViewCell")
-        tableView.addSubview(refreshControl)
+        setupRefreshControl()
     }
-
-    @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
-        viewModel.refreshData()
-    }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
+// MARK: Refreshable protocol
+extension AccountsViewController: Refreshable {
+
+    @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
+        viewModel.reloadData()
+    }
+}
+
+// MARK: View model delegate
 extension AccountsViewController: AccountsViewModelDelegate {
 
     func refreshUI() {
         tableView.reloadData()
-        refreshControl.endRefreshing()
+        refreshControl?.endRefreshing()
     }
 }
 
+// MARK: Table view data source
 extension AccountsViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -81,6 +88,10 @@ extension AccountsViewController: UITableViewDataSource {
     }
 }
 
+// MARK: Table view delegate
 extension AccountsViewController: UITableViewDelegate {
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "TransactionsViewController", sender: tableView)
+    }
 }

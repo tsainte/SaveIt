@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Segues with Peek and Pop" minToolsVersion="7.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -100,7 +101,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Fzt-KL-3Tu">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AccountTableViewCell" id="Fzt-KL-3Tu">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fzt-KL-3Tu" id="mU1-Cs-G85">
@@ -108,7 +109,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Wxj-uZ-bgQ" kind="show" id="RmT-DQ-bHe"/>
+                                            <segue destination="Wxj-uZ-bgQ" kind="show" identifier="TransactionsViewController" id="uRR-E6-ugE">
+                                                <segue key="commit" inheritsFrom="parent" id="xch-Jq-iTC"/>
+                                                <segue key="preview" inheritsFrom="commit" id="zAJ-Ig-1G1"/>
+                                            </segue>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -126,7 +130,7 @@
                     <navigationItem key="navigationItem" title="Accounts" id="Vy7-D3-VaB">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="ax5-5a-k4o">
                             <connections>
-                                <segue destination="2fn-71-GIa" kind="show" id="deb-4O-2a6"/>
+                                <segue destination="2fn-71-GIa" kind="show" identifier="BanksViewController" id="deb-4O-2a6"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -247,13 +251,19 @@
                         <viewLayoutGuide key="safeArea" id="RVW-Kf-6rh"/>
                     </view>
                     <navigationItem key="navigationItem" title="Transactions" id="3iR-M3-TUY"/>
+                    <connections>
+                        <outlet property="tableView" destination="Hpo-fY-cVB" id="yAg-gF-s0z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rzv-Za-luH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2812" y="-385"/>
+            <point key="canvasLocation" x="2671" y="-385"/>
         </scene>
     </scenes>
     <resources>
         <image name="second" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="uRR-E6-ugE"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -19,6 +19,8 @@ class Account: Object {
 
     @objc dynamic var balance: Balance?
 
+    let transactions = LinkingObjects(fromType: Transaction.self, property: "account")
+
     convenience init(bank: Bank,
                      accountId: String,
                      name: String,
@@ -35,7 +37,7 @@ class Account: Object {
     }
 
     convenience init(monzoAccount: MonzoAccount) {
-        self.init(bank: BankList.monzo,
+        self.init(bank: .monzo,
                   accountId: monzoAccount.id,
                   name: monzoAccount.type,
                   sortCode: monzoAccount.sortCode,
@@ -43,7 +45,7 @@ class Account: Object {
     }
 
     convenience init(starlingAccount: StarlingAccount) {
-        self.init(bank: BankList.starling,
+        self.init(bank: .starling,
                   accountId: starlingAccount.id,
                   name: starlingAccount.name,
                   sortCode: starlingAccount.sortCode,

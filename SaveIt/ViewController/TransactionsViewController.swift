@@ -10,25 +10,58 @@ import UIKit
 
 class TransactionsViewController: UIViewController {
 
+    var viewModel: TransactionsViewModel!
+
+    @IBOutlet weak var tableView: UITableView!
+    var refreshControl: UIRefreshControl?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        configureTableView()
+        viewModel.reloadData()
+    }
+}
+
+// MARK: Configure views
+extension TransactionsViewController {
+    func configureTableView() {
+        tableView.dataSource = self
+        tableView.register(UINib(nibName: "TransactionTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "TransactionTableViewCell")
+        setupRefreshControl()
+    }
+}
+
+extension TransactionsViewController: Refreshable {
+
+    func handleRefresh(_ refreshControl: UIRefreshControl) {
+        viewModel.reloadData()
+    }
+}
+
+extension TransactionsViewController: TransactionsViewModelDelegate {
+    func refreshUI() {
+        tableView.reloadData()
+        refreshControl?.endRefreshing()
+    }
+}
+
+extension TransactionsViewController: UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.numberOfRows
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    /*
-    // MARK: - Navigation
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TransactionTableViewCell")
+                as? TransactionTableViewCell else { return UITableViewCell() }
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let row = indexPath.row
+        cell.nameLabel.text = viewModel.getName(for: row)
+        cell.amountLabel.text = viewModel.getAmount(for: row)
+        cell.dateLabel.text = viewModel.getDate(for: row)
+        return cell
     }
-    */
-
 }

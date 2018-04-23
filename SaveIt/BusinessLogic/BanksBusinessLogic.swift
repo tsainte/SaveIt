@@ -12,9 +12,9 @@ class BanksBusinessLogic: NSObject {
 
     func loginService(bank: String) {
         switch bank {
-        case BankList.monzo.name:
-            APIManager.shared.monzo.requestAuthenticationCode()
-        case BankList.starling.name:
+        case Bank.monzo.name:
+            APIManager.shared.monzoAPI.requestAuthenticationCode()
+        case Bank.starling.name:
             APIManager.shared.fetchStarlingToken()
         default:
             print("no service found for \(bank)")

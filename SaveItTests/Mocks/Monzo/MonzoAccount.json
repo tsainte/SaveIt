@@ -1,0 +1,20 @@
+{
+  "accounts": [
+    {
+      "id": "acc_1234",
+      "closed": true,
+      "created": "2016-11-09T04:11:22.155Z",
+      "description": "Ash Ketchum",
+      "type": "uk_prepaid"
+    },
+    {
+      "id": "acc_4321",
+      "closed": false,
+      "created": "2016-03-19T13:05:17.276Z",
+      "description": "Ash Ketchum",
+      "account_number": "12344321",
+      "sort_code": "102030",
+      "type": "uk_retail"
+    }
+  ]
+}

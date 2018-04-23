@@ -28,7 +28,7 @@ struct MonzoAccount: Decodable {
         case closed
         case type
         case owner = "description"
-        case accountNumber = "account_number"
-        case sortCode = "sort_code"
+        case accountNumber
+        case sortCode
     }
 }
