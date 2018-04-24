@@ -18,13 +18,18 @@ class MainViewController: UITabBarController {
     }
 
     func configureTabBarIcons() {
-        let size = tabBarItem.image?.size ?? CGSize(width: 40, height: 40)
+        let size = CGSize(width: 40, height: 40)
         let textColor: UIColor = .green
-        if let accountsVC = viewControllers?[0] {
-            accountsVC.tabBarItem.image = UIImage.fontAwesomeIcon(name: .money, textColor: textColor, size: size)
-        }
-        if let settingsVC = viewControllers?[1] as? SettingsViewController {
-            settingsVC.tabBarItem.image = UIImage.fontAwesomeIcon(name: .cog, textColor: textColor, size: size)
+        guard let viewControllers = viewControllers else { return }
+
+        for viewController in viewControllers {
+            if let accountsVC = childViewController(from: viewController) as? AccountsViewController {
+                accountsVC.tabBarItem.image = UIImage.fontAwesomeIcon(name: .money, textColor: textColor, size: size)
+                accountsVC.tabBarItem.title = "Accounts"
+            } else if let settingsVC = childViewController(from: viewController) as? SettingsViewController {
+                settingsVC.tabBarItem.image = UIImage.fontAwesomeIcon(name: .cog, textColor: textColor, size: size)
+                settingsVC.tabBarItem.title = "Settings"
+            }
         }
     }
 }

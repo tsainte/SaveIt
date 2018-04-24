@@ -13,7 +13,7 @@ class ConfigurationKeysTests: XCTestCase {
 
     var configurationKeys: ConfigurationKeys {
         let bundle = Bundle(for: type(of: self))
-        let path = bundle.url(forResource: "configuration", withExtension: "plist")!
+        let path = bundle.url(forResource: "configuration_example", withExtension: "plist")!
         return ConfigurationKeys(with: path)
     }
 
@@ -29,9 +29,9 @@ class ConfigurationKeysTests: XCTestCase {
 
     /// Asserts it can reads all the values properly
     func testReadValues() {
-        XCTAssertEqual(configurationKeys.monzoClientId, "monzo_client_id")
-        XCTAssertEqual(configurationKeys.monzoClientSecret, "monzo_client_secret")
-        XCTAssertEqual(configurationKeys.monzoRedirectLink, "monzo_redirect_link")
-        XCTAssertEqual(configurationKeys.starlingToken, "starling_token")
+        XCTAssertEqual(configurationKeys.monzoClientId, "your_client_id")
+        XCTAssertEqual(configurationKeys.monzoClientSecret, "your_client_secret")
+        XCTAssertEqual(configurationKeys.monzoRedirectLink, "your_redirect_link")
+        XCTAssertEqual(configurationKeys.starlingToken, "your_token")
     }
 }

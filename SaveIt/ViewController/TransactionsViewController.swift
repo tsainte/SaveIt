@@ -62,6 +62,7 @@ extension TransactionsViewController: UITableViewDataSource {
         cell.nameLabel.text = viewModel.getName(for: row)
         cell.amountLabel.text = viewModel.getAmount(for: row)
         cell.dateLabel.text = viewModel.getDate(for: row)
+        cell.amountLabel.textColor = viewModel.getAmountColor(for: row)
         return cell
     }
 }

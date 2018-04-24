@@ -62,12 +62,7 @@ extension AccountsViewModel {
 
     func getAccountName(row: Int) -> String {
         let account = accounts[row]
-        let officialName = account.name
-        var name: String?
-        if let sortCode = account.sortCode, let number = account.accountNumber {
-            name = "SC: \(sortCode), AN: \(number)"
-        }
-        return name ?? officialName
+        return account.bank?.name ?? ""
     }
 
     func getLastUpdate(row: Int) -> String {
@@ -78,6 +73,23 @@ extension AccountsViewModel {
         //TODO: create extension to convert balance properly
         guard let amount = accounts[row].balance?.amount else { return "---" }
         return String(format: "£ %.02f", amount)
+    }
+
+    func getSortCode(row: Int) -> String {
+        let noSortCode = "---"
+        guard let sortCode = accounts[row].sortCode, sortCode.count == 6 else { return noSortCode }
+        var formattedSortCode = ""
+        for (index, char) in sortCode.enumerated() {
+            formattedSortCode += String(char)
+            if index < 5 && index % 2 == 1 {
+                formattedSortCode += "-"
+            }
+        }
+        return formattedSortCode
+    }
+
+    func getAccountNumber(row: Int) -> String {
+        return accounts[row].accountNumber ?? "---"
     }
 }
 
