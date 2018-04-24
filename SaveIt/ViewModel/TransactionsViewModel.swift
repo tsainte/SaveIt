@@ -53,16 +53,24 @@ extension TransactionsViewModel {
 
 // Cell bindings
 extension TransactionsViewModel {
-
     func getName(for row: Int) -> String {
         return transactions?[row].name ?? "---"
     }
 
     func getAmount(for row: Int) -> String {
-        return String(format: "%.2f", transactions?[row].amount ?? 0)
+        guard let transaction = transactions?[row] else { return "£ 0.00" }
+        let absAmount = abs(transaction.amount)
+        let sign = transaction.amount > 0 ? "+" : ""
+        let currency = transaction.currency == "GBP" ? "£" : transaction.currency //TODO: do it properly
+        return String(format: "%@ %@ %.2f", sign, currency, absAmount)
     }
 
     func getDate(for row: Int) -> String {
         return transactions?[row].created.toString(style: .short) ?? "---"
+    }
+
+    func getAmountColor(for row: Int) -> UIColor {
+        guard let amount = transactions?[row].amount else { return .darkGray }
+        return amount > 0 ? UIColor.FlatColor.Green.Fern : .darkGray
     }
 }

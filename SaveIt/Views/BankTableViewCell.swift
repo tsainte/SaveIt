@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol BankTableViewCellDelegate {
+protocol BankTableViewCellDelegate: AnyObject {
     func statusSwitchDidChange(cell: BankTableViewCell, to: Bool)
 }
 
@@ -18,8 +18,8 @@ class BankTableViewCell: UITableViewCell {
     @IBOutlet weak var bankName: UILabel!
     @IBOutlet weak var status: UISwitch!
 
-    var delegate: BankTableViewCellDelegate?
-    
+    weak var delegate: BankTableViewCellDelegate?
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

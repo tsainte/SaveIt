@@ -25,5 +25,3 @@ class Bank: Object {
     }
 
 }
-
-

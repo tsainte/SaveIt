@@ -17,7 +17,7 @@ class APIManager: NSObject {
     let starlingAPI = StarlingAPI(with: DatabaseManager.getToken(for: Bank.starling.name))
     let revolutAPI = RevolutAPI(with: DatabaseManager.getToken(for: Bank.revolut.name))
 
-    func bankApi(from bank: Bank) -> BankAPI? { 
+    func bankApi(from bank: Bank) -> BankAPI? {
         switch bank.name {
         case Bank.monzo.name:
             return monzoAPI

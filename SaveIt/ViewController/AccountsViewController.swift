@@ -45,6 +45,7 @@ extension AccountsViewController {
         tableView.register(UINib(nibName: "AccountTableViewCell", bundle: nil),
                            forCellReuseIdentifier: "AccountTableViewCell")
         setupRefreshControl()
+        tableView.removeEmptyCells()
     }
 }
 
@@ -83,6 +84,8 @@ extension AccountsViewController: UITableViewDataSource {
         cell.accountName.text = viewModel.getAccountName(row: row)
         cell.amount.text = viewModel.getAmount(row: row)
         cell.logo.image = UIImage(named: viewModel.getLogo(row: row))
+        cell.sortCodeValue.text = viewModel.getSortCode(row: row)
+        cell.accountNumberValue.text = viewModel.getAccountNumber(row: row)
         cell.lastUpdate.text = viewModel.getLastUpdate(row: row)
         return cell
     }

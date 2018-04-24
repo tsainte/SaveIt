@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
         print("Realm: \(DatabaseManager.filePath!)")
-        
+
         watchManager = WatchManager()
         watchManager?.setupWatchConnectivity()
 

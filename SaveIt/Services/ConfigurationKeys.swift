@@ -19,7 +19,7 @@ class ConfigurationKeys {
         let path = Bundle.main.url(forResource: "configuration", withExtension: "plist")!
         self.init(with: path)
     }
-    
+
     public init(with path: URL) {
         self.path = path
         self.entries = NSDictionary(contentsOf: path) as? [String: [String: String]] ?? [:]

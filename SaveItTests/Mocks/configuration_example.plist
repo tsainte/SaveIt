@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>monzo</key>
+	<dict>
+		<key>client_id</key>
+		<string>your_client_id</string>
+		<key>client_secret</key>
+		<string>your_client_secret</string>
+		<key>redirect_link</key>
+		<string>your_redirect_link</string>
+	</dict>
+	<key>starling</key>
+	<dict>
+		<key>token</key>
+		<string>your_token</string>
+	</dict>
+</dict>
+</plist>

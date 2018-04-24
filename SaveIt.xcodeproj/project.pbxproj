@@ -20,8 +20,6 @@
 		F10476D6204035C400EEAEC1 /* Watchit.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = F10476B9204035C300EEAEC1 /* Watchit.app */; };
 		F10B6B4E20693A9C00CE7710 /* configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = F10B6B4D20693A9C00CE7710 /* configuration.plist */; };
 		F10B6B50206A5AF800CE7710 /* ConfigurationKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10B6B4F206A5AF800CE7710 /* ConfigurationKeys.swift */; };
-		F10B6B54206A5D8800CE7710 /* ConfigurationKeysTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10B6B53206A5D8800CE7710 /* ConfigurationKeysTests.swift */; };
-		F10B6B57206A661C00CE7710 /* configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = F10B6B56206A661C00CE7710 /* configuration.plist */; };
 		F11658DA2045A9A700BBB746 /* BalanceRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11658D92045A9A700BBB746 /* BalanceRowController.swift */; };
 		F11658DF2045C48D00BBB746 /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11658DE2045C48D00BBB746 /* Balance.swift */; };
 		F11658E12045CBBA00BBB746 /* AccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11658E02045CBBA00BBB746 /* AccountsViewController.swift */; };
@@ -65,8 +63,6 @@
 		F1F78F5E20865F9700224C69 /* MonzoParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F78F5D20865F9700224C69 /* MonzoParser.swift */; };
 		F1F78F6020865FA000224C69 /* StarlingParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F78F5F20865FA000224C69 /* StarlingParser.swift */; };
 		F1F78F62208661E600224C69 /* RevolutParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F78F61208661E600224C69 /* RevolutParser.swift */; };
-		F1F78F652087203400224C69 /* MonzoParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F78F642087203400224C69 /* MonzoParserTests.swift */; };
-		F1F78F6720873C0700224C69 /* StarlingParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F78F6620873C0700224C69 /* StarlingParserTests.swift */; };
 		F1F78FAD20876C3200224C69 /* ViewModelConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F78FAC20876C3200224C69 /* ViewModelConnector.swift */; };
 		F1F78FB120876FB100224C69 /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F78FAF20876FB100224C69 /* TransactionTableViewCell.swift */; };
 		F1F78FB220876FB100224C69 /* TransactionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1F78FB020876FB100224C69 /* TransactionTableViewCell.xib */; };
@@ -77,6 +73,13 @@
 		F1F78FC2208DF6BD00224C69 /* MonzoTransactions.json in Resources */ = {isa = PBXBuildFile; fileRef = F1F78FBF208DF6BD00224C69 /* MonzoTransactions.json */; };
 		F1F78FC3208DF6BD00224C69 /* MonzoAccount.json in Resources */ = {isa = PBXBuildFile; fileRef = F1F78FC0208DF6BD00224C69 /* MonzoAccount.json */; };
 		F1F78FC4208DF6BD00224C69 /* MonzoBalance.json in Resources */ = {isa = PBXBuildFile; fileRef = F1F78FC1208DF6BD00224C69 /* MonzoBalance.json */; };
+		F1F78FC9208F359F00224C69 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F78FC8208F359F00224C69 /* UIViewController+Extensions.swift */; };
+		F1F78FCB208F36E000224C69 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F78FCA208F36E000224C69 /* UITableView+Extensions.swift */; };
+		F1F78FD3208F436F00224C69 /* ConfigurationKeysTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F78FD2208F436F00224C69 /* ConfigurationKeysTests.swift */; };
+		F1F78FD7208F438D00224C69 /* StarlingParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F78FD5208F438D00224C69 /* StarlingParserTests.swift */; };
+		F1F78FD8208F438D00224C69 /* MonzoParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F78FD6208F438D00224C69 /* MonzoParserTests.swift */; };
+		F1F78FDA208F43ED00224C69 /* configuration_example.plist in Resources */ = {isa = PBXBuildFile; fileRef = F1F78FD9208F43ED00224C69 /* configuration_example.plist */; };
+		F1F78FDC208F6F5100224C69 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F78FDB208F6F5100224C69 /* UIColor+Extensions.swift */; };
 		F1FEF41420502D8300A40E93 /* StarlingAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FEF41320502D8300A40E93 /* StarlingAccount.swift */; };
 		F1FEF41620502E8E00A40E93 /* StarlingBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FEF41520502E8E00A40E93 /* StarlingBalance.swift */; };
 /* End PBXBuildFile section */
@@ -150,8 +153,6 @@
 		F10476D3204035C400EEAEC1 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		F10B6B4D20693A9C00CE7710 /* configuration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = configuration.plist; sourceTree = SOURCE_ROOT; };
 		F10B6B4F206A5AF800CE7710 /* ConfigurationKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationKeys.swift; sourceTree = "<group>"; };
-		F10B6B53206A5D8800CE7710 /* ConfigurationKeysTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationKeysTests.swift; sourceTree = "<group>"; };
-		F10B6B56206A661C00CE7710 /* configuration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = configuration.plist; sourceTree = "<group>"; };
 		F11658D92045A9A700BBB746 /* BalanceRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceRowController.swift; sourceTree = "<group>"; };
 		F11658DE2045C48D00BBB746 /* Balance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balance.swift; sourceTree = "<group>"; };
 		F11658E02045CBBA00BBB746 /* AccountsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsViewController.swift; sourceTree = "<group>"; };
@@ -199,8 +200,6 @@
 		F1F78F5D20865F9700224C69 /* MonzoParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonzoParser.swift; sourceTree = "<group>"; };
 		F1F78F5F20865FA000224C69 /* StarlingParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarlingParser.swift; sourceTree = "<group>"; };
 		F1F78F61208661E600224C69 /* RevolutParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevolutParser.swift; sourceTree = "<group>"; };
-		F1F78F642087203400224C69 /* MonzoParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonzoParserTests.swift; sourceTree = "<group>"; };
-		F1F78F6620873C0700224C69 /* StarlingParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarlingParserTests.swift; sourceTree = "<group>"; };
 		F1F78FAC20876C3200224C69 /* ViewModelConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelConnector.swift; sourceTree = "<group>"; };
 		F1F78FAF20876FB100224C69 /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
 		F1F78FB020876FB100224C69 /* TransactionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionTableViewCell.xib; sourceTree = "<group>"; };
@@ -211,6 +210,13 @@
 		F1F78FBF208DF6BD00224C69 /* MonzoTransactions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MonzoTransactions.json; sourceTree = "<group>"; };
 		F1F78FC0208DF6BD00224C69 /* MonzoAccount.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MonzoAccount.json; sourceTree = "<group>"; };
 		F1F78FC1208DF6BD00224C69 /* MonzoBalance.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MonzoBalance.json; sourceTree = "<group>"; };
+		F1F78FC8208F359F00224C69 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		F1F78FCA208F36E000224C69 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		F1F78FD2208F436F00224C69 /* ConfigurationKeysTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationKeysTests.swift; sourceTree = "<group>"; };
+		F1F78FD5208F438D00224C69 /* StarlingParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarlingParserTests.swift; sourceTree = "<group>"; };
+		F1F78FD6208F438D00224C69 /* MonzoParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonzoParserTests.swift; sourceTree = "<group>"; };
+		F1F78FD9208F43ED00224C69 /* configuration_example.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = configuration_example.plist; sourceTree = "<group>"; };
+		F1F78FDB208F6F5100224C69 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		F1FEF41320502D8300A40E93 /* StarlingAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarlingAccount.swift; sourceTree = "<group>"; };
 		F1FEF41520502E8E00A40E93 /* StarlingBalance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarlingBalance.swift; sourceTree = "<group>"; };
 		FB732D498CEA60874EF4CBD7 /* Pods-SaveIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaveIt.release.xcconfig"; path = "Pods/Target Support Files/Pods-SaveIt/Pods-SaveIt.release.xcconfig"; sourceTree = "<group>"; };
@@ -292,16 +298,6 @@
 				F11658D92045A9A700BBB746 /* BalanceRowController.swift */,
 			);
 			path = "Watchit Extension";
-			sourceTree = "<group>";
-		};
-		F10B6B55206A5DCA00CE7710 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				F1F78F632087201A00224C69 /* Parser */,
-				F10B6B53206A5D8800CE7710 /* ConfigurationKeysTests.swift */,
-			);
-			name = Services;
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 		F11658DB2045C45800BBB746 /* Monzo */ = {
@@ -403,6 +399,7 @@
 		F1E700252029C2E600140153 /* SaveIt */ = {
 			isa = PBXGroup;
 			children = (
+				F1F78FC7208F358000224C69 /* Extensions */,
 				F1F78FB3208B2EC600224C69 /* Protocols */,
 				F1462CB02035D63D00D39AAB /* Model */,
 				F1E700582029C55D00140153 /* BusinessLogic */,
@@ -423,8 +420,8 @@
 		F1E7003C2029C2E600140153 /* SaveItTests */ = {
 			isa = PBXGroup;
 			children = (
+				F1F78FCF208F433F00224C69 /* Services */,
 				F1F78FB6208DCD8900224C69 /* Mocks */,
-				F10B6B55206A5DCA00CE7710 /* Services */,
 				F1E7003D2029C2E600140153 /* SaveItTests.swift */,
 				F1E7003F2029C2E600140153 /* Info.plist */,
 			);
@@ -506,15 +503,6 @@
 			path = Parser;
 			sourceTree = "<group>";
 		};
-		F1F78F632087201A00224C69 /* Parser */ = {
-			isa = PBXGroup;
-			children = (
-				F1F78F642087203400224C69 /* MonzoParserTests.swift */,
-				F1F78F6620873C0700224C69 /* StarlingParserTests.swift */,
-			);
-			path = Parser;
-			sourceTree = "<group>";
-		};
 		F1F78FAE20876F9500224C69 /* CustomCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -537,9 +525,9 @@
 		F1F78FB6208DCD8900224C69 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				F1F78FD9208F43ED00224C69 /* configuration_example.plist */,
 				F1F78FB8208DCE0600224C69 /* Monzo */,
 				F1F78FB7208DCE0100224C69 /* Starling */,
-				F10B6B56206A661C00CE7710 /* configuration.plist */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -562,6 +550,34 @@
 				F1F78FBF208DF6BD00224C69 /* MonzoTransactions.json */,
 			);
 			path = Monzo;
+			sourceTree = "<group>";
+		};
+		F1F78FC7208F358000224C69 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F1F78FC8208F359F00224C69 /* UIViewController+Extensions.swift */,
+				F1F78FCA208F36E000224C69 /* UITableView+Extensions.swift */,
+				F1F78FDB208F6F5100224C69 /* UIColor+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F1F78FCF208F433F00224C69 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F1F78FD4208F437A00224C69 /* Parser */,
+				F1F78FD2208F436F00224C69 /* ConfigurationKeysTests.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		F1F78FD4208F437A00224C69 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				F1F78FD6208F438D00224C69 /* MonzoParserTests.swift */,
+				F1F78FD5208F438D00224C69 /* StarlingParserTests.swift */,
+			);
+			path = Parser;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -732,9 +748,9 @@
 				F1F78FC3208DF6BD00224C69 /* MonzoAccount.json in Resources */,
 				F1F78FC4208DF6BD00224C69 /* MonzoBalance.json in Resources */,
 				F1F78FBD208DF61000224C69 /* StarlingAccount.json in Resources */,
+				F1F78FDA208F43ED00224C69 /* configuration_example.plist in Resources */,
 				F1F78FBC208DF61000224C69 /* StarlingTransactions.json in Resources */,
 				F1F78FBE208DF61000224C69 /* StarlingBalance.json in Resources */,
-				F10B6B57206A661C00CE7710 /* configuration.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -788,6 +804,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-SaveIt/Pods-SaveIt-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFDateHelper/AFDateHelper.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/FontAwesome.swift/FontAwesome_swift.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
@@ -795,6 +812,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFDateHelper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FontAwesome_swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
@@ -854,6 +872,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1F78FCB208F36E000224C69 /* UITableView+Extensions.swift in Sources */,
 				F1462CB6203B407F00D39AAB /* MonzoAccount.swift in Sources */,
 				F10476B620402D7700EEAEC1 /* MonzoBalance.swift in Sources */,
 				F1A26A772046CB5A002972A3 /* AccountsBusinessLogic.swift in Sources */,
@@ -874,6 +893,7 @@
 				F11658E72045CECA00BBB746 /* DatabaseManager.swift in Sources */,
 				F1E700572029C54900140153 /* StarlingAPI.swift in Sources */,
 				F1E700552029C53B00140153 /* MonzoAPI.swift in Sources */,
+				F1F78FDC208F6F5100224C69 /* UIColor+Extensions.swift in Sources */,
 				F10476B4203F33A900EEAEC1 /* DateHandler.swift in Sources */,
 				F11658E52045CC0B00BBB746 /* Account.swift in Sources */,
 				F1F78FB120876FB100224C69 /* TransactionTableViewCell.swift in Sources */,
@@ -882,6 +902,7 @@
 				F1462CB22035D6D400D39AAB /* MonzoToken.swift in Sources */,
 				F11658DF2045C48D00BBB746 /* Balance.swift in Sources */,
 				F1F78F5820864AA300224C69 /* Transaction.swift in Sources */,
+				F1F78FC9208F359F00224C69 /* UIViewController+Extensions.swift in Sources */,
 				F1A26A8D204DA9A7002972A3 /* BanksBusinessLogic.swift in Sources */,
 				F1F78F62208661E600224C69 /* RevolutParser.swift in Sources */,
 				F1A26A7C2046F693002972A3 /* RevolutAPI.swift in Sources */,
@@ -904,10 +925,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1F78F6720873C0700224C69 /* StarlingParserTests.swift in Sources */,
-				F10B6B54206A5D8800CE7710 /* ConfigurationKeysTests.swift in Sources */,
+				F1F78FD8208F438D00224C69 /* MonzoParserTests.swift in Sources */,
+				F1F78FD3208F436F00224C69 /* ConfigurationKeysTests.swift in Sources */,
 				F1E7003E2029C2E600140153 /* SaveItTests.swift in Sources */,
-				F1F78F652087203400224C69 /* MonzoParserTests.swift in Sources */,
+				F1F78FD7208F438D00224C69 /* StarlingParserTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
