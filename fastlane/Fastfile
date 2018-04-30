@@ -58,6 +58,16 @@ platform :ios do
     )
   end
 
+  desc "Release the app"
+  lane :release do
+    increment_build_number
+  # match(type: "appstore")
+  # snapshot
+  # gym(scheme: "SaveIt")
+  # deliver(force: true)
+  # frameit
+  end
+
   desc "Runs some metrics for ensure code quality"
   lane :metrics do
     puts("So your code is good enough? Let me run some metrics...")
