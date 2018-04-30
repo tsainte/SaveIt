@@ -3,7 +3,7 @@ SaveIt is a quick alternative to have a look into your balances from the major b
 
 |||
 |:-:|:-:|
-| ![Watch app](static/watchOS.jpg) | ![iPhone app](static/iOS.png) |
+| ![Watch app](static/watchOS.jpg) | ![iPhone app](static/iOS.PNG) |
 
 🚀*At this moment the project is just an experiment and it is working, with ___limitations___, with Monzo and Starling developer accounts only. I do have plans to integrate with Revolut, Lloyds and HSBC if possible in the near future.*
 
