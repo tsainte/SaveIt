@@ -1,13 +1,13 @@
 PODS:
   - AFDateHelper (4.2.7)
-  - Alamofire (4.7.1)
+  - Alamofire (4.7.2)
   - FontAwesome.swift (1.3.2)
-  - Realm (3.3.2):
-    - Realm/Headers (= 3.3.2)
-  - Realm/Headers (3.3.2)
-  - RealmSwift (3.3.2):
-    - Realm (= 3.3.2)
-  - SwiftLint (0.25.0)
+  - Realm (3.5.0):
+    - Realm/Headers (= 3.5.0)
+  - Realm/Headers (3.5.0)
+  - RealmSwift (3.5.0):
+    - Realm (= 3.5.0)
+  - SwiftLint (0.25.1)
 
 DEPENDENCIES:
   - AFDateHelper (~> 4.2.2)
@@ -27,11 +27,11 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFDateHelper: 4ad66fb19503041fbba8a3018cb7ef9c71b2ff88
-  Alamofire: 68d7d521118d49c615a8d2214d87cdf525599d30
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   FontAwesome.swift: b4e4c8ccbbecb12f9b592bc533ff237af3706667
-  Realm: d927fbf66df5532cfafc08afb5f7e53ded37b894
-  RealmSwift: 4e903a494e05d866581d69ad6f7e7b879d446baf
-  SwiftLint: e14651157288e9e01d6e1a71db7014fb5744a8ea
+  Realm: 0378021c424e4e2bd6a0e63b27881e929d9b9ad1
+  RealmSwift: 3322562622fda2ad596985ead4d8d8be30cf838c
+  SwiftLint: ce933681be10c3266e82576dad676fa815a602e9
 
 PODFILE CHECKSUM: d62dc8539a18f59cccbf4a6ea78dc2da46fe7b4e
 

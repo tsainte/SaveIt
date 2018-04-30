@@ -41,6 +41,11 @@ Run unit tests
 fastlane ios beta
 ```
 Deploy to Beta platform
+### ios release
+```
+fastlane ios release
+```
+Release the app
 ### ios metrics
 ```
 fastlane ios metrics
