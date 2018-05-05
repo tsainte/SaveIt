@@ -10,19 +10,14 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView! {
+        didSet {
+            tableView.dataSource = self
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureTableView()
-    }
-}
-
-// MARK: Configure views
-extension SettingsViewController {
-
-    func configureTableView() {
-        tableView.dataSource = self
     }
 }
 

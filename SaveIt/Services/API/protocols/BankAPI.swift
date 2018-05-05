@@ -18,6 +18,7 @@ enum BankError: Error {
     case error(localizedDescription: String) // generic
 }
 
+// This protocol is implemented for being used with the 'Strategy' design pattern
 protocol BankAPI {
     var token: Token? { get set }
     var parser: BankParser { get set }

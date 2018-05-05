@@ -29,6 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ app: UIApplication,
                      open url: URL,
                      options: [UIApplicationOpenURLOptionsKey: Any] = [:]) -> Bool {
+        EmbedSafariManager.shared.dismiss()
         APIManager.shared.fetchMonzoToken(from: url)
         return true
     }

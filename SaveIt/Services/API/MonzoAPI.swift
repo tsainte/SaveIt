@@ -34,27 +34,34 @@ class MonzoAPI: NSObject {
  2. Monzo redirects the user back to your app with an authorization code
  3. Exchange the authorization code for an access token
 */
-extension MonzoAPI {
+extension MonzoAPI: OAuth {
 
-    //1. Redirect user to monzo website
+    // 1. Redirect user to Monzo website
     func requestAuthenticationCode() {
-        if let url = URL(string: "https://auth.monzo.com/?client_id=\(MonzoAPI.clientId)&redirect_uri=\(MonzoAPI.redirectURI)&response_type=code&state=") {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        if let url = URL(string: "https://auth.monzo.com/?client_id=\(MonzoAPI.clientId)&" +
+            "redirect_uri=\(MonzoAPI.redirectURI)&response_type=code&state=") {
+            UIApplication.shared.openEmbed(url: url)
         }
     }
 
-    //2 and 3. Callback method, from AppDelegate, to exchange the authorization for an access token
-    func getAuhenticationToken(from authURL: URL, completeHandler: @escaping (MonzoToken?) -> Void) {
+    // 2. Callback method, from AppDelegate, as response from Monzo email
+    func extractAuthenticationToken(from authURL: URL,
+                                   completeHandler: @escaping (Token?) -> Void) {
         guard let authUrl = URLComponents(url: authURL, resolvingAgainstBaseURL: true),
             let code = authUrl.queryItems?.first(where: { $0.name == "code" })?.value else {
                 return
         }
+        requestAccessToken(for: code, completeHandler: completeHandler)
+    }
 
+    // 3. Exchange the authorization for an access token
+    internal func requestAccessToken(for authenticationToken: String,
+                                     completeHandler: @escaping (Token?) -> Void) {
         let parameters: Parameters = ["grant_type": "authorization_code",
                                       "client_id": MonzoAPI.clientId,
                                       "client_secret": MonzoAPI.clientSecret,
                                       "redirect_uri": MonzoAPI.redirectURI,
-                                      "code": code]
+                                      "code": authenticationToken]
 
         let url = MonzoAPI.baseURL + "oauth2/token"
 
@@ -66,8 +73,9 @@ extension MonzoAPI {
             }
 
             do {
-                let token = try decoder.decode(MonzoToken.self, from: data)
-                print("monzo token: \(token.accessToken)")
+                let monzoToken = try decoder.decode(MonzoToken.self, from: data)
+                print("monzo token: \(monzoToken.accessToken)")
+                let token = Token(monzoToken: monzoToken)
                 completeHandler(token)
             } catch {
                 self.printError(error: error, data: data)

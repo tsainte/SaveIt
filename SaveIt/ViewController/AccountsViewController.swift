@@ -10,7 +10,13 @@ import UIKit
 
 class AccountsViewController: UIViewController {
 
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView! {
+        didSet {
+            tableView.dataSource = self
+            tableView.delegate = self
+        }
+    }
+
     var viewModel: AccountsViewModel!
     var refreshControl: UIRefreshControl?
 
@@ -20,9 +26,10 @@ class AccountsViewController: UIViewController {
         viewModel = AccountsViewModel(delegate: self)
         configureTableView()
     }
+}
 
-    // MARK: - Navigation
-
+// MARK: - Navigation
+extension AccountsViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
         if segue.identifier == "TransactionsViewController" {
@@ -35,13 +42,9 @@ class AccountsViewController: UIViewController {
         }
     }
 }
-
-// MARK: Setup controls
+// MARK: - Setup controls
 extension AccountsViewController {
     func configureTableView() {
-        tableView.dataSource = self
-        tableView.delegate = self
-
         tableView.register(UINib(nibName: "AccountTableViewCell", bundle: nil),
                            forCellReuseIdentifier: "AccountTableViewCell")
         setupRefreshControl()

@@ -10,18 +10,18 @@ import UIKit
 
 class BanksViewController: UIViewController {
 
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView! {
+        didSet {
+            tableView.dataSource = self
+        }
+    }
+
     let viewModel = BanksViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         title = "Banks"
-        configureTableView()
-    }
-
-    func configureTableView() {
-        tableView.dataSource = self
         tableView.removeEmptyCells()
     }
 }

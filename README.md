@@ -1,12 +1,11 @@
 # Welcome to SaveIt 👋💸
-SaveIt is a quick alternative to have a look into your balances from the major banks in the UK on your iPhone and/or your Apple Watch. This has been done by using [Open Banking APIs](https://www.openbanking.org.uk/).
+SaveIt is a quick alternative to have a look into your balances from the major banks in the UK on your iPhone and/or your Apple Watch. This has been done by using [Open Banking APIs](https://www.openbanking.org.uk/), [Monzo APIs](https://developers.monzo.com/) and [Starling APIs](https://developer.starlingbank.com/).
 
 |||
 |:-:|:-:|
 | ![Watch app](static/watchOS.jpg) | ![iPhone app](static/iOS.PNG) |
 
 🚀*At this moment the project is just an experiment and it is working, with ___limitations___, with Monzo and Starling developer accounts only. I do have plans to integrate with Revolut, Lloyds and HSBC if possible in the near future.*
-
 
 ## Purpose 🤓
 

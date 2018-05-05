@@ -31,6 +31,7 @@ struct MonzoToken: Decodable, TokenProtocol {
 
 extension MonzoToken: CustomStringConvertible {
     var description: String {
-        return "accessToken: \(accessToken), clientId: \(clientId), expiresIn: \(expiresIn), refreshToken: \(refreshToken ?? ""), tokenType: \(tokenType), userId: \(userId)"
+        return "accessToken: \(accessToken), clientId: \(clientId), expiresIn: \(expiresIn), " +
+        "refreshToken: \(refreshToken ?? ""), tokenType: \(tokenType), userId: \(userId)"
     }
 }

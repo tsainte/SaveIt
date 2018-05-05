@@ -31,6 +31,9 @@
 		F1462CB42035DD3D00D39AAB /* MonzoError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1462CB32035DD3D00D39AAB /* MonzoError.swift */; };
 		F1462CB6203B407F00D39AAB /* MonzoAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1462CB5203B407F00D39AAB /* MonzoAccount.swift */; };
 		F152397F204EA524004A2DFB /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F152397E204EA524004A2DFB /* APIManager.swift */; };
+		F18E2BFD209DF0A70054EF2E /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18E2BFC209DF0A70054EF2E /* UIApplication+Extensions.swift */; };
+		F18E2BFF209DF74D0054EF2E /* OAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18E2BFE209DF74D0054EF2E /* OAuth.swift */; };
+		F18E2C03209DFCDE0054EF2E /* EmbedSafariManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18E2C02209DFCDE0054EF2E /* EmbedSafariManager.swift */; };
 		F1A26A772046CB5A002972A3 /* AccountsBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A26A762046CB5A002972A3 /* AccountsBusinessLogic.swift */; };
 		F1A26A792046CBA5002972A3 /* BankAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A26A782046CBA5002972A3 /* BankAPI.swift */; };
 		F1A26A7C2046F693002972A3 /* RevolutAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A26A7B2046F693002972A3 /* RevolutAPI.swift */; };
@@ -164,6 +167,9 @@
 		F1462CB32035DD3D00D39AAB /* MonzoError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonzoError.swift; sourceTree = "<group>"; };
 		F1462CB5203B407F00D39AAB /* MonzoAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonzoAccount.swift; sourceTree = "<group>"; };
 		F152397E204EA524004A2DFB /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		F18E2BFC209DF0A70054EF2E /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
+		F18E2BFE209DF74D0054EF2E /* OAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth.swift; sourceTree = "<group>"; };
+		F18E2C02209DFCDE0054EF2E /* EmbedSafariManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbedSafariManager.swift; sourceTree = "<group>"; };
 		F1A26A762046CB5A002972A3 /* AccountsBusinessLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsBusinessLogic.swift; sourceTree = "<group>"; };
 		F1A26A782046CBA5002972A3 /* BankAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAPI.swift; sourceTree = "<group>"; };
 		F1A26A7B2046F693002972A3 /* RevolutAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevolutAPI.swift; sourceTree = "<group>"; };
@@ -325,8 +331,11 @@
 		F11658DD2045C46B00BBB746 /* Meta */ = {
 			isa = PBXGroup;
 			children = (
-				F152397D204EA4D3004A2DFB /* managers */,
-				F152397C204EA4C0004A2DFB /* entities */,
+				F11658DE2045C48D00BBB746 /* Balance.swift */,
+				F11658E42045CC0B00BBB746 /* Account.swift */,
+				F1A26A8420484CC2002972A3 /* Bank.swift */,
+				F1A26A8220484C92002972A3 /* Token.swift */,
+				F1F78F5720864AA300224C69 /* Transaction.swift */,
 			);
 			path = Meta;
 			sourceTree = "<group>";
@@ -342,25 +351,23 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		F152397C204EA4C0004A2DFB /* entities */ = {
+		F18E2C00209DF75B0054EF2E /* protocols */ = {
 			isa = PBXGroup;
 			children = (
-				F11658DE2045C48D00BBB746 /* Balance.swift */,
-				F11658E42045CC0B00BBB746 /* Account.swift */,
-				F1A26A8420484CC2002972A3 /* Bank.swift */,
-				F1A26A8220484C92002972A3 /* Token.swift */,
-				F1F78F5720864AA300224C69 /* Transaction.swift */,
+				F1A26A782046CBA5002972A3 /* BankAPI.swift */,
+				F18E2BFE209DF74D0054EF2E /* OAuth.swift */,
 			);
-			path = entities;
+			path = protocols;
 			sourceTree = "<group>";
 		};
-		F152397D204EA4D3004A2DFB /* managers */ = {
+		F18E2C01209DFC5C0054EF2E /* Managers */ = {
 			isa = PBXGroup;
 			children = (
 				F11658E62045CECA00BBB746 /* DatabaseManager.swift */,
 				F13EFFD72084C6EB00921550 /* WatchManager.swift */,
+				F18E2C02209DFCDE0054EF2E /* EmbedSafariManager.swift */,
 			);
-			path = managers;
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		F1A26A7D20470C4B002972A3 /* Views */ = {
@@ -399,6 +406,7 @@
 		F1E700252029C2E600140153 /* SaveIt */ = {
 			isa = PBXGroup;
 			children = (
+				F18E2C01209DFC5C0054EF2E /* Managers */,
 				F1F78FC7208F358000224C69 /* Extensions */,
 				F1F78FB3208B2EC600224C69 /* Protocols */,
 				F1462CB02035D63D00D39AAB /* Model */,
@@ -483,8 +491,8 @@
 		F1F78F5920865E5A00224C69 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				F18E2C00209DF75B0054EF2E /* protocols */,
 				F152397E204EA524004A2DFB /* APIManager.swift */,
-				F1A26A782046CBA5002972A3 /* BankAPI.swift */,
 				F1E700542029C53B00140153 /* MonzoAPI.swift */,
 				F1A26A7B2046F693002972A3 /* RevolutAPI.swift */,
 				F1E700562029C54900140153 /* StarlingAPI.swift */,
@@ -558,6 +566,7 @@
 				F1F78FC8208F359F00224C69 /* UIViewController+Extensions.swift */,
 				F1F78FCA208F36E000224C69 /* UITableView+Extensions.swift */,
 				F1F78FDB208F6F5100224C69 /* UIColor+Extensions.swift */,
+				F18E2BFC209DF0A70054EF2E /* UIApplication+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -892,6 +901,7 @@
 				F11658E12045CBBA00BBB746 /* AccountsViewController.swift in Sources */,
 				F11658E72045CECA00BBB746 /* DatabaseManager.swift in Sources */,
 				F1E700572029C54900140153 /* StarlingAPI.swift in Sources */,
+				F18E2BFF209DF74D0054EF2E /* OAuth.swift in Sources */,
 				F1E700552029C53B00140153 /* MonzoAPI.swift in Sources */,
 				F1F78FDC208F6F5100224C69 /* UIColor+Extensions.swift in Sources */,
 				F10476B4203F33A900EEAEC1 /* DateHandler.swift in Sources */,
@@ -902,6 +912,8 @@
 				F1462CB22035D6D400D39AAB /* MonzoToken.swift in Sources */,
 				F11658DF2045C48D00BBB746 /* Balance.swift in Sources */,
 				F1F78F5820864AA300224C69 /* Transaction.swift in Sources */,
+				F18E2C03209DFCDE0054EF2E /* EmbedSafariManager.swift in Sources */,
+				F18E2BFD209DF0A70054EF2E /* UIApplication+Extensions.swift in Sources */,
 				F1F78FC9208F359F00224C69 /* UIViewController+Extensions.swift in Sources */,
 				F1A26A8D204DA9A7002972A3 /* BanksBusinessLogic.swift in Sources */,
 				F1F78F62208661E600224C69 /* RevolutParser.swift in Sources */,

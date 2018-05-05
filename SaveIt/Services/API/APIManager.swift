@@ -35,10 +35,9 @@ class APIManager: NSObject {
 extension APIManager {
 
     func fetchMonzoToken(from url: URL) {
-        monzoAPI.getAuhenticationToken(from: url) { [unowned self] monzoToken in
-            guard let monzoToken = monzoToken else { print("no token returned"); return }
+        monzoAPI.extractAuthenticationToken(from: url) { [unowned self] token in
+            guard let token = token else { print("no token returned"); return }
 
-            let token = Token(monzoToken: monzoToken)
             self.monzoAPI.token = token
             DatabaseManager.updateToken(token)
         }
