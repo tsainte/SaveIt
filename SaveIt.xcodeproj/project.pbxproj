@@ -32,8 +32,9 @@
 		F1462CB6203B407F00D39AAB /* MonzoAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1462CB5203B407F00D39AAB /* MonzoAccount.swift */; };
 		F152397F204EA524004A2DFB /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F152397E204EA524004A2DFB /* APIManager.swift */; };
 		F18E2BFD209DF0A70054EF2E /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18E2BFC209DF0A70054EF2E /* UIApplication+Extensions.swift */; };
-		F18E2BFF209DF74D0054EF2E /* OAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18E2BFE209DF74D0054EF2E /* OAuth.swift */; };
+		F18E2BFF209DF74D0054EF2E /* OAuth2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18E2BFE209DF74D0054EF2E /* OAuth2.swift */; };
 		F18E2C03209DFCDE0054EF2E /* EmbedSafariManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18E2C02209DFCDE0054EF2E /* EmbedSafariManager.swift */; };
+		F18E2C0520A033960054EF2E /* StarlingToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18E2C0420A033960054EF2E /* StarlingToken.swift */; };
 		F1A26A772046CB5A002972A3 /* AccountsBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A26A762046CB5A002972A3 /* AccountsBusinessLogic.swift */; };
 		F1A26A792046CBA5002972A3 /* BankAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A26A782046CBA5002972A3 /* BankAPI.swift */; };
 		F1A26A7C2046F693002972A3 /* RevolutAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A26A7B2046F693002972A3 /* RevolutAPI.swift */; };
@@ -168,8 +169,9 @@
 		F1462CB5203B407F00D39AAB /* MonzoAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonzoAccount.swift; sourceTree = "<group>"; };
 		F152397E204EA524004A2DFB /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		F18E2BFC209DF0A70054EF2E /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
-		F18E2BFE209DF74D0054EF2E /* OAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth.swift; sourceTree = "<group>"; };
+		F18E2BFE209DF74D0054EF2E /* OAuth2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2.swift; sourceTree = "<group>"; };
 		F18E2C02209DFCDE0054EF2E /* EmbedSafariManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbedSafariManager.swift; sourceTree = "<group>"; };
+		F18E2C0420A033960054EF2E /* StarlingToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarlingToken.swift; sourceTree = "<group>"; };
 		F1A26A762046CB5A002972A3 /* AccountsBusinessLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsBusinessLogic.swift; sourceTree = "<group>"; };
 		F1A26A782046CBA5002972A3 /* BankAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAPI.swift; sourceTree = "<group>"; };
 		F1A26A7B2046F693002972A3 /* RevolutAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevolutAPI.swift; sourceTree = "<group>"; };
@@ -322,6 +324,7 @@
 			isa = PBXGroup;
 			children = (
 				F1FEF41320502D8300A40E93 /* StarlingAccount.swift */,
+				F18E2C0420A033960054EF2E /* StarlingToken.swift */,
 				F1FEF41520502E8E00A40E93 /* StarlingBalance.swift */,
 				F1F78F532086491500224C69 /* StarlingTransaction.swift */,
 			);
@@ -355,7 +358,7 @@
 			isa = PBXGroup;
 			children = (
 				F1A26A782046CBA5002972A3 /* BankAPI.swift */,
-				F18E2BFE209DF74D0054EF2E /* OAuth.swift */,
+				F18E2BFE209DF74D0054EF2E /* OAuth2.swift */,
 			);
 			path = protocols;
 			sourceTree = "<group>";
@@ -894,6 +897,7 @@
 				F1462CB42035DD3D00D39AAB /* MonzoError.swift in Sources */,
 				F1E7005A2029C58000140153 /* TransactionsBusinessLogic.swift in Sources */,
 				F1A26A8720485B98002972A3 /* BankTableViewCell.swift in Sources */,
+				F18E2C0520A033960054EF2E /* StarlingToken.swift in Sources */,
 				F1F78F5620864A1400224C69 /* MonzoTransaction.swift in Sources */,
 				F1E700522029C51F00140153 /* TransactionsViewModel.swift in Sources */,
 				F1FEF41620502E8E00A40E93 /* StarlingBalance.swift in Sources */,
@@ -901,7 +905,7 @@
 				F11658E12045CBBA00BBB746 /* AccountsViewController.swift in Sources */,
 				F11658E72045CECA00BBB746 /* DatabaseManager.swift in Sources */,
 				F1E700572029C54900140153 /* StarlingAPI.swift in Sources */,
-				F18E2BFF209DF74D0054EF2E /* OAuth.swift in Sources */,
+				F18E2BFF209DF74D0054EF2E /* OAuth2.swift in Sources */,
 				F1E700552029C53B00140153 /* MonzoAPI.swift in Sources */,
 				F1F78FDC208F6F5100224C69 /* UIColor+Extensions.swift in Sources */,
 				F10476B4203F33A900EEAEC1 /* DateHandler.swift in Sources */,

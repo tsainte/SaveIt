@@ -15,6 +15,12 @@
 	<dict>
 		<key>token</key>
 		<string>your_token</string>
+		<key>client_id</key>
+		<string>your_client_id</string>
+		<key>client_secret</key>
+		<string>your_client_secret</string>
+		<key>redirect_link</key>
+		<string>your_redirect_link</string>
 	</dict>
 </dict>
 </plist>

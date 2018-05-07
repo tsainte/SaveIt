@@ -13,14 +13,15 @@ class MonzoAPI: NSObject {
 
     static let clientId = ConfigurationKeys.shared.monzoClientId
     static let clientSecret = ConfigurationKeys.shared.monzoClientSecret
-    static let redirectURI = ConfigurationKeys.shared.monzoRedirectLink
+    static let redirectURI = ConfigurationKeys.shared.monzoRedirectURI
 
-    static let baseURL = "https://api.monzo.com/"
+    static let baseURL = "https://api.monzo.com"
+    static let authBaseURL = "https://auth.monzo.com"
 
     var token: Token?
     var parser: BankParser
 
-    required init(with token: Token?) {
+    required init(at environment: BankEnvironment, token: Token?) {
         self.token = token
         self.parser = MonzoParser()
     }
@@ -34,19 +35,23 @@ class MonzoAPI: NSObject {
  2. Monzo redirects the user back to your app with an authorization code
  3. Exchange the authorization code for an access token
 */
-extension MonzoAPI: OAuth {
+extension MonzoAPI: OAuth2 {
 
     // 1. Redirect user to Monzo website
     func requestAuthenticationCode() {
-        if let url = URL(string: "https://auth.monzo.com/?client_id=\(MonzoAPI.clientId)&" +
-            "redirect_uri=\(MonzoAPI.redirectURI)&response_type=code&state=") {
+        if let url = URL(string: "\(MonzoAPI.authBaseURL)/?" +
+            "client_id=\(MonzoAPI.clientId)&" +
+            "redirect_uri=\(MonzoAPI.redirectURI)&" +
+            "response_type=code&" +
+            "state=") {
             UIApplication.shared.openEmbed(url: url)
         }
     }
 
     // 2. Callback method, from AppDelegate, as response from Monzo email
-    func extractAuthenticationToken(from authURL: URL,
-                                   completeHandler: @escaping (Token?) -> Void) {
+    func extractAuthenticationToken(
+        from authURL: URL,
+        completeHandler: @escaping (Token?) -> Void) {
         guard let authUrl = URLComponents(url: authURL, resolvingAgainstBaseURL: true),
             let code = authUrl.queryItems?.first(where: { $0.name == "code" })?.value else {
                 return
@@ -63,7 +68,7 @@ extension MonzoAPI: OAuth {
                                       "redirect_uri": MonzoAPI.redirectURI,
                                       "code": authenticationToken]
 
-        let url = MonzoAPI.baseURL + "oauth2/token"
+        let url = "\(MonzoAPI.baseURL)/oauth2/token"
 
         Alamofire.request(url, method: .post, parameters: parameters).response { response in
             let decoder = JSONDecoder()
@@ -92,7 +97,7 @@ extension MonzoAPI: OAuth {
                                       "client_secret": MonzoAPI.clientSecret,
                                       "refresh_token": expiredToken]
 
-        let url = MonzoAPI.baseURL + "oauth2/token"
+        let url = "\(MonzoAPI.baseURL)/oauth2/token"
 
         Alamofire.request(url, method: .post, parameters: parameters).response { response in
             let decoder = JSONDecoder()
@@ -131,7 +136,7 @@ extension MonzoAPI: BankAPI {
         guard let token = self.token?.accessToken else { failure(.noToken); return }
 
         let headers: HTTPHeaders = ["Authorization": "Bearer \(token)"]
-        let url = MonzoAPI.baseURL + "accounts"
+        let url = "\(MonzoAPI.baseURL)/accounts"
 
         Alamofire.request(url, headers: headers).response { response in
             guard let data = response.data else { failure(.noData); return }
@@ -151,7 +156,7 @@ extension MonzoAPI: BankAPI {
 
         let headers: HTTPHeaders = ["Authorization": "Bearer \(token)"]
         let parameters: Parameters = ["account_id": account.accountId]
-        let url = MonzoAPI.baseURL + "balance"
+        let url = "\(MonzoAPI.baseURL)/balance"
 
         Alamofire.request(url, parameters: parameters, headers: headers).response { response in
             guard let data = response.data else { failure(.noData); return }
@@ -171,7 +176,7 @@ extension MonzoAPI: BankAPI {
 
         let headers: HTTPHeaders = ["Authorization": "Bearer \(token)"]
         let parameters: Parameters = ["account_id": account.accountId]
-        let url = MonzoAPI.baseURL + "transactions"
+        let url = "\(MonzoAPI.baseURL)/transactions"
 
         Alamofire.request(url,
                           parameters: parameters,

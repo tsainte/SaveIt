@@ -23,6 +23,7 @@ extension UIColor {
 }
 
 // MARK: Flat colour palette
+//swiftlint:disable nesting
 extension UIColor {
     struct FlatColor {
         struct Green {

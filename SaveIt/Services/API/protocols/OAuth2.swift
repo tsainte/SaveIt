@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol OAuth {
+protocol OAuth2 {
     func requestAuthenticationCode()
     func extractAuthenticationToken(from authURL: URL, completeHandler: @escaping (Token?) -> Void)
     func requestAccessToken(for authenticationToken: String, completeHandler: @escaping (Token?) -> Void)

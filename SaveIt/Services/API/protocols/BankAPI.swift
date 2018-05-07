@@ -18,12 +18,17 @@ enum BankError: Error {
     case error(localizedDescription: String) // generic
 }
 
+enum BankEnvironment {
+    case sandbox
+    case production
+}
+
 // This protocol is implemented for being used with the 'Strategy' design pattern
-protocol BankAPI {
+protocol BankAPI: AnyObject {
     var token: Token? { get set }
     var parser: BankParser { get set }
 
-    init(with token: Token?)
+    init(at environment: BankEnvironment, token: Token?)
 
     func getAccounts(success: @escaping ([Account]) -> Void,
                      failure: @escaping (BankError) -> Void)

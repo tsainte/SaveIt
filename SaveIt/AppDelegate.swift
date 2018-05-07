@@ -30,7 +30,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      open url: URL,
                      options: [UIApplicationOpenURLOptionsKey: Any] = [:]) -> Bool {
         EmbedSafariManager.shared.dismiss()
-        APIManager.shared.fetchMonzoToken(from: url)
+        switch url.lastPathComponent {
+        case "saveit_monzo":
+            APIManager.shared.fetchMonzoToken(from: url)
+        case "saveit_starling":
+            APIManager.shared.fetchStarlingToken(from: url)
+        default:
+            return true
+        }
+
         return true
     }
 }

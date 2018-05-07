@@ -13,9 +13,9 @@ class APIManager: NSObject {
     static let shared = APIManager()
 
     // Injecting token onto the API services if available
-    let monzoAPI = MonzoAPI(with: DatabaseManager.getToken(for: Bank.monzo.name))
-    let starlingAPI = StarlingAPI(with: DatabaseManager.getToken(for: Bank.starling.name))
-    let revolutAPI = RevolutAPI(with: DatabaseManager.getToken(for: Bank.revolut.name))
+    let monzoAPI = MonzoAPI(at: .production, token: DatabaseManager.getToken(for: Bank.monzo.name))
+    let starlingAPI = StarlingAPI(at: .sandbox, token: DatabaseManager.getToken(for: Bank.starling.name))
+    let revolutAPI = RevolutAPI(at: .production, token: DatabaseManager.getToken(for: Bank.revolut.name))
 
     func bankApi(from bank: Bank) -> BankAPI? {
         switch bank.name {
@@ -43,11 +43,17 @@ extension APIManager {
         }
     }
 
-    func fetchStarlingToken() {
-        starlingAPI.addDeveloperToken { [unowned self] token in
+    func fetchStarlingToken(from url: URL) {
+        starlingAPI.extractAuthenticationToken(from: url) { [unowned self] token in
+            guard let token = token else { print("no token returned"); return }
+
             self.starlingAPI.token = token
             DatabaseManager.updateToken(token)
         }
+//        starlingAPI.addDeveloperToken { [unowned self] token in
+//            self.starlingAPI.token = token
+//            DatabaseManager.updateToken(token)
+//        }
     }
 }
 

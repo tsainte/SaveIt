@@ -15,7 +15,7 @@ class BanksBusinessLogic: NSObject {
         case Bank.monzo.name:
             APIManager.shared.monzoAPI.requestAuthenticationCode()
         case Bank.starling.name:
-            APIManager.shared.fetchStarlingToken()
+            APIManager.shared.starlingAPI.requestAuthenticationCode()
         default:
             print("no service found for \(bank)")
         }

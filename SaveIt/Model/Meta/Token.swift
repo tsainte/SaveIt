@@ -29,8 +29,12 @@ class Token: Object {
         self.init(bank: .monzo, accessToken: monzoToken.accessToken)
     }
 
-    convenience init(starlingToken: String) {
-        self.init(bank: .starling, accessToken: starlingToken)
+    convenience init(starlingToken: StarlingToken) {
+        self.init(bank: .starling, accessToken: starlingToken.accessToken)
+    }
+
+    convenience init(starlingDeveloperToken: String) {
+        self.init(bank: .starling, accessToken: starlingDeveloperToken)
     }
 
     override static func primaryKey() -> String? {
