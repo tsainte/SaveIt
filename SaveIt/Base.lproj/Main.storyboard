@@ -22,6 +22,51 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8nV-Io-oYo">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingsEnvironmentCell" id="XPs-sC-q98" customClass="SettingsEnvironmentCell" customModule="SaveIt" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XPs-sC-q98" id="0Sx-WD-Q9C">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lZE-lq-Vgg">
+                                                    <rect key="frame" x="16" y="6" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="RiD-GJ-opf"/>
+                                                        <constraint firstAttribute="width" constant="30" id="yJu-Ed-Xlb"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oeh-Pj-Uqp">
+                                                    <rect key="frame" x="54" y="10" width="43" height="23.5"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kyX-kr-Qtu">
+                                                    <rect key="frame" x="326" y="12" width="38" height="21"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Oeh-Pj-Uqp" firstAttribute="centerY" secondItem="lZE-lq-Vgg" secondAttribute="centerY" id="4Hv-sT-aGR"/>
+                                                <constraint firstItem="kyX-kr-Qtu" firstAttribute="centerY" secondItem="Oeh-Pj-Uqp" secondAttribute="centerY" id="6Y3-Cw-Wm8"/>
+                                                <constraint firstItem="lZE-lq-Vgg" firstAttribute="centerY" secondItem="0Sx-WD-Q9C" secondAttribute="centerY" id="ZrX-X9-F7O"/>
+                                                <constraint firstItem="lZE-lq-Vgg" firstAttribute="leading" secondItem="0Sx-WD-Q9C" secondAttribute="leading" constant="16" id="mc1-sN-6nc"/>
+                                                <constraint firstAttribute="trailing" secondItem="kyX-kr-Qtu" secondAttribute="trailing" constant="11" id="v5G-Fz-NQu"/>
+                                                <constraint firstItem="Oeh-Pj-Uqp" firstAttribute="leading" secondItem="lZE-lq-Vgg" secondAttribute="trailing" constant="8" id="xsA-XE-hSX"/>
+                                                <constraint firstItem="kyX-kr-Qtu" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Oeh-Pj-Uqp" secondAttribute="trailing" constant="8" id="zoS-ZX-zhu"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="bankLabel" destination="Oeh-Pj-Uqp" id="xlm-ZK-QtP"/>
+                                            <outlet property="environmentLabel" destination="kyX-kr-Qtu" id="SUO-bw-y7U"/>
+                                            <outlet property="iconImage" destination="lZE-lq-Vgg" id="ZzX-o7-wss"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -35,6 +35,9 @@
 		F18E2BFF209DF74D0054EF2E /* OAuth2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18E2BFE209DF74D0054EF2E /* OAuth2.swift */; };
 		F18E2C03209DFCDE0054EF2E /* EmbedSafariManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18E2C02209DFCDE0054EF2E /* EmbedSafariManager.swift */; };
 		F18E2C0520A033960054EF2E /* StarlingToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18E2C0420A033960054EF2E /* StarlingToken.swift */; };
+		F18E2C0720A084C40054EF2E /* SettingsEnvironmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18E2C0620A084C40054EF2E /* SettingsEnvironmentCell.swift */; };
+		F18E2C0920A087570054EF2E /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18E2C0820A087570054EF2E /* SettingsViewModel.swift */; };
+		F18E2C0B20A08A330054EF2E /* CustomisableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18E2C0A20A08A330054EF2E /* CustomisableCell.swift */; };
 		F1A26A772046CB5A002972A3 /* AccountsBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A26A762046CB5A002972A3 /* AccountsBusinessLogic.swift */; };
 		F1A26A792046CBA5002972A3 /* BankAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A26A782046CBA5002972A3 /* BankAPI.swift */; };
 		F1A26A7C2046F693002972A3 /* RevolutAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A26A7B2046F693002972A3 /* RevolutAPI.swift */; };
@@ -172,6 +175,9 @@
 		F18E2BFE209DF74D0054EF2E /* OAuth2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2.swift; sourceTree = "<group>"; };
 		F18E2C02209DFCDE0054EF2E /* EmbedSafariManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbedSafariManager.swift; sourceTree = "<group>"; };
 		F18E2C0420A033960054EF2E /* StarlingToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarlingToken.swift; sourceTree = "<group>"; };
+		F18E2C0620A084C40054EF2E /* SettingsEnvironmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsEnvironmentCell.swift; sourceTree = "<group>"; };
+		F18E2C0820A087570054EF2E /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		F18E2C0A20A08A330054EF2E /* CustomisableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomisableCell.swift; sourceTree = "<group>"; };
 		F1A26A762046CB5A002972A3 /* AccountsBusinessLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsBusinessLogic.swift; sourceTree = "<group>"; };
 		F1A26A782046CBA5002972A3 /* BankAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAPI.swift; sourceTree = "<group>"; };
 		F1A26A7B2046F693002972A3 /* RevolutAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevolutAPI.swift; sourceTree = "<group>"; };
@@ -377,7 +383,6 @@
 			isa = PBXGroup;
 			children = (
 				F1F78FAE20876F9500224C69 /* CustomCells */,
-				F1A26A8620485B98002972A3 /* BankTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -446,6 +451,7 @@
 				F11658E22045CBD400BBB746 /* AccountsViewModel.swift */,
 				F1A26A8A20485D75002972A3 /* BanksViewModel.swift */,
 				F1F78FAC20876C3200224C69 /* ViewModelConnector.swift */,
+				F18E2C0820A087570054EF2E /* SettingsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -517,10 +523,12 @@
 		F1F78FAE20876F9500224C69 /* CustomCells */ = {
 			isa = PBXGroup;
 			children = (
+				F1A26A8620485B98002972A3 /* BankTableViewCell.swift */,
 				F1A26A7E204718D3002972A3 /* AccountTableViewCell.swift */,
 				F1A26A7F204718D3002972A3 /* AccountTableViewCell.xib */,
 				F1F78FAF20876FB100224C69 /* TransactionTableViewCell.swift */,
 				F1F78FB020876FB100224C69 /* TransactionTableViewCell.xib */,
+				F18E2C0620A084C40054EF2E /* SettingsEnvironmentCell.swift */,
 			);
 			path = CustomCells;
 			sourceTree = "<group>";
@@ -529,6 +537,7 @@
 			isa = PBXGroup;
 			children = (
 				F1F78FB4208B2EF900224C69 /* UIViewController+Protocols.swift */,
+				F18E2C0A20A08A330054EF2E /* CustomisableCell.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -884,6 +893,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F18E2C0720A084C40054EF2E /* SettingsEnvironmentCell.swift in Sources */,
 				F1F78FCB208F36E000224C69 /* UITableView+Extensions.swift in Sources */,
 				F1462CB6203B407F00D39AAB /* MonzoAccount.swift in Sources */,
 				F10476B620402D7700EEAEC1 /* MonzoBalance.swift in Sources */,
@@ -922,6 +932,7 @@
 				F1A26A8D204DA9A7002972A3 /* BanksBusinessLogic.swift in Sources */,
 				F1F78F62208661E600224C69 /* RevolutParser.swift in Sources */,
 				F1A26A7C2046F693002972A3 /* RevolutAPI.swift in Sources */,
+				F18E2C0B20A08A330054EF2E /* CustomisableCell.swift in Sources */,
 				F13EFFD82084C6EB00921550 /* WatchManager.swift in Sources */,
 				F1A26A8320484C92002972A3 /* Token.swift in Sources */,
 				F1F78F5C20865EA600224C69 /* BankParser.swift in Sources */,
@@ -930,6 +941,7 @@
 				F1F78F6020865FA000224C69 /* StarlingParser.swift in Sources */,
 				F1F78FAD20876C3200224C69 /* ViewModelConnector.swift in Sources */,
 				F1A26A8520484CC2002972A3 /* Bank.swift in Sources */,
+				F18E2C0920A087570054EF2E /* SettingsViewModel.swift in Sources */,
 				F1A26A8B20485D75002972A3 /* BanksViewModel.swift in Sources */,
 				F1A26A792046CBA5002972A3 /* BankAPI.swift in Sources */,
 				F1F78F5E20865F9700224C69 /* MonzoParser.swift in Sources */,
