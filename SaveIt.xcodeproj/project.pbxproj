@@ -31,6 +31,7 @@
 		F1462CB42035DD3D00D39AAB /* MonzoError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1462CB32035DD3D00D39AAB /* MonzoError.swift */; };
 		F1462CB6203B407F00D39AAB /* MonzoAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1462CB5203B407F00D39AAB /* MonzoAccount.swift */; };
 		F152397F204EA524004A2DFB /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F152397E204EA524004A2DFB /* APIManager.swift */; };
+		F170BFD520C475A200E26650 /* SettingsTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F170BFD420C475A200E26650 /* SettingsTableViewManager.swift */; };
 		F18E2BFD209DF0A70054EF2E /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18E2BFC209DF0A70054EF2E /* UIApplication+Extensions.swift */; };
 		F18E2BFF209DF74D0054EF2E /* OAuth2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18E2BFE209DF74D0054EF2E /* OAuth2.swift */; };
 		F18E2C03209DFCDE0054EF2E /* EmbedSafariManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18E2C02209DFCDE0054EF2E /* EmbedSafariManager.swift */; };
@@ -171,6 +172,7 @@
 		F1462CB32035DD3D00D39AAB /* MonzoError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonzoError.swift; sourceTree = "<group>"; };
 		F1462CB5203B407F00D39AAB /* MonzoAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonzoAccount.swift; sourceTree = "<group>"; };
 		F152397E204EA524004A2DFB /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		F170BFD420C475A200E26650 /* SettingsTableViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewManager.swift; sourceTree = "<group>"; };
 		F18E2BFC209DF0A70054EF2E /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
 		F18E2BFE209DF74D0054EF2E /* OAuth2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2.swift; sourceTree = "<group>"; };
 		F18E2C02209DFCDE0054EF2E /* EmbedSafariManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbedSafariManager.swift; sourceTree = "<group>"; };
@@ -352,12 +354,95 @@
 		F1462CB02035D63D00D39AAB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F1F78FAC20876C3200224C69 /* ViewModelConnector.swift */,
 				F11658DD2045C46B00BBB746 /* Meta */,
 				F11658DB2045C45800BBB746 /* Monzo */,
 				F11658DC2045C46500BBB746 /* Starling */,
 				F10476B3203F33A900EEAEC1 /* DateHandler.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		F170BFCB20C473E600E26650 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				F170BFD020C4746200E26650 /* Main */,
+				F170BFD120C4747400E26650 /* Scenes */,
+				F1A26A7D20470C4B002972A3 /* Views */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		F170BFCC20C473F300E26650 /* SettingsScene */ = {
+			isa = PBXGroup;
+			children = (
+				F170BFD420C475A200E26650 /* SettingsTableViewManager.swift */,
+				F1E7005F2029E7B700140153 /* SettingsViewController.swift */,
+				F18E2C0820A087570054EF2E /* SettingsViewModel.swift */,
+			);
+			path = SettingsScene;
+			sourceTree = "<group>";
+		};
+		F170BFCD20C4740E00E26650 /* AccountsScene */ = {
+			isa = PBXGroup;
+			children = (
+				F11658E02045CBBA00BBB746 /* AccountsViewController.swift */,
+				F11658E22045CBD400BBB746 /* AccountsViewModel.swift */,
+			);
+			path = AccountsScene;
+			sourceTree = "<group>";
+		};
+		F170BFCE20C4741B00E26650 /* BanksScene */ = {
+			isa = PBXGroup;
+			children = (
+				F1A26A8820485C04002972A3 /* BanksViewController.swift */,
+				F1A26A8A20485D75002972A3 /* BanksViewModel.swift */,
+			);
+			path = BanksScene;
+			sourceTree = "<group>";
+		};
+		F170BFCF20C4743200E26650 /* TransactionsScene */ = {
+			isa = PBXGroup;
+			children = (
+				F1E7004F2029C4F200140153 /* TransactionsViewController.swift */,
+				F1E700512029C51F00140153 /* TransactionsViewModel.swift */,
+			);
+			path = TransactionsScene;
+			sourceTree = "<group>";
+		};
+		F170BFD020C4746200E26650 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				F1E7005D2029C60400140153 /* MainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		F170BFD120C4747400E26650 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				F170BFCD20C4740E00E26650 /* AccountsScene */,
+				F170BFCE20C4741B00E26650 /* BanksScene */,
+				F170BFCF20C4743200E26650 /* TransactionsScene */,
+				F170BFCC20C473F300E26650 /* SettingsScene */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		F170BFD220C474CC00E26650 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		F170BFD320C474E700E26650 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F1F78FC7208F358000224C69 /* Extensions */,
+				F1F78FB3208B2EC600224C69 /* Protocols */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		F18E2C00209DF75B0054EF2E /* protocols */ = {
@@ -414,15 +499,13 @@
 		F1E700252029C2E600140153 /* SaveIt */ = {
 			isa = PBXGroup;
 			children = (
-				F18E2C01209DFC5C0054EF2E /* Managers */,
-				F1F78FC7208F358000224C69 /* Extensions */,
-				F1F78FB3208B2EC600224C69 /* Protocols */,
-				F1462CB02035D63D00D39AAB /* Model */,
 				F1E700582029C55D00140153 /* BusinessLogic */,
+				F170BFD320C474E700E26650 /* Helpers */,
+				F18E2C01209DFC5C0054EF2E /* Managers */,
+				F1462CB02035D63D00D39AAB /* Model */,
 				F1E700532029C52800140153 /* Services */,
-				F1A26A7D20470C4B002972A3 /* Views */,
-				F1E7004A2029C49800140153 /* ViewController */,
-				F1E700482029C44600140153 /* ViewModel */,
+				F170BFD220C474CC00E26650 /* Storage */,
+				F170BFCB20C473E600E26650 /* UI */,
 				F1E700262029C2E600140153 /* AppDelegate.swift */,
 				F1E7002C2029C2E600140153 /* Main.storyboard */,
 				F1E7002F2029C2E600140153 /* Assets.xcassets */,
@@ -442,30 +525,6 @@
 				F1E7003F2029C2E600140153 /* Info.plist */,
 			);
 			path = SaveItTests;
-			sourceTree = "<group>";
-		};
-		F1E700482029C44600140153 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				F1E700512029C51F00140153 /* TransactionsViewModel.swift */,
-				F11658E22045CBD400BBB746 /* AccountsViewModel.swift */,
-				F1A26A8A20485D75002972A3 /* BanksViewModel.swift */,
-				F1F78FAC20876C3200224C69 /* ViewModelConnector.swift */,
-				F18E2C0820A087570054EF2E /* SettingsViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		F1E7004A2029C49800140153 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				F1E7004F2029C4F200140153 /* TransactionsViewController.swift */,
-				F1E7005F2029E7B700140153 /* SettingsViewController.swift */,
-				F1E7005D2029C60400140153 /* MainViewController.swift */,
-				F11658E02045CBBA00BBB746 /* AccountsViewController.swift */,
-				F1A26A8820485C04002972A3 /* BanksViewController.swift */,
-			);
-			path = ViewController;
 			sourceTree = "<group>";
 		};
 		F1E700532029C52800140153 /* Services */ = {
@@ -943,6 +1002,7 @@
 				F1A26A8520484CC2002972A3 /* Bank.swift in Sources */,
 				F18E2C0920A087570054EF2E /* SettingsViewModel.swift in Sources */,
 				F1A26A8B20485D75002972A3 /* BanksViewModel.swift in Sources */,
+				F170BFD520C475A200E26650 /* SettingsTableViewManager.swift in Sources */,
 				F1A26A792046CBA5002972A3 /* BankAPI.swift in Sources */,
 				F1F78F5E20865F9700224C69 /* MonzoParser.swift in Sources */,
 				F1E700602029E7B700140153 /* SettingsViewController.swift in Sources */,
