@@ -26,7 +26,7 @@ extension Refreshable where Self: UIViewController {
         refreshControl.tintColor = tintColor
         refreshControl.addTarget(self,
                                  action: #selector(handleRefresh(_:)),
-                                 for: UIControlEvents.valueChanged)
+                                 for: UIControl.Event.valueChanged)
         tableView.refreshControl = refreshControl
         self.refreshControl = refreshControl
     }

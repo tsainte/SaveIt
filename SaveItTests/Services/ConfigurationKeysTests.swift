@@ -31,7 +31,7 @@ class ConfigurationKeysTests: XCTestCase {
     func testReadValues() {
         XCTAssertEqual(configurationKeys.monzoClientId, "your_client_id")
         XCTAssertEqual(configurationKeys.monzoClientSecret, "your_client_secret")
-        XCTAssertEqual(configurationKeys.monzoRedirectLink, "your_redirect_link")
+        XCTAssertEqual(configurationKeys.monzoRedirectURI, "your_redirect_link")
         XCTAssertEqual(configurationKeys.starlingToken, "your_token")
     }
 }
