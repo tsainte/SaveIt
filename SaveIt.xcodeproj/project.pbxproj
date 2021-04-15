@@ -763,7 +763,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SaveItTests/Pods-SaveItTests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-SaveItTests/Pods-SaveItTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
@@ -774,7 +774,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SaveItTests/Pods-SaveItTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SaveItTests/Pods-SaveItTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		21F4EAAE8A3DF89424ADA6FC /* [CP] Check Pods Manifest.lock */ = {
@@ -801,7 +801,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SaveIt/Pods-SaveIt-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-SaveIt/Pods-SaveIt-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFDateHelper/AFDateHelper.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/FontAwesome.swift/FontAwesome_swift.framework",
@@ -818,7 +818,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SaveIt/Pods-SaveIt-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SaveIt/Pods-SaveIt-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E20EA5E09BC7E3B7068FF18F /* [CP] Check Pods Manifest.lock */ = {

@@ -58,7 +58,7 @@ extension MonzoAPI {
 
         let url = MonzoAPI.baseURL + "oauth2/token"
 
-        Alamofire.request(url, method: .post, parameters: parameters).response { response in
+        AF.request(url, method: .post, parameters: parameters).response { response in
             let decoder = JSONDecoder()
             guard let data = response.data else {
                 print("Monzo error: no data")
@@ -86,7 +86,7 @@ extension MonzoAPI {
 
         let url = MonzoAPI.baseURL + "oauth2/token"
 
-        Alamofire.request(url, method: .post, parameters: parameters).response { response in
+        AF.request(url, method: .post, parameters: parameters).response { response in
             let decoder = JSONDecoder()
             guard let data = response.data else {
                 print("error: no data")
@@ -125,7 +125,7 @@ extension MonzoAPI: BankAPI {
         let headers: HTTPHeaders = ["Authorization": "Bearer \(token)"]
         let url = MonzoAPI.baseURL + "accounts"
 
-        Alamofire.request(url, headers: headers).response { response in
+        AF.request(url, headers: headers).response { response in
             guard let data = response.data else { failure(.noData); return }
             do {
                 let accounts = try self.parser.parseAccounts(from: data)
@@ -145,7 +145,7 @@ extension MonzoAPI: BankAPI {
         let parameters: Parameters = ["account_id": account.accountId]
         let url = MonzoAPI.baseURL + "balance"
 
-        Alamofire.request(url, parameters: parameters, headers: headers).response { response in
+        AF.request(url, parameters: parameters, headers: headers).response { response in
             guard let data = response.data else { failure(.noData); return }
             do {
                 let balance = try self.parser.parseBalance(from: data, account: account)
@@ -165,7 +165,7 @@ extension MonzoAPI: BankAPI {
         let parameters: Parameters = ["account_id": account.accountId]
         let url = MonzoAPI.baseURL + "transactions"
 
-        Alamofire.request(url,
+        AF.request(url,
                           parameters: parameters,
                           headers: headers
         ).response { response in

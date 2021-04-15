@@ -54,7 +54,7 @@ extension DatabaseManager {
         if let oldToken = getToken(for: token.bank) {
             write(realm: realm) {
                 oldToken.accessToken = token.accessToken
-                realm.add(oldToken, update: true)
+                realm.add(oldToken, update: .all)
                 print("token updated: \(token.accessToken)")
             }
         } else {
@@ -76,7 +76,7 @@ extension DatabaseManager {
 
     static func saveAccount(_ account: Account) {
         write(realm: realm) {
-            realm.add(account, update: true)
+            realm.add(account, update: .all)
         }
     }
 }

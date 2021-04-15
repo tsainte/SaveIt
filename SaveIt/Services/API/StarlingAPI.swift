@@ -40,7 +40,7 @@ extension StarlingAPI: BankAPI {
         let headers: HTTPHeaders = ["Authorization": "Bearer \(token)"]
         let url = StarlingAPI.baseURL + "accounts"
 
-        Alamofire.request(url, headers: headers).response { response in
+        AF.request(url, headers: headers).response { response in
             guard let data = response.data else { failure(.noData); return }
             do {
                 let account = try self.parser.parseAccounts(from: data)
@@ -59,7 +59,7 @@ extension StarlingAPI: BankAPI {
         let headers: HTTPHeaders = ["Authorization": "Bearer \(token)"]
         let url = StarlingAPI.baseURL + "accounts/balance"
 
-        Alamofire.request(url, headers: headers).response { response in
+        AF.request(url, headers: headers).response { response in
             guard let data = response.data else { failure(.noData); return }
             do {
                 let balance = try self.parser.parseBalance(from: data, account: account)
@@ -78,7 +78,7 @@ extension StarlingAPI: BankAPI {
         let headers: HTTPHeaders = ["Authorization": "Bearer \(token)"]
         let url = StarlingAPI.baseURL + "transactions"
 
-        Alamofire.request(url, headers: headers).response { response in
+        AF.request(url, headers: headers).response { response in
             guard let data = response.data else { failure(.noData); return }
             do {
                 let transactions = try self.parser.parseTransactions(from: data, account: account)

@@ -1,23 +1,23 @@
 PODS:
-  - AFDateHelper (4.2.7)
-  - Alamofire (4.7.3)
-  - FontAwesome.swift (1.3.2)
-  - Realm (3.10.0):
-    - Realm/Headers (= 3.10.0)
-  - Realm/Headers (3.10.0)
-  - RealmSwift (3.10.0):
-    - Realm (= 3.10.0)
-  - SwiftLint (0.27.0)
+  - AFDateHelper (4.3.0)
+  - Alamofire (5.4.2)
+  - FontAwesome.swift (1.9.1)
+  - Realm (10.7.2):
+    - Realm/Headers (= 10.7.2)
+  - Realm/Headers (10.7.2)
+  - RealmSwift (10.7.2):
+    - Realm (= 10.7.2)
+  - SwiftLint (0.43.1)
 
 DEPENDENCIES:
-  - AFDateHelper (~> 4.2.2)
-  - Alamofire (~> 4.5)
-  - FontAwesome.swift (= 1.3.2)
-  - RealmSwift (~> 3.3)
-  - SwiftLint
+  - AFDateHelper (~> 4.3.0)
+  - Alamofire (= 5.4.2)
+  - FontAwesome.swift (= 1.9.1)
+  - RealmSwift (= 10.7.2)
+  - SwiftLint (= 0.43.1)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - AFDateHelper
     - Alamofire
     - FontAwesome.swift
@@ -26,13 +26,13 @@ SPEC REPOS:
     - SwiftLint
 
 SPEC CHECKSUMS:
-  AFDateHelper: 4ad66fb19503041fbba8a3018cb7ef9c71b2ff88
-  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
-  FontAwesome.swift: b4e4c8ccbbecb12f9b592bc533ff237af3706667
-  Realm: 85ab9e4f779d66f6e9ffeb118dc25b7f130c96ac
-  RealmSwift: 69121c8b86d0ae005fb779efdb10e606732e1c74
-  SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
+  AFDateHelper: b769c07d3d4784ee9a74633285304261bb27dc52
+  Alamofire: bfbc4c2fe5909b1d94fb4ef2277c6b3727ef5dae
+  FontAwesome.swift: 6b52cb7be66eacd28cbfaa0ca7ffd0de4a186a1d
+  Realm: e523da9ade306c5ae87e85dc09fdef148d3e1cc1
+  RealmSwift: 4f6758c3adbdcc87f7b7777107226532a077f61c
+  SwiftLint: 99f82d07b837b942dd563c668de129a03fc3fb52
 
-PODFILE CHECKSUM: e8f11883e51de955a132ecaa0bb0669404c1309c
+PODFILE CHECKSUM: 79a0a3eaa527286ae799278b18e2dc785e048920
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.10.1

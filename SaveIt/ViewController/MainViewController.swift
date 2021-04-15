@@ -24,10 +24,16 @@ class MainViewController: UITabBarController {
 
         for viewController in viewControllers {
             if let accountsVC = childViewController(from: viewController) as? AccountsViewController {
-                accountsVC.tabBarItem.image = UIImage.fontAwesomeIcon(name: .money, textColor: textColor, size: size)
+                accountsVC.tabBarItem.image = UIImage.fontAwesomeIcon(name: .moneyBill,
+                                                                      style: .solid,
+                                                                      textColor: textColor,
+                                                                      size: size)
                 accountsVC.tabBarItem.title = "Accounts"
             } else if let settingsVC = childViewController(from: viewController) as? SettingsViewController {
-                settingsVC.tabBarItem.image = UIImage.fontAwesomeIcon(name: .cog, textColor: textColor, size: size)
+                settingsVC.tabBarItem.image = UIImage.fontAwesomeIcon(name: .userCog,
+                                                                      style: .solid,
+                                                                      textColor: textColor,
+                                                                      size: size)
                 settingsVC.tabBarItem.title = "Settings"
             }
         }
